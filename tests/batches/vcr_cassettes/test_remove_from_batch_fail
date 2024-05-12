@@ -1,0 +1,115 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: GET
+    uri: https://api.shipengine.com/v1/batches/se-1038286
+  response:
+    body:
+      string: "{\r\n  \"label_layout\": null,\r\n  \"label_format\": \"pdf\",\r\n
+        \ \"batch_id\": \"se-1038286\",\r\n  \"external_batch_id\": null,\r\n  \"batch_number\":
+        \"100061\",\r\n  \"batch_notes\": null,\r\n  \"created_at\": \"2024-05-12T09:04:15Z\",\r\n
+        \ \"processed_at\": null,\r\n  \"errors\": 0,\r\n  \"process_errors\": null,\r\n
+        \ \"warnings\": 0,\r\n  \"completed\": 0,\r\n  \"forms\": 0,\r\n  \"count\":
+        0,\r\n  \"batch_shipments_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/shipments?batch_id=se-1038286\"\r\n
+        \ },\r\n  \"batch_labels_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/labels?batch_id=se-1038286\"\r\n
+        \ },\r\n  \"batch_errors_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/batches/se-1038286/errors\"\r\n
+        \ },\r\n  \"label_download\": {\r\n    \"pdf\": \"https://api.shipengine.com/v1/downloads/14/BjN61_8Rt0uWWnQwurhTGg/label-1038286.pdf\",\r\n
+        \   \"zpl\": \"https://api.shipengine.com/v1/downloads/14/BjN61_8Rt0uWWnQwurhTGg/label-1038286.zpl\",\r\n
+        \   \"href\": \"https://api.shipengine.com/v1/downloads/14/BjN61_8Rt0uWWnQwurhTGg/label-1038286.pdf\"\r\n
+        \ },\r\n  \"form_download\": {\r\n    \"href\": \"https://api.shipengine.com/v1/downloads/14/NriZxlMChkSVJkKP83DGqA/form-1038286.pdf\"\r\n
+        \ },\r\n  \"status\": \"open\"\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1129'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 12 May 2024 17:49:46 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '181'
+      RateLimit-Reset:
+      - '14'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - bca9dc16-6205-416e-9f71-c754baff446d
+      x-shipengine-requestid:
+      - bca9dc16-6205-416e-9f71-c754baff446d
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"shipment_ids": ["bad-batch-id"], "rate_ids": null}'
+    headers:
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: POST
+    uri: https://api.shipengine.com/v1/batches/se-1038286/remove
+  response:
+    body:
+      string: "{\r\n  \"request_id\": \"2f82db72-ba7d-4cbe-b1c3-4f34e72bf37b\",\r\n
+        \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
+        \"business_rules\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
+        \"shipment_ids must be only integers\",\r\n      \"field_name\": \"shipment_ids\",\r\n
+        \     \"field_value\": [\r\n        \"bad-batch-id\"\r\n      ]\r\n    }\r\n
+        \ ]\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '357'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 12 May 2024 17:49:46 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '180'
+      RateLimit-Reset:
+      - '14'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - 2f82db72-ba7d-4cbe-b1c3-4f34e72bf37b
+      x-shipengine-requestid:
+      - 2f82db72-ba7d-4cbe-b1c3-4f34e72bf37b
+    status:
+      code: 400
+      message: Bad Request
+version: 1

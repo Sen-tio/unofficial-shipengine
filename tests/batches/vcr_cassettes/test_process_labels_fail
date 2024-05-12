@@ -1,0 +1,118 @@
+interactions:
+- request:
+    body: '{"shipment_ids": ["se-1518508", "se-1519477"], "rate_ids": null, "external_batch_id":
+      null, "batch_notes": null, "process_labels": null}'
+    headers:
+      Content-Length:
+      - '136'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: POST
+    uri: https://api.shipengine.com/v1/batches
+  response:
+    body:
+      string: "{\r\n  \"label_layout\": null,\r\n  \"label_format\": \"pdf\",\r\n
+        \ \"batch_id\": \"se-1038457\",\r\n  \"external_batch_id\": null,\r\n  \"batch_number\":
+        \"100106\",\r\n  \"batch_notes\": null,\r\n  \"created_at\": \"2024-05-12T17:57:50.68Z\",\r\n
+        \ \"processed_at\": null,\r\n  \"errors\": 0,\r\n  \"process_errors\": null,\r\n
+        \ \"warnings\": 0,\r\n  \"completed\": 0,\r\n  \"forms\": 0,\r\n  \"count\":
+        2,\r\n  \"batch_shipments_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/shipments?batch_id=se-1038457\"\r\n
+        \ },\r\n  \"batch_labels_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/labels?batch_id=se-1038457\"\r\n
+        \ },\r\n  \"batch_errors_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/batches/se-1038457/errors\"\r\n
+        \ },\r\n  \"label_download\": {\r\n    \"pdf\": \"https://api.shipengine.com/v1/downloads/14/ym6832U2LUq8z0FmT8fpQA/label-1038457.pdf\",\r\n
+        \   \"zpl\": \"https://api.shipengine.com/v1/downloads/14/ym6832U2LUq8z0FmT8fpQA/label-1038457.zpl\",\r\n
+        \   \"href\": \"https://api.shipengine.com/v1/downloads/14/ym6832U2LUq8z0FmT8fpQA/label-1038457.pdf\"\r\n
+        \ },\r\n  \"form_download\": {\r\n    \"href\": \"https://api.shipengine.com/v1/downloads/14/hQ9WqpmdXk-b6OhdNSGgVw/form-1038457.pdf\"\r\n
+        \ },\r\n  \"status\": \"open\"\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1132'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 12 May 2024 17:57:50 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '199'
+      RateLimit-Reset:
+      - '10'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - 072c77cd-eb8e-436d-96d9-f66728cc7161
+      x-shipengine-requestid:
+      - 072c77cd-eb8e-436d-96d9-f66728cc7161
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"create_batch_and_process_labels": true, "ship_date": null, "label_layout":
+      "4x6", "label_format": "pdf", "display_scheme": "label"}'
+    headers:
+      Content-Length:
+      - '133'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: POST
+    uri: https://api.shipengine.com/v1/batches/bad-batch-id/process/labels
+  response:
+    body:
+      string: "{\r\n  \"request_id\": \"fbf444f3-77e0-4583-8537-6f0b46dda37f\",\r\n
+        \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
+        \"business_rules\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
+        \"id parameter is in the wrong format\",\r\n      \"field_name\": null,\r\n
+        \     \"field_value\": \"bad-batch-id\"\r\n    }\r\n  ]\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '328'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 12 May 2024 17:57:51 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '198'
+      RateLimit-Reset:
+      - '9'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - fbf444f3-77e0-4583-8537-6f0b46dda37f
+      x-shipengine-requestid:
+      - fbf444f3-77e0-4583-8537-6f0b46dda37f
+    status:
+      code: 400
+      message: Bad Request
+version: 1
