@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "unofficial-shipengine"
+version = "0.1.0"
+description = ""
+authors = ["Richard Smith <programming.smithr@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.31.0"
+attrs = "^23.2.0"
+python-dotenv = "^1.0.1"
+
+
+[tool.poetry.dev-dependencies]
+black = "^24.4.2"
+vcrpy = "^6.0.1"
+coverage = "^7.5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
