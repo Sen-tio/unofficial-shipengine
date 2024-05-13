@@ -4,27 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="- commited vcr cassette files">
-      <change afterPath="$PROJECT_DIR$/tests/batches/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/run_tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/warehouses/__init__.py" afterDir="false" />
+    <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="- commited vcr cassettes">
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/carriers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/carriers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/carriers/test_carriers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/warehouses.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/warehouses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/test_batch.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/batches/test_batch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_add_to_batch_fail" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_add_to_batch_success" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_create_batch_fail" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_create_batch_success" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_delete_batch_fail" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_delete_batch_success" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_get_by_id_fail" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_get_by_id_success" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_process_label_success" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_process_labels_fail" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_process_labels_success" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_remove_from_batch_fail" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/test_remove_from_batch_success" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/warehouses/test_warehouses.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/warehouses/test_warehouses.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,28 +49,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for test_batch.TestBatch.executor&quot;: &quot;Coverage&quot;,
-    &quot;Python tests.Python tests in test_batch_request.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_batches.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Unittests in tests.executor&quot;: &quot;Run&quot;,
-    &quot;Python.run_tests.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_unoffical_shipengine.executor&quot;: &quot;Run&quot;,
-    &quot;Python.warehouses.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/dev/python/unofficial-shipengine/tests&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.black.configuration.BlackFormatterConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_batch.TestBatch.executor": "Coverage",
+    "Python tests.Python tests in test_batch_request.py.executor": "Run",
+    "Python tests.Python tests in test_batches.py.executor": "Run",
+    "Python tests.Python tests in tests.executor": "Run",
+    "Python tests.Unittests in tests.executor": "Run",
+    "Python.run_tests.executor": "Run",
+    "Python.test_unoffical_shipengine.executor": "Run",
+    "Python.warehouses.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "C:/dev/python/unofficial-shipengine/tests",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.black.configuration.BlackFormatterConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="run_tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="unofficial-shipengine" />
@@ -143,6 +127,8 @@
       <workItem from="1715500415731" duration="8451000" />
       <workItem from="1715535111622" duration="4680000" />
       <workItem from="1715552841287" duration="6456000" />
+      <workItem from="1715566331422" duration="162000" />
+      <workItem from="1715577369853" duration="4497000" />
     </task>
     <task id="LOCAL-00001" summary="- added batches&#10;- added warehouses&#10;- updated shipments&#10;- updated common&#10;- updated tests for batches&#10;- updated test for warehouses">
       <option name="closed" value="true" />
@@ -160,7 +146,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715553246929</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- refactored test_batch.py&#10;- added run_tests.py for suite">
+      <option name="closed" value="true" />
+      <created>1715566403635</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715566403635</updated>
+    </task>
+    <task id="LOCAL-00004" summary="- commited vcr cassettes">
+      <option name="closed" value="true" />
+      <created>1715566482138</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715566482138</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,13 +182,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- added batches&#10;- added warehouses&#10;- updated shipments&#10;- updated common&#10;- updated tests for batches&#10;- updated test for warehouses" />
     <MESSAGE value="- commited vcr cassette files" />
-    <option name="LAST_COMMIT_MESSAGE" value="- commited vcr cassette files" />
+    <MESSAGE value="- refactored test_batch.py&#10;- added run_tests.py for suite" />
+    <MESSAGE value="- commited vcr cassettes" />
+    <option name="LAST_COMMIT_MESSAGE" value="- commited vcr cassettes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/unofficial_shipengine$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1715554669254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/unofficial_shipengine$test_unoffical_shipengine.coverage" NAME="test_unoffical_shipengine Coverage Results" MODIFIED="1715506695552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/unofficial_shipengine$.coverage" NAME=" Coverage Results" MODIFIED="1715554598161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/unofficial_shipengine$warehouses.coverage" NAME="warehouses Coverage Results" MODIFIED="1715506687424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/unofficial_shipengine/core" />
-    <SUITE FILE_PATH="coverage/unofficial_shipengine$run_tests.coverage" NAME="run_tests Coverage Results" MODIFIED="1715557935855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/unofficial_shipengine$run_tests.coverage" NAME="run_tests Coverage Results" MODIFIED="1715582209582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>
