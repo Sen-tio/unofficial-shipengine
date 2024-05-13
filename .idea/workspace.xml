@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="- commited vcr cassettes">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="- commited vcr cassettes for carriers">
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/shipments.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/carriers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/carriers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/carriers/test_carriers.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/carriers/test_carriers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestBatch.test_carriers_get_carriers.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestBatch.test_get_by_id.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/shipment.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/shipment.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +33,12 @@
     &quot;assignee&quot;: &quot;Sen-tio&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Sen-tio/unofficial-shipengine.git&quot;,
-    &quot;accountId&quot;: &quot;8e43b4ea-7a4f-4fc8-a09c-b504d0091a7d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Sen-tio/unofficial-shipengine",
+    "accountId": "2c25ed3b-66b1-4f52-b1bc-a973d82e6c14"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -53,30 +48,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_batch.TestBatch.executor": "Coverage",
-    "Python tests.Python tests for test_carriers.TestCarriers.executor": "Run",
-    "Python tests.Python tests for test_carriers.TestCarriers.test_get_by_id_success.executor": "Run",
-    "Python tests.Python tests in test_batch_request.py.executor": "Run",
-    "Python tests.Python tests in test_batches.py.executor": "Run",
-    "Python tests.Python tests in tests.executor": "Run",
-    "Python tests.Unittests in tests.executor": "Run",
-    "Python.run_tests.executor": "Run",
-    "Python.test_unoffical_shipengine.executor": "Run",
-    "Python.warehouses.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "D:/dev/python/sen/unofficial-shipengine",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.black.configuration.BlackFormatterConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_batch.TestBatch.executor&quot;: &quot;Coverage&quot;,
+    &quot;Python tests.Python tests for test_carriers.TestCarriers.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_carriers.TestCarriers.test_get_by_id_success.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_batch_request.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_batches.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Unittests in tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_unoffical_shipengine.executor&quot;: &quot;Run&quot;,
+    &quot;Python.warehouses.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/dev/python/sen/unofficial-shipengine&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.black.configuration.BlackFormatterConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python tests.Python tests for test_carriers.TestCarriers">
     <configuration name="run_tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="unofficial-shipengine" />
@@ -152,7 +147,8 @@
       <workItem from="1715552841287" duration="6456000" />
       <workItem from="1715566331422" duration="162000" />
       <workItem from="1715577369853" duration="4497000" />
-      <workItem from="1715608119942" duration="3989000" />
+      <workItem from="1715608119942" duration="4980000" />
+      <workItem from="1715614855042" duration="3492000" />
     </task>
     <task id="LOCAL-00001" summary="- added batches&#10;- added warehouses&#10;- updated shipments&#10;- updated common&#10;- updated tests for batches&#10;- updated test for warehouses">
       <option name="closed" value="true" />
@@ -186,7 +182,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715566482138</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- carriers in working state with tests">
+      <option name="closed" value="true" />
+      <created>1715612209238</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715612209238</updated>
+    </task>
+    <task id="LOCAL-00006" summary="- commited vcr cassettes for carriers">
+      <option name="closed" value="true" />
+      <created>1715612243673</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715612243673</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +220,9 @@
     <MESSAGE value="- commited vcr cassette files" />
     <MESSAGE value="- refactored test_batch.py&#10;- added run_tests.py for suite" />
     <MESSAGE value="- commited vcr cassettes" />
-    <option name="LAST_COMMIT_MESSAGE" value="- commited vcr cassettes" />
+    <MESSAGE value="- carriers in working state with tests" />
+    <MESSAGE value="- commited vcr cassettes for carriers" />
+    <option name="LAST_COMMIT_MESSAGE" value="- commited vcr cassettes for carriers" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/unofficial_shipengine$test_unoffical_shipengine.coverage" NAME="test_unoffical_shipengine Coverage Results" MODIFIED="1715506695552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />

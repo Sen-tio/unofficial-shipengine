@@ -11,10 +11,12 @@ from src.unofficial_shipengine.core.common import (
     Weight,
     serializer,
 )
+
 from .exceptions import ShipEngineAPIError
 from .. import session
 
 
+# TODO: refactor to match more standard structure of carriers
 @define
 class ShipmentRequest:
     class ValidateAddress(Enum):
