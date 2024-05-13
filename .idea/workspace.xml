@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="- commited vcr cassettes">
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/carriers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/carriers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/carriers/test_carriers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/carriers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/carriers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/carriers/test_carriers.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/carriers/test_carriers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestBatch.test_carriers_get_carriers.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestBatch.test_get_by_id.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +56,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python tests.Python tests for test_batch.TestBatch.executor": "Coverage",
+    "Python tests.Python tests for test_carriers.TestCarriers.executor": "Run",
+    "Python tests.Python tests for test_carriers.TestCarriers.test_get_by_id_success.executor": "Run",
     "Python tests.Python tests in test_batch_request.py.executor": "Run",
     "Python tests.Python tests in test_batches.py.executor": "Run",
     "Python tests.Python tests in tests.executor": "Run",
@@ -61,7 +67,7 @@
     "Python.warehouses.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "dev",
-    "last_opened_file_path": "C:/dev/python/unofficial-shipengine/tests",
+    "last_opened_file_path": "D:/dev/python/sen/unofficial-shipengine",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,7 +77,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests for test_carriers.TestCarriers">
     <configuration name="run_tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="unofficial-shipengine" />
       <option name="ENV_FILES" value="" />
@@ -95,8 +101,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_carriers.TestCarriers" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="unofficial-shipengine" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/carriers" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_carriers.TestCarriers&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_carriers.TestCarriers" />
         <item itemvalue="Python.run_tests" />
       </list>
     </recent_temporary>
@@ -104,8 +127,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
-        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
+        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
       </set>
     </attachedChunks>
   </component>
@@ -129,6 +152,7 @@
       <workItem from="1715552841287" duration="6456000" />
       <workItem from="1715566331422" duration="162000" />
       <workItem from="1715577369853" duration="4497000" />
+      <workItem from="1715608119942" duration="3989000" />
     </task>
     <task id="LOCAL-00001" summary="- added batches&#10;- added warehouses&#10;- updated shipments&#10;- updated common&#10;- updated tests for batches&#10;- updated test for warehouses">
       <option name="closed" value="true" />
@@ -187,10 +211,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="- commited vcr cassettes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/unofficial_shipengine$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1715554669254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/unofficial_shipengine$test_unoffical_shipengine.coverage" NAME="test_unoffical_shipengine Coverage Results" MODIFIED="1715506695552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/unofficial_shipengine$.coverage" NAME=" Coverage Results" MODIFIED="1715554598161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/unofficial_shipengine$run_tests.coverage" NAME="run_tests Coverage Results" MODIFIED="1715608779480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/unofficial_shipengine$warehouses.coverage" NAME="warehouses Coverage Results" MODIFIED="1715506687424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/unofficial_shipengine/core" />
-    <SUITE FILE_PATH="coverage/unofficial_shipengine$run_tests.coverage" NAME="run_tests Coverage Results" MODIFIED="1715582209582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/unofficial_shipengine$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1715554669254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/unofficial_shipengine$.coverage" NAME=" Coverage Results" MODIFIED="1715611085571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/carriers" />
   </component>
 </project>

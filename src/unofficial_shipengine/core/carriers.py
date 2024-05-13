@@ -46,6 +46,16 @@ class CarrierService:
 
 
 @define
+class CarrierBalance:
+    currency: str
+    amount: float
+
+    @classmethod
+    def from_dict(cls, data: dict) -> Self:
+        return cls(**data)
+
+
+@define
 class Carrier:
     carrier_id: str
     carrier_code: str
@@ -106,3 +116,20 @@ class Carrier:
             )
 
         return cls.from_dict(response_dict)
+
+    def add_funds(self, amount: float, currency: str = "usd") -> CarrierBalance:
+        """
+        There is no test mode for adding funds. You will be charged when you add funds.
+        """
+        url = f"https://api.shipengine.com/v1/carriers/{self.carrier_id}/add_funds"
+        data = {"amount": amount, "currency": currency}
+
+        response = session.post(url, data=json.dumps(data))
+        response_dict = json.loads(response.text)
+
+        if response.status_code != 200:
+            raise ShipEngineAPIError(
+                request_id=response_dict["request_id"], errors=response_dict["errors"]
+            )
+
+        return CarrierBalance.from_dict(response_dict)

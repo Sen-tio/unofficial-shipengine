@@ -10,6 +10,7 @@ python = "^3.12"
 requests = "^2.31.0"
 attrs = "^23.2.0"
 python-dotenv = "^1.0.1"
+vcrpy-unittest = "^0.1.7"
 
 
 [tool.poetry.dev-dependencies]
