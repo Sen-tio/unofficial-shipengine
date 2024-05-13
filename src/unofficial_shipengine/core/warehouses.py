@@ -1,6 +1,6 @@
 import json
 from typing import Self
-from attrs import define, field, validators, asdict
+from attrs import define, asdict
 from src.unofficial_shipengine.core.common import Address, serializer
 from src.unofficial_shipengine.core.exceptions import ShipEngineAPIError
 from .. import session
