@@ -6,6 +6,7 @@ from src.unofficial_shipengine.core.common import Address, Value
 from .. import session
 
 
+# TODO: finish building
 class ValidateAddress(Enum):
     NO_VALIDATION: str = "no_validation"
     VALIDATE_ONLY: str = "validate_only"
