@@ -1,6 +1,6 @@
 import json
 from typing import Self
-from attrs import define, asdict
+from attrs import define
 
 from src.unofficial_shipengine.core.exceptions import ShipEngineAPIError
 
