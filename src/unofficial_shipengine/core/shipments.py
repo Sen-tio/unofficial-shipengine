@@ -1,16 +1,22 @@
+import json
 from enum import Enum
-from attrs import define, asdict, validators, field
 
-from src.unofficial_shipengine.core.common import Address, Value
+import requests
+from attrs import define, asdict, validators, field
+from typing import Self
+
+from src.unofficial_shipengine.core.common import (
+    Address,
+    Value,
+    Package,
+    AddressValidation,
+    Weight,
+    ValidateAddress,
+    serializer,
+)
+from .shipment import Shipment
 
 from .. import session
-
-
-# TODO: finish building
-class ValidateAddress(Enum):
-    NO_VALIDATION: str = "no_validation"
-    VALIDATE_ONLY: str = "validate_only"
-    VALIDATE_AND_CLEAN: str = "validate_and_clean"
 
 
 class Confirmation(Enum):
@@ -28,6 +34,29 @@ class InsuranceProvider(Enum):
     SHIPSURANCE: str = "shipsurance"
     CARRIER: str = "carrier"
     THIRD_PARTY: str = "third_party"
+
+
+class OrderSourceCode(Enum):
+    AMAZON_CA: str = "amazon_ca"
+    AMAZON_US: str = "amazon_us"
+    BRIGHTPEARL: str = "brightpearl"
+    CHANNEL_ADVISOR: str = "channel_advisor"
+    CRATEJOY: str = "cratejoy"
+    EBAY: str = "ebay"
+    ETSY: str = "etsy"
+    JANE: str = "jane"
+    GROUPON_GOODS: str = "groupon_goods"
+    MAGENTO: str = "magento"
+    PAYPAL: str = "paypal"
+    SELLER_ACTIVE: str = "seller_active"
+    SHOPIFY: str = "shopify"
+    STITCH_LABS: str = "stitch_labs"
+    SQUARESPACE: str = "squarespace"
+    THREE_DCART: str = "three_dcart"
+    TOPHATTER: str = "tophatter"
+    WALMART: str = "walmart"
+    WOO_COMMERCE: str = "woo_commerce"
+    VOLUSION: str = "volusion"
 
 
 @define
@@ -193,21 +222,20 @@ class AdvancedOptions:
 
 
 @define
-class Shipment:
-
-    class OrderSourceCode(Enum):
-        AMAZON_CA: str = "amazon_ca"
+class ShipmentRequest:
 
     validate_address: ValidateAddress
     carrier_id: str
     service_code: str
-    ship_date: str
     ship_to: Address
+    ship_date: str = field(default=None)
     advanced_options: AdvancedOptions = field(default=None)
     confirmation: Confirmation = field(
         default=Confirmation.NONE, validator=validators.in_(Confirmation)
     )
-    customers: list[CustomsInformation] = field(default=None)
+    tags: list[str] = field(default=list)
+    is_return: bool = field(default=False)
+    customs: list[CustomsInformation] = field(default=None)
     warehouse_id: str = field(default=None)
     ship_from: Address = field(default=None)
     return_to: Address = field(default=None)
@@ -219,6 +247,11 @@ class Shipment:
     insurance_provider: InsuranceProvider = field(
         default=InsuranceProvider.NONE, validator=validators.in_(InsuranceProvider)
     )
+    order_source_code: OrderSourceCode = field(
+        default=None, validator=validators.in_(OrderSourceCode)
+    )
+    packages: list[Package] = field(default=None)
+    comparison_rate_type: str = field(default=None)
 
     @ship_from.validator
     def _validate_ship_from(self, attribute, value):
@@ -226,3 +259,50 @@ class Shipment:
             raise ValueError(
                 f"'{attribute}' must be passed when 'warehouse_id' is not set"
             )
+
+
+@define(kw_only=True)
+class Shipment(ShipmentRequest):
+    """Subclassed from ShipmentRequest to avoid repeating many fields."""
+
+    class Status(Enum):
+        PENDING: str = "pending"
+        PROCESSING: str = "processing"
+        LABEL_PURCHASED: str = "label_purchased"
+        CANCELLED: str = "cancelled"
+
+    shipment_id: str
+    created_at: str
+    modified_at: str
+    shipment_status: Status = field(
+        default=Status.PENDING, validator=validators.in_(Status)
+    )
+    total_weight: Weight = field(default=None)
+    address_validation: AddressValidation = field(default=None)
+
+    @classmethod
+    def from_dict(cls, data: dict) -> Self:
+        return cls(**data)
+
+    @classmethod
+    def create_shipments(
+        cls, shipment_requests: list[ShipmentRequest]
+    ) -> list[Shipment]:
+        url = "https://api.shipengine.com/v1/shipments"
+
+        data = [asdict(sr, value_serializer=serializer) for sr in shipment_requests]
+        data = json.dumps({"shipments": data})
+
+        response = requests.post(url, data=data)
+        response_dict = response.json()
+
+        if response.status_code != 200:
+            raise ShipEngineAPIError(
+                request_id=response_dict["request_id"], errors=response_dict["errors"]
+            )
+
+        shipments: list[Shipment] = [
+            Shipment.from_dict(s) for s in response_dict["shipments"]
+        ]
+
+        return shipments
