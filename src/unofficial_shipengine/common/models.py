@@ -1,4 +1,6 @@
 from enum import Enum
+from typing import Self
+
 from attrs import define, field, validators
 
 
@@ -51,7 +53,6 @@ class LabelDownload:
 
 @define
 class AddressValidation:
-
     @define
     class Message:
         code: str
@@ -104,7 +105,6 @@ class Value:
 
 @define
 class Package:
-
     @define
     class LabelMessages:
         reference1: str = None
@@ -116,19 +116,24 @@ class Package:
     dimensions: Dimension = None
     content_description: str = None
     package_id: str = None
-    insurance_value: Value = None
+    insured_value: Value = None
     label_messages: LabelMessages = None
     products: list[object] = None  # TODO
     external_package_id: str = None
+    shipment_package_id: str = None
+    package_name: str = None
 
+    @classmethod
+    def from_dict(cls, data: dict) -> Self:
+        weight = Weight(**data.pop("weight"))
+        dimensions = Dimension(**data.pop("dimensions"))
+        insured_value = Value(**data.pop("insured_value"))
+        label_messages = Package.LabelMessages(**data.pop("label_messages"))
 
-class ValidateAddress(Enum):
-    NO_VALIDATION: str = "no_validation"
-    VALIDATE_ONLY: str = "validate_only"
-    VALIDATE_AND_CLEAN: str = "validate_and_clean"
-
-
-def serializer(inst, field, value):
-    if isinstance(value, Enum):
-        return value.value
-    return value
+        return cls(
+            weight=weight,
+            dimensions=dimensions,
+            insured_value=insured_value,
+            label_messages=label_messages,
+            **data
+        )

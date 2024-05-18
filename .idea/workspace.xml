@@ -5,9 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="- added shipments">
-      <change afterPath="$PROJECT_DIR$/tests/shipments/test_shipments.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/common/enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/common/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/labels/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/labels/enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/labels/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/labels/services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/unofficial_shipengine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/utils/serialize.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/shipments/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/shipments.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/shipments.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/batches.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/carriers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/common.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/labels.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/labels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/shipment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/shipments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/warehouses.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/batches/test_batch.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/batches/test_batch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/carriers/test_carriers.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/carriers/test_carriers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestCarriers.test_get_by_id.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestCarriers.test_get_by_id_fail.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestCarriers.test_get_by_id_success.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestCarriers.test_get_carriers.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/shipments/test_shipments.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/shipments/test_shipments.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/warehouses/test_warehouses.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/warehouses/test_warehouses.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +69,12 @@
     &quot;assignee&quot;: &quot;Sen-tio&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Sen-tio/unofficial-shipengine",
-    "accountId": "2c25ed3b-66b1-4f52-b1bc-a973d82e6c14"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sen-tio/unofficial-shipengine&quot;,
+    &quot;accountId&quot;: &quot;2c25ed3b-66b1-4f52-b1bc-a973d82e6c14&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -48,31 +84,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for test_batch.TestBatch.executor&quot;: &quot;Coverage&quot;,
-    &quot;Python tests.Python tests for test_carriers.TestCarriers.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_carriers.TestCarriers.test_get_by_id_success.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_batch_request.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_batches.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Unittests in tests.executor&quot;: &quot;Run&quot;,
-    &quot;Python.run_tests.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_unoffical_shipengine.executor&quot;: &quot;Run&quot;,
-    &quot;Python.warehouses.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/dev/python/sen/unofficial-shipengine&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.black.configuration.BlackFormatterConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_batch.TestBatch.executor": "Coverage",
+    "Python tests.Python tests for test_carriers.TestCarriers.executor": "Run",
+    "Python tests.Python tests for test_carriers.TestCarriers.test_get_by_id_success.executor": "Run",
+    "Python tests.Python tests in test_batch_request.py.executor": "Run",
+    "Python tests.Python tests in test_batches.py.executor": "Run",
+    "Python tests.Python tests in tests.executor": "Run",
+    "Python tests.Unittests in tests.executor": "Run",
+    "Python.run_tests.executor": "Run",
+    "Python.test_unoffical_shipengine.executor": "Run",
+    "Python.warehouses.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "C:/dev/python/unofficial-shipengine/src/unofficial_shipengine/common/enums.py",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.black.configuration.BlackFormatterConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Python tests.Python tests for test_carriers.TestCarriers">
+}]]></component>
+  <component name="RunManager" selected="Python.run_tests">
     <configuration name="run_tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="unofficial-shipengine" />
       <option name="ENV_FILES" value="" />
@@ -114,8 +150,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_carriers.TestCarriers" />
         <item itemvalue="Python.run_tests" />
+        <item itemvalue="Python tests.Python tests for test_carriers.TestCarriers" />
       </list>
     </recent_temporary>
   </component>
@@ -222,10 +258,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="- added shipments" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/unofficial_shipengine$test_unoffical_shipengine.coverage" NAME="test_unoffical_shipengine Coverage Results" MODIFIED="1715506695552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/unofficial_shipengine$run_tests.coverage" NAME="run_tests Coverage Results" MODIFIED="1715608779480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/unofficial_shipengine$warehouses.coverage" NAME="warehouses Coverage Results" MODIFIED="1715506687424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/unofficial_shipengine/core" />
     <SUITE FILE_PATH="coverage/unofficial_shipengine$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1715554669254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/unofficial_shipengine$test_unoffical_shipengine.coverage" NAME="test_unoffical_shipengine Coverage Results" MODIFIED="1715506695552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/unofficial_shipengine$.coverage" NAME=" Coverage Results" MODIFIED="1715611085571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/carriers" />
+    <SUITE FILE_PATH="coverage/unofficial_shipengine$warehouses.coverage" NAME="warehouses Coverage Results" MODIFIED="1715506687424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/unofficial_shipengine/core" />
+    <SUITE FILE_PATH="coverage/unofficial_shipengine$run_tests.coverage" NAME="run_tests Coverage Results" MODIFIED="1716055287405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>

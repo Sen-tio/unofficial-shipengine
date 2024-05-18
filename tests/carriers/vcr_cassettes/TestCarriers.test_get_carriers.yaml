@@ -10,64 +10,64 @@ interactions:
     uri: https://api.shipengine.com/v1/carriers
   response:
     body:
-      string: "{\r\n  \"carriers\": [\r\n    {\r\n      \"carrier_id\": \"se-2424643\",\r\n
-        \     \"carrier_code\": \"stamps_com\",\r\n      \"account_number\": \"test_account_2424643\",\r\n
-        \     \"requires_funded_amount\": true,\r\n      \"balance\": 7212.7200,\r\n
+      string: "{\r\n  \"carriers\": [\r\n    {\r\n      \"carrier_id\": \"se-64525\",\r\n
+        \     \"carrier_code\": \"stamps_com\",\r\n      \"account_number\": \"test_account_64525\",\r\n
+        \     \"requires_funded_amount\": true,\r\n      \"balance\": 11112.2800,\r\n
         \     \"nickname\": \"ShipEngine Test Account - Stamps.com\",\r\n      \"friendly_name\":
         \"Stamps.com\",\r\n      \"primary\": false,\r\n      \"has_multi_package_supporting_services\":
         false,\r\n      \"supports_label_messages\": true,\r\n      \"disabled_by_billing_plan\":
         false,\r\n      \"services\": [\r\n        {\r\n          \"carrier_id\":
-        \"se-2424643\",\r\n          \"carrier_code\": \"stamps_com\",\r\n          \"service_code\":
+        \"se-64525\",\r\n          \"carrier_code\": \"stamps_com\",\r\n          \"service_code\":
         \"usps_priority_mail\",\r\n          \"name\": \"USPS Priority Mail\",\r\n
         \         \"domestic\": true,\r\n          \"international\": false,\r\n          \"is_multi_package_supported\":
-        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424643\",\r\n
+        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64525\",\r\n
         \         \"carrier_code\": \"stamps_com\",\r\n          \"service_code\":
         \"usps_priority_mail_express\",\r\n          \"name\": \"USPS Priority Mail
         Express\",\r\n          \"domestic\": true,\r\n          \"international\":
         false,\r\n          \"is_multi_package_supported\": false\r\n        },\r\n
-        \       {\r\n          \"carrier_id\": \"se-2424643\",\r\n          \"carrier_code\":
+        \       {\r\n          \"carrier_id\": \"se-64525\",\r\n          \"carrier_code\":
         \"stamps_com\",\r\n          \"service_code\": \"usps_parcel_select\",\r\n
         \         \"name\": \"USPS Parcel Select Ground\",\r\n          \"domestic\":
         true,\r\n          \"international\": false,\r\n          \"is_multi_package_supported\":
-        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424643\",\r\n
+        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64525\",\r\n
         \         \"carrier_code\": \"stamps_com\",\r\n          \"service_code\":
         \"usps_first_class_mail\",\r\n          \"name\": \"USPS First Class Mail\",\r\n
         \         \"domestic\": true,\r\n          \"international\": false,\r\n          \"is_multi_package_supported\":
-        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424643\",\r\n
+        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64525\",\r\n
         \         \"carrier_code\": \"stamps_com\",\r\n          \"service_code\":
         \"usps_media_mail\",\r\n          \"name\": \"USPS Media Mail\",\r\n          \"domestic\":
         true,\r\n          \"international\": false,\r\n          \"is_multi_package_supported\":
-        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424643\",\r\n
+        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64525\",\r\n
         \         \"carrier_code\": \"stamps_com\",\r\n          \"service_code\":
         \"usps_ground_advantage\",\r\n          \"name\": \"USPS Ground Advantage\",\r\n
         \         \"domestic\": true,\r\n          \"international\": false,\r\n          \"is_multi_package_supported\":
-        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424643\",\r\n
+        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64525\",\r\n
         \         \"carrier_code\": \"stamps_com\",\r\n          \"service_code\":
         \"usps_priority_mail_international\",\r\n          \"name\": \"USPS Priority
         Mail Intl\",\r\n          \"domestic\": false,\r\n          \"international\":
         true,\r\n          \"is_multi_package_supported\": false\r\n        },\r\n
-        \       {\r\n          \"carrier_id\": \"se-2424643\",\r\n          \"carrier_code\":
+        \       {\r\n          \"carrier_id\": \"se-64525\",\r\n          \"carrier_code\":
         \"stamps_com\",\r\n          \"service_code\": \"usps_priority_mail_express_international\",\r\n
         \         \"name\": \"USPS Priority Mail Express Intl\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424643\",\r\n
+        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64525\",\r\n
         \         \"carrier_code\": \"stamps_com\",\r\n          \"service_code\":
         \"usps_first_class_mail_international\",\r\n          \"name\": \"USPS First
         Class Mail Intl\",\r\n          \"domestic\": false,\r\n          \"international\":
         true,\r\n          \"is_multi_package_supported\": false\r\n        },\r\n
-        \       {\r\n          \"carrier_id\": \"se-2424643\",\r\n          \"carrier_code\":
+        \       {\r\n          \"carrier_id\": \"se-64525\",\r\n          \"carrier_code\":
         \"stamps_com\",\r\n          \"service_code\": \"globalpost_economy\",\r\n
         \         \"name\": \"GlobalPost Economy Intl\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424643\",\r\n
+        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64525\",\r\n
         \         \"carrier_code\": \"stamps_com\",\r\n          \"service_code\":
         \"globalpost_priority\",\r\n          \"name\": \"GlobalPost Standard Intl\",\r\n
         \         \"domestic\": false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424643\",\r\n
+        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64525\",\r\n
         \         \"carrier_code\": \"stamps_com\",\r\n          \"service_code\":
         \"gp_plus\",\r\n          \"name\": \"GlobalPost Plus\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424643\",\r\n
+        false\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64525\",\r\n
         \         \"carrier_code\": \"stamps_com\",\r\n          \"service_code\":
         \"globalpost_parcel_select_smart_saver\",\r\n          \"name\": \"GlobalPost
         Parcel Select SmartSaver\",\r\n          \"domestic\": true,\r\n          \"international\":
@@ -133,101 +133,101 @@ interactions:
         \       {\r\n          \"name\": \"registered_mail_value\",\r\n          \"default_value\":
         null,\r\n          \"description\": \"This shipment contains a registered
         mail value.\"\r\n        }\r\n      ],\r\n      \"funding_source_id\": null\r\n
-        \   },\r\n    {\r\n      \"carrier_id\": \"se-2424646\",\r\n      \"carrier_code\":
-        \"ups\",\r\n      \"account_number\": \"test_account_2424646\",\r\n      \"requires_funded_amount\":
+        \   },\r\n    {\r\n      \"carrier_id\": \"se-64526\",\r\n      \"carrier_code\":
+        \"ups\",\r\n      \"account_number\": \"test_account_64526\",\r\n      \"requires_funded_amount\":
         false,\r\n      \"balance\": 0.0,\r\n      \"nickname\": \"ShipEngine Test
         Account - UPS\",\r\n      \"friendly_name\": \"UPS\",\r\n      \"primary\":
         false,\r\n      \"has_multi_package_supporting_services\": true,\r\n      \"supports_label_messages\":
         true,\r\n      \"disabled_by_billing_plan\": false,\r\n      \"services\":
-        [\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n          \"carrier_code\":
+        [\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n          \"carrier_code\":
         \"ups\",\r\n          \"service_code\": \"ups_standard_international\",\r\n
         \         \"name\": \"UPS Standard\xAE\",\r\n          \"domestic\": false,\r\n
         \         \"international\": true,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_next_day_air_early_am\",\r\n
         \         \"name\": \"UPS Next Day Air\xAE Early\",\r\n          \"domestic\":
         true,\r\n          \"international\": false,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_economy_ddp\",\r\n
         \         \"name\": \"UPS\u2122 Economy DDP\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_worldwide_express\",\r\n
         \         \"name\": \"UPS Worldwide Express\xAE\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_next_day_air\",\r\n
         \         \"name\": \"UPS Next Day Air\xAE\",\r\n          \"domestic\": true,\r\n
         \         \"international\": false,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_ground_international\",\r\n
         \         \"name\": \"UPS Ground\xAE (International)\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_worldwide_express_plus\",\r\n
         \         \"name\": \"UPS Worldwide Express Plus\xAE\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_next_day_air_saver\",\r\n
         \         \"name\": \"UPS Next Day Air Saver\xAE\",\r\n          \"domestic\":
         true,\r\n          \"international\": false,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_2nd_day_air_am\",\r\n
         \         \"name\": \"UPS 2nd Day Air AM\xAE\",\r\n          \"domestic\":
         true,\r\n          \"international\": false,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_2nd_day_air\",\r\n
         \         \"name\": \"UPS 2nd Day Air\xAE\",\r\n          \"domestic\": true,\r\n
         \         \"international\": false,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_2nd_day_air_international\",\r\n
         \         \"name\": \"UPS 2nd Day Air\xAE (International)\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_ground\",\r\n
         \         \"name\": \"UPS\xAE Ground\",\r\n          \"domestic\": true,\r\n
         \         \"international\": false,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_express_early_am\",\r\n
         \         \"name\": \"UPS Express Early A.M. to the U.S.\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_standard\",\r\n
         \         \"name\": \"UPS Standard\xAE\",\r\n          \"domestic\": true,\r\n
         \         \"international\": false,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_next_day_air_international\",\r\n
         \         \"name\": \"UPS Next Day Air\xAE (International)\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_express\",\r\n
         \         \"name\": \"UPS Express\xAE\",\r\n          \"domestic\": true,\r\n
         \         \"international\": false,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_express_noon\",\r\n
         \         \"name\": \"UPS Express\xAE 12:00\",\r\n          \"domestic\":
         true,\r\n          \"international\": false,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_economy_ddu\",\r\n
         \         \"name\": \"UPS\u2122 Economy DDU\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_express_plus\",\r\n
         \         \"name\": \"UPS Express Plus\xAE\",\r\n          \"domestic\": true,\r\n
         \         \"international\": false,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_express_na1\",\r\n
         \         \"name\": \"UPS Express (NA1)\",\r\n          \"domestic\": false,\r\n
         \         \"international\": true,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_worldwide_expedited\",\r\n
         \         \"name\": \"UPS Worldwide Expedited\xAE\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_worldwide_saver\",\r\n
         \         \"name\": \"UPS Worldwide Saver\xAE\",\r\n          \"domestic\":
         false,\r\n          \"international\": true,\r\n          \"is_multi_package_supported\":
-        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-2424646\",\r\n
+        true\r\n        },\r\n        {\r\n          \"carrier_id\": \"se-64526\",\r\n
         \         \"carrier_code\": \"ups\",\r\n          \"service_code\": \"ups_3_day_select\",\r\n
         \         \"name\": \"UPS 3 Day Select\xAE\",\r\n          \"domestic\": true,\r\n
         \         \"international\": true,\r\n          \"is_multi_package_supported\":
@@ -283,7 +283,7 @@ interactions:
         \         \"name\": \"shipper_release\",\r\n          \"default_value\": \"false\",\r\n
         \         \"description\": \"Driver may release package without signature\"\r\n
         \       }\r\n      ],\r\n      \"funding_source_id\": null\r\n    }\r\n  ],\r\n
-        \ \"request_id\": \"5eadc40b-f5f6-4611-8af2-caee41f945a6\",\r\n  \"errors\":
+        \ \"request_id\": \"09fc8e78-870a-4362-a518-ad7807435df7\",\r\n  \"errors\":
         []\r\n}"
     headers:
       Branch-Name:
@@ -291,22 +291,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '20104'
+      - '20025'
       Content-Security-Policy:
       - default-src 'none'; frame-ancestors 'none'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 13 May 2024 14:32:14 GMT
+      - Sat, 18 May 2024 05:48:13 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '199'
+      - '196'
       RateLimit-Reset:
-      - '46'
+      - '47'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -314,9 +314,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 5eadc40b-f5f6-4611-8af2-caee41f945a6
+      - 09fc8e78-870a-4362-a518-ad7807435df7
       x-shipengine-requestid:
-      - 5eadc40b-f5f6-4611-8af2-caee41f945a6
+      - 09fc8e78-870a-4362-a518-ad7807435df7
     status:
       code: 200
       message: OK

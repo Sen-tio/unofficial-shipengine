@@ -1,27 +1,10 @@
 from enum import Enum
+
 from attrs import define, field, validators
 
-from src.unofficial_shipengine.core.common import Value, URL, Package, ValidateAddress
-from src.unofficial_shipengine.core.shipment import ShipmentRequest
-
-
-class LabelFormat(Enum):
-    PDF: str = "pdf"
-    PNG: str = "png"
-    ZPL: str = "zpl"
-
-
-class LabelLayout(Enum):
-    FOUR_BY_SIX: str = "4x6"
-    LETTER: str = "letter"
-
-
-class DisplayScheme(Enum):
-    LABEL: str = "label"
-    QR_CODE: str = "qr_code"
-    LABEL_AND_QR_CODE: str = "label_and_qr_code"
-    PAPERLESS: str = "paperless"
-    LABEL_AND_PAPERLESS: str = "label_and_paperless"
+from src.unofficial_shipengine.common.models import Value, URL, Package
+from src.unofficial_shipengine.shipments.models import ShipmentRequest
+from .enums import ChargeEvent, LabelFormat, LabelLayout, DisplayScheme
 
 
 @define
@@ -39,12 +22,6 @@ class PaperlessDownload:
     handoff_code: str = field(default=None)
 
 
-class ChargeEvent(Enum):
-    CARRIER_DEFAULT: str = "carrier_default"
-    ON_CREATION: str = "on_creation"
-    ON_CARRIER_ACCEPTANCE: str = "on_carrier_acceptance"
-
-
 @define
 class LabelRequest:
     shipment: ShipmentRequest
@@ -60,7 +37,6 @@ class LabelRequest:
 
 @define
 class Label:
-
     @define
     class AlternativeIdentifier:
         type: str

@@ -1,62 +1,17 @@
-import json
 from enum import Enum
-
-import requests
-from attrs import define, asdict, validators, field
 from typing import Self
 
-from src.unofficial_shipengine.core.common import (
-    Address,
+from attrs import define, field, validators
+
+from src.unofficial_shipengine.common.models import (
     Value,
-    Package,
-    AddressValidation,
+    Address,
     Weight,
-    ValidateAddress,
-    serializer,
+    AddressValidation,
+    Package,
 )
-from .shipment import Shipment
-
-from .. import session
-
-
-class Confirmation(Enum):
-    NONE: str = "none"
-    DELIVERY: str = "delivery"
-    SIGNATURE: str = "signature"
-    ADULT_SIGNATURE: str = "adult_signature"
-    DIRECT_SIGNATURE: str = "direct_signature"
-    DELIVERY_MAILED: str = "delivery_mailed"
-    VERBAL_CONFIRMATION: str = "verbal_confirmation"
-
-
-class InsuranceProvider(Enum):
-    NONE: str = "none"
-    SHIPSURANCE: str = "shipsurance"
-    CARRIER: str = "carrier"
-    THIRD_PARTY: str = "third_party"
-
-
-class OrderSourceCode(Enum):
-    AMAZON_CA: str = "amazon_ca"
-    AMAZON_US: str = "amazon_us"
-    BRIGHTPEARL: str = "brightpearl"
-    CHANNEL_ADVISOR: str = "channel_advisor"
-    CRATEJOY: str = "cratejoy"
-    EBAY: str = "ebay"
-    ETSY: str = "etsy"
-    JANE: str = "jane"
-    GROUPON_GOODS: str = "groupon_goods"
-    MAGENTO: str = "magento"
-    PAYPAL: str = "paypal"
-    SELLER_ACTIVE: str = "seller_active"
-    SHOPIFY: str = "shopify"
-    STITCH_LABS: str = "stitch_labs"
-    SQUARESPACE: str = "squarespace"
-    THREE_DCART: str = "three_dcart"
-    TOPHATTER: str = "tophatter"
-    WALMART: str = "walmart"
-    WOO_COMMERCE: str = "woo_commerce"
-    VOLUSION: str = "volusion"
+from ..common.enums import ValidateAddress
+from .enums import Confirmation, InsuranceProvider, OrderSourceCode
 
 
 @define
@@ -90,7 +45,6 @@ class TaxIdentifier:
 
 @define
 class CustomsInformation:
-
     @define
     class InvoiceAdditionalDetail:
         freight_charge: Value
@@ -159,7 +113,6 @@ class CustomsInformation:
 
 @define
 class AdvancedOptions:
-
     @define
     class FedexFreight:
         shipper_load_and_count: str
@@ -192,6 +145,7 @@ class AdvancedOptions:
     contains_alcohol: bool = field(default=False)
     delivered_duty_paid: bool = field(default=False)
     dry_ice: bool = field(default=False)
+    dry_ice_weight: Weight = field(default=None)
     non_machinable: bool = field(default=False)
     saturday_delivery: bool = field(default=False)
     bill_to_account: str = field(default=None)
@@ -212,6 +166,12 @@ class AdvancedOptions:
     dangerous_goods: bool = field(default=False)
     dangerous_goods_contact: DangerousGoodsContact = field(default=None)
 
+    ancillary_endorsements_option: str = field(default=None)
+    return_pickup_attempts: int = field(default=None)
+    own_document_upload: bool = field(default=False)
+    limited_quantity: bool = field(default=False)
+    event_notification: bool = field(default=False)
+
     @use_ups_ground_freight_pricing.validator
     def _use_ups_ground_freight_pricing(self, attribute, value):
         if value is not None and self.freight_class is None:
@@ -223,23 +183,24 @@ class AdvancedOptions:
 
 @define
 class ShipmentRequest:
-
-    validate_address: ValidateAddress
     carrier_id: str
     service_code: str
     ship_to: Address
     ship_date: str = field(default=None)
+    validate_address: ValidateAddress = field(
+        default=ValidateAddress.NO_VALIDATION, validator=validators.in_(ValidateAddress)
+    )
     advanced_options: AdvancedOptions = field(default=None)
     confirmation: Confirmation = field(
         default=Confirmation.NONE, validator=validators.in_(Confirmation)
     )
-    tags: list[str] = field(default=list)
+    tags: list[str] = field(default=[])
     is_return: bool = field(default=False)
     customs: list[CustomsInformation] = field(default=None)
     warehouse_id: str = field(default=None)
     ship_from: Address = field(default=None)
     return_to: Address = field(default=None)
-    items: list = field(default=list)
+    items: list = field(default=[])
     external_order_id: str = field(default=None)
     tax_identifiers: list[TaxIdentifier] = field(default=None)
     external_shipment_id: str = field(default=None)
@@ -247,15 +208,13 @@ class ShipmentRequest:
     insurance_provider: InsuranceProvider = field(
         default=InsuranceProvider.NONE, validator=validators.in_(InsuranceProvider)
     )
-    order_source_code: OrderSourceCode = field(
-        default=None, validator=validators.in_(OrderSourceCode)
-    )
+    order_source_code: OrderSourceCode = field(default=None)
     packages: list[Package] = field(default=None)
     comparison_rate_type: str = field(default=None)
 
     @ship_from.validator
     def _validate_ship_from(self, attribute, value):
-        if self.warehouse_id is None:
+        if self.warehouse_id is None and self.ship_from is None:
             raise ValueError(
                 f"'{attribute}' must be passed when 'warehouse_id' is not set"
             )
@@ -274,6 +233,8 @@ class Shipment(ShipmentRequest):
     shipment_id: str
     created_at: str
     modified_at: str
+    shipping_rule_id: str
+    errors: list[str] = field(default=[])
     shipment_status: Status = field(
         default=Status.PENDING, validator=validators.in_(Status)
     )
@@ -282,27 +243,19 @@ class Shipment(ShipmentRequest):
 
     @classmethod
     def from_dict(cls, data: dict) -> Self:
-        return cls(**data)
+        ship_to = Address(**data.pop("ship_to"))
+        ship_from = Address(**data.pop("ship_from"))
+        return_to = Address(**data.pop("return_to"))
+        packages = [Package.from_dict(p) for p in data.pop("packages")]
+        total_weight = Weight(**data.pop("total_weight"))
+        advanced_options = AdvancedOptions(**data.pop("advanced_options"))
 
-    @classmethod
-    def create_shipments(
-        cls, shipment_requests: list[ShipmentRequest]
-    ) -> list[Shipment]:
-        url = "https://api.shipengine.com/v1/shipments"
-
-        data = [asdict(sr, value_serializer=serializer) for sr in shipment_requests]
-        data = json.dumps({"shipments": data})
-
-        response = requests.post(url, data=data)
-        response_dict = response.json()
-
-        if response.status_code != 200:
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
-
-        shipments: list[Shipment] = [
-            Shipment.from_dict(s) for s in response_dict["shipments"]
-        ]
-
-        return shipments
+        return cls(
+            ship_to=ship_to,
+            ship_from=ship_from,
+            advanced_options=advanced_options,
+            return_to=return_to,
+            packages=packages,
+            total_weight=total_weight,
+            **data,
+        )
