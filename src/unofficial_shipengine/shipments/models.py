@@ -10,8 +10,8 @@ from src.unofficial_shipengine.common.models import (
     AddressValidation,
     Package,
 )
-from ..common.enums import ValidateAddress
 from .enums import Confirmation, InsuranceProvider, OrderSourceCode
+from ..common.enums import ValidateAddress
 
 
 @define

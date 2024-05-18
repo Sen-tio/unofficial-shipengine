@@ -1,8 +1,8 @@
+from enum import Enum
 from typing import Union
 
 from attrs import define, field, validators
 
-from enum import Enum
 from src.unofficial_shipengine.common.models import URL, LabelDownload, Error
 from .enums import LabelLayout, LabelFormat
 

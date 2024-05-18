@@ -1,10 +1,10 @@
-import requests
 import json
-
 from typing import Union
 
-from .models import Carrier, CarrierBalance
+import requests
+
 from src.unofficial_shipengine.core.exceptions import ShipEngineAPIError
+from .models import Carrier, CarrierBalance
 
 
 class CarrierService:

@@ -4,46 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="- added shipments">
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/common/enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/common/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/labels/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/labels/enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/labels/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/labels/services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/unofficial_shipengine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/utils/serialize.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/shipments/__init__.py" afterDir="false" />
+    <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="restructed entire package and created base client object to act with each model as a service">
+      <change afterPath="$PROJECT_DIR$/src/unofficial_shipengine/common/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/batches.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/carriers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/common.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/labels.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/labels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/shipment.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/shipments.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/warehouses.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/test_batch.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/batches/test_batch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/carriers/test_carriers.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/carriers/test_carriers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestCarriers.test_get_by_id.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestCarriers.test_get_by_id_fail.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestCarriers.test_get_by_id_success.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestCarriers.test_get_carriers.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/shipments/test_shipments.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/shipments/test_shipments.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/warehouses/test_warehouses.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/warehouses/test_warehouses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/batches/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/batches/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/unofficial_shipengine.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/unofficial_shipengine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/services.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715566482138</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="restructed entire package and created base client object to act with each model as a service">
+      <option name="closed" value="true" />
+      <created>1716055663975</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716055663975</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,13 +236,14 @@
     <MESSAGE value="- refactored test_batch.py&#10;- added run_tests.py for suite" />
     <MESSAGE value="- commited vcr cassettes" />
     <MESSAGE value="- added shipments" />
-    <option name="LAST_COMMIT_MESSAGE" value="- added shipments" />
+    <MESSAGE value="restructed entire package and created base client object to act with each model as a service" />
+    <option name="LAST_COMMIT_MESSAGE" value="restructed entire package and created base client object to act with each model as a service" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/unofficial_shipengine$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1715554669254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/unofficial_shipengine$test_unoffical_shipengine.coverage" NAME="test_unoffical_shipengine Coverage Results" MODIFIED="1715506695552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/unofficial_shipengine$.coverage" NAME=" Coverage Results" MODIFIED="1715611085571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/carriers" />
     <SUITE FILE_PATH="coverage/unofficial_shipengine$warehouses.coverage" NAME="warehouses Coverage Results" MODIFIED="1715506687424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/unofficial_shipengine/core" />
-    <SUITE FILE_PATH="coverage/unofficial_shipengine$run_tests.coverage" NAME="run_tests Coverage Results" MODIFIED="1716055287405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/unofficial_shipengine$run_tests.coverage" NAME="run_tests Coverage Results" MODIFIED="1716056641743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>

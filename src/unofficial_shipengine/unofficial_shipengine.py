@@ -1,8 +1,9 @@
 import requests
 
-from .shipments.services import ShipmentService
-from .carriers.services import CarrierService
 from .batches.services import BatchService
+from .carriers.services import CarrierService
+from .shipments.services import ShipmentService
+from .warehouses.services import WarehouseService
 
 
 class UnofficialShipEngine:
@@ -17,3 +18,6 @@ class UnofficialShipEngine:
         self.shipments = ShipmentService(self.session)
         self.carriers = CarrierService(self.session)
         self.batches = BatchService(self.session)
+        self.warehouses = WarehouseService(self.session)
+
+        # TODO: setup retry strategy

@@ -1,9 +1,11 @@
 import json
-import requests
 from typing import Union
+
+import requests
 from attrs import asdict
-from .models import ShipmentRequest, Shipment
+
 from src.unofficial_shipengine.core.exceptions import ShipEngineAPIError
+from .models import ShipmentRequest, Shipment
 from ..utils.serialize import serializer
 
 

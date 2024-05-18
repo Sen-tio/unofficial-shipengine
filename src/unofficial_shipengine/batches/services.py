@@ -1,12 +1,12 @@
+import json
 from typing import Union
 
 import requests
-import json
-
 from attrs import asdict
-from ..utils.serialize import serializer
-from .models import Batch, BatchRequest, ProcessLabels
+
 from src.unofficial_shipengine.core.exceptions import ShipEngineAPIError
+from .models import Batch, BatchRequest, ProcessLabels
+from ..utils.serialize import serializer
 
 
 class BatchService:
