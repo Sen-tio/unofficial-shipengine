@@ -3,7 +3,7 @@ from typing import Union
 
 from attrs import define, field, validators
 
-from src.unofficial_shipengine.common.models import URL, LabelDownload, Error
+from ..common.models import URL, LabelDownload, Error
 from .enums import LabelLayout, LabelFormat
 
 

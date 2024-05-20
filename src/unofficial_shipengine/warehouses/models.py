@@ -2,7 +2,7 @@ from typing import Self
 
 from attrs import define
 
-from src.unofficial_shipengine.common.models import Address
+from ..common.models import Address
 
 
 @define

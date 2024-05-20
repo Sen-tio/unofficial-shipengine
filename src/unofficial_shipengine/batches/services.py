@@ -4,7 +4,7 @@ from typing import Union
 import requests
 from attrs import asdict
 
-from src.unofficial_shipengine.core.exceptions import ShipEngineAPIError
+from ..core.exceptions import ShipEngineAPIError
 from .models import Batch, BatchRequest, ProcessLabels
 from ..utils.serialize import serializer
 

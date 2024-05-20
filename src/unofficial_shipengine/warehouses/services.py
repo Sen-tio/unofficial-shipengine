@@ -4,9 +4,9 @@ from typing import Self, Union
 import requests
 from attrs import asdict
 
-from src.unofficial_shipengine.core.exceptions import ShipEngineAPIError
-from src.unofficial_shipengine.utils.serialize import serializer
-from src.unofficial_shipengine.warehouses.models import WarehouseRequest, Warehouse
+from ..core.exceptions import ShipEngineAPIError
+from ..utils.serialize import serializer
+from .models import WarehouseRequest, Warehouse
 
 
 class WarehouseService:

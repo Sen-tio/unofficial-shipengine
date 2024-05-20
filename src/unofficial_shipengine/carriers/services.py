@@ -3,7 +3,7 @@ from typing import Union
 
 import requests
 
-from src.unofficial_shipengine.core.exceptions import ShipEngineAPIError
+from ..core.exceptions import ShipEngineAPIError
 from .models import Carrier, CarrierBalance
 
 

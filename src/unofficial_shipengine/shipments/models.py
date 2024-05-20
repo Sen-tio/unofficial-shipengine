@@ -3,7 +3,7 @@ from typing import Self
 
 from attrs import define, field, validators
 
-from src.unofficial_shipengine.common.models import (
+from ..common.models import (
     Value,
     Address,
     Weight,

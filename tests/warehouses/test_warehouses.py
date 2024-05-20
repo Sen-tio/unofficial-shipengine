@@ -1,8 +1,8 @@
 import unittest
 import vcr
 
-from src.unofficial_shipengine.warehouses.models import WarehouseRequest, Warehouse
-from src.unofficial_shipengine.common.models import Address
+from unofficial_shipengine.warehouses.models import WarehouseRequest, Warehouse
+from unofficial_shipengine.common.models import Address
 
 
 class TestWarehouses(unittest.TestCase):
