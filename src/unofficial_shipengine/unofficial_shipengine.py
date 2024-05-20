@@ -21,5 +21,4 @@ class UnofficialShipEngine:
         self.warehouses = WarehouseService(self.session)
 
         # TODO: setup retry strategy
-        #   tox pytest flake8 > github actions
         #   create proper fixtures for tests

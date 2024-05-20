@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: '{"shipment_ids": ["bad-shipment-id"], "rate_ids": null, "external_batch_id":
+      null, "batch_notes": null, "process_labels": null}'
+    headers:
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: POST
+    uri: https://api.shipengine.com/v1/batches
+  response:
+    body:
+      string: "{\r\n  \"request_id\": \"83079b67-99a8-4a87-bca3-0db36e14c7ba\",\r\n
+        \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
+        \"business_rules\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
+        \"shipment_ids must be only integers\",\r\n      \"field_name\": \"shipment_ids\",\r\n
+        \     \"field_value\": [\r\n        \"bad-shipment-id\"\r\n      ]\r\n    }\r\n
+        \ ]\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '360'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 20 May 2024 14:11:15 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '166'
+      RateLimit-Reset:
+      - '45'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - 83079b67-99a8-4a87-bca3-0db36e14c7ba
+      x-shipengine-requestid:
+      - 83079b67-99a8-4a87-bca3-0db36e14c7ba
+    status:
+      code: 400
+      message: Bad Request
+version: 1

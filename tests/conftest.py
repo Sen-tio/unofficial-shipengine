@@ -2,10 +2,10 @@ import pytest
 import os
 import vcr
 
+from typing import Generator
 from dotenv import load_dotenv
 from pathlib import Path
 
-from unofficial_shipengine.batches.models import BatchRequest
 from unofficial_shipengine.shipments.models import ShipmentRequest
 from unofficial_shipengine.unofficial_shipengine import UnofficialShipEngine
 from unofficial_shipengine.common.models import Address, Package, Weight
@@ -24,7 +24,7 @@ def vcr_config():
 
 @pytest.fixture(scope="session")
 def client():
-    api_key = os.getenv("SHIPENGINE_API_KEY")
+    api_key = os.getenv("SHIPENGINE_API_KEY", "")
     return UnofficialShipEngine(api_key)
 
 
@@ -45,8 +45,8 @@ def warehouse_request():
 
 
 @pytest.fixture(scope="function")
-def warehouse(client, warehouse_request) -> Warehouse:
-    warehouse = client.warehouses.create_warehouse(warehouse_request)
+def warehouse(client, warehouse_request) -> Generator:
+    warehouse: Warehouse = client.warehouses.create_warehouse(warehouse_request)
     yield warehouse
     client.warehouses.delete_warehouse(warehouse)
 
@@ -71,17 +71,3 @@ def shipment_request(client, warehouse):
         ),
         packages=[Package(Weight(1, Weight.Unit.OUNCE))],
     )
-
-
-@pytest.fixture(scope="function")
-def shipment(client, shipment_request):
-    shipment = client.shipments.create_shipment(shipment_request)
-    return shipment
-
-
-@pytest.fixture(scope="function")
-def batch_request(client, shipment):
-    return BatchRequest(shipment_ids=[shipment.shipment_id])
-
-
-# TODO: refactor fixtures to only include ObjectRequests and create the required object within the test

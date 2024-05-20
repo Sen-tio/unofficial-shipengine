@@ -1,0 +1,181 @@
+interactions:
+- request:
+    body: '{"name": "Test Warehouse 123", "origin_address": {"name": "Electronic Output
+      Solutions", "phone": "555-555-5555", "address_line1": "2510 Commerce Way", "city_locality":
+      "Vista", "state_province": "CA", "postal_code": "92081", "address_line2": null,
+      "address_line3": null, "email": null, "company_name": null, "instructions":
+      null, "geolocation": null, "country_code": "US", "address_residential_indicator":
+      "unknown"}, "return_address": null, "is_default": null}'
+    headers:
+      Content-Length:
+      - '462'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: POST
+    uri: https://api.shipengine.com/v1/warehouses
+  response:
+    body:
+      string: "{\r\n  \"warehouse_id\": \"se-18990437\",\r\n  \"is_default\": false,\r\n
+        \ \"name\": \"Test Warehouse 123\",\r\n  \"created_at\": \"2024-05-20T14:02:16Z\",\r\n
+        \ \"origin_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
+        \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
+        null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
+        null,\r\n    \"address_line3\": null,\r\n    \"city_locality\": \"Vista\",\r\n
+        \   \"state_province\": \"CA\",\r\n    \"postal_code\": \"92081\",\r\n    \"country_code\":
+        \"US\",\r\n    \"address_residential_indicator\": \"unknown\"\r\n  },\r\n
+        \ \"return_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
+        \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
+        null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
+        null,\r\n    \"address_line3\": null,\r\n    \"city_locality\": \"Vista\",\r\n
+        \   \"state_province\": \"CA\",\r\n    \"postal_code\": \"92081\",\r\n    \"country_code\":
+        \"US\",\r\n    \"address_residential_indicator\": \"unknown\"\r\n  }\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '961'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 20 May 2024 14:02:16 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '156'
+      RateLimit-Reset:
+      - '45'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - ede4ca10-05c4-42e6-9f30-371a9b160a38
+      x-shipengine-requestid:
+      - ede4ca10-05c4-42e6-9f30-371a9b160a38
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"shipments": [{"carrier_id": "bad-carrier-id", "service_code": "usps_ground_advantage",
+      "ship_to": {"name": "Electronic Output Solutions", "phone": "555-555-5555",
+      "address_line1": "2510 Commerce Way", "city_locality": "Vista", "state_province":
+      "CA", "postal_code": "92081", "address_line2": null, "address_line3": null,
+      "email": null, "company_name": null, "instructions": null, "geolocation": null,
+      "country_code": "US", "address_residential_indicator": "unknown"}, "ship_date":
+      null, "validate_address": "no_validation", "advanced_options": null, "confirmation":
+      "none", "tags": [], "is_return": false, "customs": null, "warehouse_id": "se-18990437",
+      "ship_from": null, "return_to": null, "items": [], "external_order_id": null,
+      "tax_identifiers": null, "external_shipment_id": null, "shipment_number": null,
+      "insurance_provider": "none", "order_source_code": null, "packages": [{"weight":
+      {"value": 1, "unit": "ounce"}, "package_code": null, "dimensions": null, "content_description":
+      null, "package_id": null, "insured_value": null, "label_messages": null, "products":
+      null, "external_package_id": null, "shipment_package_id": null, "package_name":
+      null}], "comparison_rate_type": null}]}'
+    headers:
+      Content-Length:
+      - '1195'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: POST
+    uri: https://api.shipengine.com/v1/shipments
+  response:
+    body:
+      string: "{\r\n  \"request_id\": \"abdb8db4-a7ae-432a-bb38-c43837130f26\",\r\n
+        \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
+        \"business_rules\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
+        \"carrier_id must be an integer\",\r\n      \"field_name\": \"carrier_id\",\r\n
+        \     \"field_value\": \"bad-carrier-id\"\r\n    }\r\n  ]\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '332'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 20 May 2024 14:02:16 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '155'
+      RateLimit-Reset:
+      - '44'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - abdb8db4-a7ae-432a-bb38-c43837130f26
+      x-shipengine-requestid:
+      - abdb8db4-a7ae-432a-bb38-c43837130f26
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: DELETE
+    uri: https://api.shipengine.com/v1/warehouses/se-18990437
+  response:
+    body:
+      string: ''
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Date:
+      - Mon, 20 May 2024 14:02:16 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '154'
+      RateLimit-Reset:
+      - '44'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - f5870b75-a374-4fbe-b00d-bfe3f8f83517
+      x-shipengine-requestid:
+      - f5870b75-a374-4fbe-b00d-bfe3f8f83517
+    status:
+      code: 204
+      message: No Content
+version: 1

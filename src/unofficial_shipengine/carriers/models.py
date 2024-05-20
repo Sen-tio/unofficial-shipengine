@@ -1,4 +1,4 @@
-from typing import Self
+from typing import Self, Any
 
 from attrs import define
 
@@ -10,7 +10,7 @@ class CarrierOption:
     description: str
 
     @classmethod
-    def from_dict(cls, data: dict) -> Self:
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         return cls(**data)
 
 
@@ -22,7 +22,7 @@ class CarrierPackage:
     description: str
 
     @classmethod
-    def from_dict(cls, data: dict) -> Self:
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         return cls(**data)
 
 
@@ -37,7 +37,7 @@ class CarrierService:
     is_multi_package_supported: bool
 
     @classmethod
-    def from_dict(cls, data: dict) -> Self:
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         return cls(**data)
 
 
@@ -47,7 +47,7 @@ class CarrierBalance:
     amount: float
 
     @classmethod
-    def from_dict(cls, data: dict) -> Self:
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         return cls(**data)
 
 
@@ -70,7 +70,7 @@ class Carrier:
     options: list[CarrierOption] = []
 
     @classmethod
-    def from_dict(cls, data: dict) -> Self:
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         packages: list[CarrierPackage] = [
             CarrierPackage.from_dict(p) for p in data.pop("packages")
         ]

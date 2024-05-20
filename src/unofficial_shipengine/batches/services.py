@@ -1,11 +1,11 @@
 import json
-from typing import Union
+from typing import Union, Optional, Any
 
 import requests
 from attrs import asdict
 
-from ..core.exceptions import ShipEngineAPIError
 from .models import Batch, BatchRequest, ProcessLabels
+from ..core.exceptions import ShipEngineAPIError
 from ..utils.serialize import serializer
 
 
@@ -31,7 +31,7 @@ class BatchService:
         url: str = f"https://api.shipengine.com/v1/batches/{batch_id}"
 
         response = self.session.get(url)
-        response_dict: dict = json.loads(response.text)
+        response_dict = json.loads(response.text)
 
         if response.status_code != 200:
             raise ShipEngineAPIError(
@@ -54,14 +54,14 @@ class BatchService:
         response = self.session.post(url, data=data)
 
         if response.status_code != 204:
-            response_dict: dict = json.loads(response.text)
+            response_dict = json.loads(response.text)
             raise ShipEngineAPIError(
                 request_id=response_dict["request_id"], errors=response_dict["errors"]
             )
 
     def get_batch_errors(
         self, batch: Union[Batch, str], page: int = 1, pagesize: int = 1
-    ) -> dict:
+    ) -> dict[str, Any]:
         if isinstance(batch, Batch):
             batch = batch.batch_id
 
@@ -70,7 +70,9 @@ class BatchService:
             url, params=json.dumps({"page": page, "pagesize": pagesize})
         )
 
-        return response.json()
+        response_json: dict[str, Any] = response.json()
+
+        return response_json
 
     def delete_batch(self, batch: Union[Batch, str]) -> None:
         if isinstance(batch, Batch):
@@ -80,7 +82,7 @@ class BatchService:
         response = self.session.delete(url)
 
         if response.status_code != 204:
-            response_dict: dict = json.loads(response.text)
+            response_dict = json.loads(response.text)
             raise ShipEngineAPIError(
                 request_id=response_dict["request_id"], errors=response_dict["errors"]
             )
@@ -89,7 +91,7 @@ class BatchService:
         self,
         batch: Union[Batch, str],
         shipment_ids: list[str],
-        rate_ids: list[str] = None,
+        rate_ids: Optional[list[str]] = None,
     ) -> None:
         self._modify_batch(batch, "add", shipment_ids, rate_ids)
 
@@ -97,7 +99,7 @@ class BatchService:
         self,
         batch: Union[Batch, str],
         shipment_ids: list[str],
-        rate_ids: list[str] = None,
+        rate_ids: Optional[list[str]] = None,
     ) -> None:
         self._modify_batch(batch, "remove", shipment_ids, rate_ids)
 
@@ -106,7 +108,7 @@ class BatchService:
         batch: Union[Batch, str],
         endpoint: str,
         shipment_ids: list[str],
-        rate_ids: list[str],
+        rate_ids: Optional[list[str]] = None,
     ) -> None:
         if isinstance(batch, Batch):
             batch = batch.batch_id
@@ -116,7 +118,7 @@ class BatchService:
         response = self.session.post(url, data=data)
 
         if response.status_code != 204:
-            response_dict: dict = json.loads(response.text)
+            response_dict = json.loads(response.text)
             raise ShipEngineAPIError(
                 request_id=response_dict["request_id"], errors=response_dict["errors"]
             )

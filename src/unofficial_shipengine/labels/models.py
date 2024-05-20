@@ -2,8 +2,8 @@ from enum import Enum
 
 from attrs import define, field, validators
 
-from src.unofficial_shipengine.common.models import Value, URL, Package
-from src.unofficial_shipengine.shipments.models import ShipmentRequest
+from ..common.models import Value, URL, Package
+from ..shipments.models import ShipmentRequest
 from .enums import ChargeEvent, LabelFormat, LabelLayout, DisplayScheme
 
 

@@ -1,6 +1,6 @@
-from typing import Self
+from typing import Self, Any
 
-from attrs import define
+from attrs import define, field
 
 from ..common.models import Address
 
@@ -9,8 +9,8 @@ from ..common.models import Address
 class WarehouseRequest:
     name: str
     origin_address: Address
-    return_address: Address = None
-    is_default: bool = None
+    return_address: Address = field(default=None)
+    is_default: bool = field(default=None)
 
 
 @define
@@ -20,12 +20,10 @@ class Warehouse:
     created_at: str
     origin_address: Address
     return_address: Address
-    is_default: bool = None
+    is_default: bool = field(default=None)
 
     @classmethod
-    def from_dict(cls, data: dict) -> Self:
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         origin_address: Address = Address(**data.pop("origin_address"))
         return_address: Address = Address(**data.pop("return_address"))
-        return Warehouse(
-            origin_address=origin_address, return_address=return_address, **data
-        )
+        return cls(origin_address=origin_address, return_address=return_address, **data)

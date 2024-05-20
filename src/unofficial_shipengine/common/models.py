@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Self
+from typing import Self, Optional, Any
 
 from attrs import define, field, validators
 
@@ -17,12 +17,12 @@ class Address:
     city_locality: str
     state_province: str
     postal_code: str
-    address_line2: str = None
-    address_line3: str = None
-    email: str = None
-    company_name: str = None
-    instructions: str = None
-    geolocation: list[object] = None
+    address_line2: str = field(default=None)
+    address_line3: str = field(default=None)
+    email: str = field(default=None)
+    company_name: str = field(default=None)
+    instructions: str = field(default=None)
+    geolocation: list[object] = field(default=None)
     country_code: str = field(default="US")
     address_residential_indicator: AddressResidentialIndicator = field(
         default=AddressResidentialIndicator.UNKNOWN
@@ -40,15 +40,15 @@ class Error:
 @define
 class URL:
     href: str
-    type: str = None
+    type: str = field(default=None)
 
 
 @define
 class LabelDownload:
     href: str
-    pdf: str = None
-    zpl: str = None
-    png: str = None
+    pdf: str = field(default=None)
+    zpl: str = field(default=None)
+    png: str = field(default=None)
 
 
 @define
@@ -58,7 +58,7 @@ class AddressValidation:
         code: str
         message: str
         type: str
-        detail_code: str = None
+        detail_code: str = field(default=None)
 
     class Status(Enum):
         UNVERIFIED: str = "unverified"
@@ -68,8 +68,8 @@ class AddressValidation:
 
     status: Status
     original_address: Address
-    matched_address: Address = None
-    messages: list[Message] = None
+    matched_address: Address = field(default=None)
+    messages: list[Message] = field(default=None)
 
 
 @define
@@ -107,24 +107,24 @@ class Value:
 class Package:
     @define
     class LabelMessages:
-        reference1: str = None
-        reference2: str = None
-        reference3: str = None
+        reference1: Optional[str] = field(default=None)
+        reference2: Optional[str] = field(default=None)
+        reference3: Optional[str] = field(default=None)
 
-    weight: Weight
-    package_code: str = None
-    dimensions: Dimension = None
-    content_description: str = None
-    package_id: str = None
-    insured_value: Value = None
-    label_messages: LabelMessages = None
-    products: list[object] = None  # TODO
-    external_package_id: str = None
-    shipment_package_id: str = None
-    package_name: str = None
+    weight: "Weight"
+    package_code: Optional[str] = field(default=None)
+    dimensions: Optional["Dimension"] = field(default=None)
+    content_description: Optional[str] = field(default=None)
+    package_id: Optional[str] = field(default=None)
+    insured_value: Optional["Value"] = field(default=None)
+    label_messages: Optional[LabelMessages] = field(default=None)
+    products: Optional[list[object]] = field(default=None)  # TODO
+    external_package_id: Optional[str] = field(default=None)
+    shipment_package_id: Optional[str] = field(default=None)
+    package_name: Optional[str] = field(default=None)
 
     @classmethod
-    def from_dict(cls, data: dict) -> Self:
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         weight = Weight(**data.pop("weight"))
         dimensions = Dimension(**data.pop("dimensions"))
         insured_value = Value(**data.pop("insured_value"))
