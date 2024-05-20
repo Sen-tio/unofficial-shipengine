@@ -3,6 +3,8 @@ from typing import Self
 
 from attrs import define, field, validators
 
+from .enums import Confirmation, InsuranceProvider, OrderSourceCode
+from ..common.enums import ValidateAddress
 from ..common.models import (
     Value,
     Address,
@@ -10,8 +12,6 @@ from ..common.models import (
     AddressValidation,
     Package,
 )
-from .enums import Confirmation, InsuranceProvider, OrderSourceCode
-from ..common.enums import ValidateAddress
 
 
 @define
@@ -72,7 +72,7 @@ class CustomsInformation:
         RETURN_TO_SENDER: str = "return_to_sender"
         TREAT_AS_ABANDONED: str = "treat_as_abandoned"
 
-    class TermsOfTradeCode:
+    class TermsOfTradeCode(Enum):
         EXW: str = "exw"
         FCA: str = "fca"
         CPT: str = "cpt"

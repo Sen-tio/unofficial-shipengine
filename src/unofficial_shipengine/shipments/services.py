@@ -4,8 +4,8 @@ from typing import Union
 import requests
 from attrs import asdict
 
-from ..core.exceptions import ShipEngineAPIError
 from .models import ShipmentRequest, Shipment
+from ..core.exceptions import ShipEngineAPIError
 from ..utils.serialize import serializer
 
 
@@ -24,9 +24,9 @@ class ShipmentService:
 
         url = "https://api.shipengine.com/v1/shipments"
         data = [asdict(sr, value_serializer=serializer) for sr in shipment_requests]
-        data = json.dumps({"shipments": data})
+        json_data: str = json.dumps({"shipments": data})
 
-        response = self.session.post(url, data=data)
+        response = self.session.post(url, data=json_data)
         response_dict = response.json()
 
         if response.status_code != 200:

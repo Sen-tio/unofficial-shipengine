@@ -1,11 +1,11 @@
 import json
-from typing import Union
+from typing import Union, Optional
 
 import requests
 from attrs import asdict
 
-from ..core.exceptions import ShipEngineAPIError
 from .models import Batch, BatchRequest, ProcessLabels
+from ..core.exceptions import ShipEngineAPIError
 from ..utils.serialize import serializer
 
 
@@ -89,7 +89,7 @@ class BatchService:
         self,
         batch: Union[Batch, str],
         shipment_ids: list[str],
-        rate_ids: list[str] = None,
+        rate_ids: Optional[list[str]] = None,
     ) -> None:
         self._modify_batch(batch, "add", shipment_ids, rate_ids)
 
@@ -97,7 +97,7 @@ class BatchService:
         self,
         batch: Union[Batch, str],
         shipment_ids: list[str],
-        rate_ids: list[str] = None,
+        rate_ids: Optional[list[str]] = None,
     ) -> None:
         self._modify_batch(batch, "remove", shipment_ids, rate_ids)
 
@@ -106,7 +106,7 @@ class BatchService:
         batch: Union[Batch, str],
         endpoint: str,
         shipment_ids: list[str],
-        rate_ids: list[str],
+        rate_ids: Optional[list[str]] = None,
     ) -> None:
         if isinstance(batch, Batch):
             batch = batch.batch_id

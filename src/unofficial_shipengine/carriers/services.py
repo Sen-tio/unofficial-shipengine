@@ -3,8 +3,8 @@ from typing import Union
 
 import requests
 
-from ..core.exceptions import ShipEngineAPIError
 from .models import Carrier, CarrierBalance
+from ..core.exceptions import ShipEngineAPIError
 
 
 class CarrierService:

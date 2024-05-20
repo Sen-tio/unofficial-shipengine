@@ -1,12 +1,12 @@
 import json
-from typing import Self, Union
+from typing import Union
 
 import requests
 from attrs import asdict
 
+from .models import WarehouseRequest, Warehouse
 from ..core.exceptions import ShipEngineAPIError
 from ..utils.serialize import serializer
-from .models import WarehouseRequest, Warehouse
 
 
 class WarehouseService:
@@ -14,7 +14,7 @@ class WarehouseService:
     def __init__(self, session: requests.Session):
         self.session = session
 
-    def create_warehouse(self, warehouse_request: WarehouseRequest) -> Self:
+    def create_warehouse(self, warehouse_request: WarehouseRequest) -> Warehouse:
         data: str = json.dumps(asdict(warehouse_request, value_serializer=serializer))
         url = "https://api.shipengine.com/v1/warehouses"
         response = self.session.post(url, data=data)

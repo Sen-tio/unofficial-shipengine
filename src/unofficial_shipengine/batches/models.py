@@ -3,8 +3,8 @@ from typing import Union
 
 from attrs import define, field, validators
 
-from ..common.models import URL, LabelDownload, Error
 from .enums import LabelLayout, LabelFormat
+from ..common.models import URL, LabelDownload, Error
 
 
 @define
@@ -17,7 +17,7 @@ class ProcessLabels:
         LABEL_AND_PAPERLESS: str = "label_and_paperless"
 
     create_batch_and_process_labels: bool = field(default=True)
-    ship_date: str = None
+    ship_date: str = field(default=None)
 
     label_layout: LabelLayout = field(
         default=LabelLayout.FOUR_BY_SIX, validator=validators.in_(LabelLayout)
@@ -33,10 +33,10 @@ class ProcessLabels:
 @define
 class BatchRequest:
     shipment_ids: list[str]
-    rate_ids: list[str] = None
-    external_batch_id: str = None
-    batch_notes: str = None
-    process_labels: ProcessLabels = None
+    rate_ids: list[str] = field(default=None)
+    external_batch_id: str = field(default=None)
+    batch_notes: str = field(default=None)
+    process_labels: ProcessLabels = field(default=None)
 
 
 @define
@@ -65,11 +65,11 @@ class Batch:
     batch_shipments_url: URL
     batch_labels_url: URL
     batch_errors_url: URL
-    label_download: URL
+    label_download: LabelDownload
     form_download: URL
     status: Status = field(validator=validators.in_(Status))
-    paperless_download: URL = None
-    batch_notes: str = None
+    paperless_download: URL = field(default=None)
+    batch_notes: str = field(default=None)
 
     label_layout: Union[LabelLayout, None] = field(default=LabelLayout.FOUR_BY_SIX)
     label_format: LabelFormat = field(

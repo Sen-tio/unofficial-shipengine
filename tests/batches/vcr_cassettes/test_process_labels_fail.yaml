@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"create_batch_and_process_labels": true, "ship_date": null, "label_layout":
+      "4x6", "label_format": "pdf", "display_scheme": "label"}'
+    headers:
+      Content-Length:
+      - '133'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: POST
+    uri: https://api.shipengine.com/v1/batches/bad-batch-id/process/labels
+  response:
+    body:
+      string: "{\r\n  \"request_id\": \"f9d809e6-6012-409b-b261-b5064deea8dd\",\r\n
+        \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
+        \"business_rules\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
+        \"id parameter is in the wrong format\",\r\n      \"field_name\": null,\r\n
+        \     \"field_value\": \"bad-batch-id\"\r\n    }\r\n  ]\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '328'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 20 May 2024 14:11:21 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '152'
+      RateLimit-Reset:
+      - '39'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - f9d809e6-6012-409b-b261-b5064deea8dd
+      x-shipengine-requestid:
+      - f9d809e6-6012-409b-b261-b5064deea8dd
+    status:
+      code: 400
+      message: Bad Request
+version: 1
