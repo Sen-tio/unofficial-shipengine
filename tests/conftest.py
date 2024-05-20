@@ -23,7 +23,7 @@ def vcr_config():
 
 @pytest.fixture(scope="session")
 def client():
-    api_key = os.getenv("SHIPENGINE_API_KEY")
+    api_key = os.getenv("SHIPENGINE_API_KEY", "")
     return UnofficialShipEngine(api_key)
 
 
