@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="updated type hinting">
+    <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="updated ShipmentRequest and tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/common/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/common/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +163,7 @@
       <workItem from="1716089571759" duration="740000" />
       <workItem from="1716098888912" duration="777000" />
       <workItem from="1716149281905" duration="6044000" />
-      <workItem from="1716239058255" duration="851000" />
+      <workItem from="1716239058255" duration="1163000" />
     </task>
     <task id="LOCAL-00001" summary="- added batches&#10;- added warehouses&#10;- updated shipments&#10;- updated common&#10;- updated tests for batches&#10;- updated test for warehouses">
       <option name="closed" value="true" />
@@ -215,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716239475979</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="updated ShipmentRequest and tests">
+      <option name="closed" value="true" />
+      <created>1716239983593</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716239983593</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +258,8 @@
     <MESSAGE value="- added shipments" />
     <MESSAGE value="restructed entire package and created base client object to act with each model as a service" />
     <MESSAGE value="updated type hinting" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated type hinting" />
+    <MESSAGE value="updated ShipmentRequest and tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated ShipmentRequest and tests" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/unofficial_shipengine$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1715554669254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
