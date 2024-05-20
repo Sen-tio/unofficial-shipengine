@@ -6,6 +6,7 @@ from attrs import asdict
 
 from .models import Batch, BatchRequest, ProcessLabels
 from ..core.exceptions import ShipEngineAPIError
+from ..shipments.models import Shipment
 from ..utils.serialize import serializer
 
 
@@ -90,31 +91,33 @@ class BatchService:
     def add_to_batch(
         self,
         batch: Union[Batch, str],
-        shipment_ids: list[str],
-        rate_ids: Optional[list[str]] = None,
+        shipments: list[Union[Shipment, str]],
+        rates: Optional[list[str]] = None,
     ) -> None:
-        self._modify_batch(batch, "add", shipment_ids, rate_ids)
+        self._modify_batch(batch, "add", shipments, rates)
 
     def remove_from_batch(
         self,
         batch: Union[Batch, str],
-        shipment_ids: list[str],
-        rate_ids: Optional[list[str]] = None,
+        shipments: list[Union[Shipment, str]],
+        rates: Optional[list[str]] = None,
     ) -> None:
-        self._modify_batch(batch, "remove", shipment_ids, rate_ids)
+        self._modify_batch(batch, "remove", shipments, rates)
 
     def _modify_batch(
         self,
         batch: Union[Batch, str],
         endpoint: str,
-        shipment_ids: list[str],
-        rate_ids: Optional[list[str]] = None,
+        shipments: list[Union[str, Shipment]],
+        rates: Optional[list[str]] = None,
     ) -> None:
         if isinstance(batch, Batch):
             batch = batch.batch_id
 
+        shipments = [s.shipment_id for s in shipments if isinstance(s, Shipment)]
+
         url: str = f"https://api.shipengine.com/v1/batches/{batch}/{endpoint}"
-        data: str = json.dumps({"shipment_ids": shipment_ids, "rate_ids": rate_ids})
+        data: str = json.dumps({"shipment_ids": shipments, "rate_ids": rates})
         response = self.session.post(url, data=data)
 
         if response.status_code != 204:

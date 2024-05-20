@@ -38,7 +38,7 @@ def test_add_to_batch_success(client, shipment_request):
     before_count = batch.count
 
     new_shipment = client.shipments.create_shipment(shipment_request)
-    client.batches.add_to_batch(batch, shipment_ids=[new_shipment.shipment_id])
+    client.batches.add_to_batch(batch, shipments=[new_shipment])
 
     batch = client.batches.get_by_id(batch.batch_id)
 
@@ -53,7 +53,7 @@ def test_add_to_batch_fail(client, shipment_request):
     batch = client.batches.create_batch(batch_request)
 
     with pytest.raises(ShipEngineAPIError):
-        client.batches.add_to_batch(batch, shipment_ids=["bad-shipment-id"])
+        client.batches.add_to_batch(batch, shipments=["bad-shipment-id"])
 
 
 @pytest.mark.vcr
@@ -64,7 +64,7 @@ def test_remove_from_batch_success(client, shipment_request):
     batch = client.batches.create_batch(batch_request)
     before_count = batch.count
 
-    client.batches.remove_from_batch(batch, shipment_ids=[shipment.shipment_id])
+    client.batches.remove_from_batch(batch, shipments=[shipment])
 
     batch = client.batches.get_by_id(batch.batch_id)
 
@@ -78,7 +78,7 @@ def test_remove_from_batch_fail(client, shipment_request):
     batch = client.batches.create_batch(batch_request)
 
     with pytest.raises(ShipEngineAPIError):
-        client.batches.remove_from_batch(batch, shipment_ids=["bad-shipment-id"])
+        client.batches.remove_from_batch(batch, shipments=["bad-shipment-id"])
 
 
 @pytest.mark.vcr
