@@ -2,8 +2,6 @@ interactions:
 - request:
     body: null
     headers:
-      API-Key:
-      - TEST_HM7I03251HKCg5wTCvEWk099fgXjzCOj7VRXM3msUzw
       Content-Type:
       - application/json
       Host:
@@ -465,7 +463,7 @@ interactions:
         \       {\r\n          \"name\": \"saturday_delivery\",\r\n          \"default_value\":
         \"false\",\r\n          \"description\": \"Saturday Delivery\"\r\n        }\r\n
         \     ],\r\n      \"funding_source_id\": null\r\n    }\r\n  ],\r\n  \"request_id\":
-        \"557f2c4b-c7b6-45e5-9c16-58c81542c26a\",\r\n  \"errors\": []\r\n}"
+        \"62056b51-8ef1-4d61-af44-9e542021464e\",\r\n  \"errors\": []\r\n}"
     headers:
       Branch-Name:
       - bWFpbg
@@ -478,16 +476,16 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 20 May 2024 23:21:43 GMT
+      - Mon, 20 May 2024 23:32:44 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '199'
+      - '198'
       RateLimit-Reset:
-      - '18'
+      - '17'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -495,9 +493,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 557f2c4b-c7b6-45e5-9c16-58c81542c26a
+      - 62056b51-8ef1-4d61-af44-9e542021464e
       x-shipengine-requestid:
-      - 557f2c4b-c7b6-45e5-9c16-58c81542c26a
+      - 62056b51-8ef1-4d61-af44-9e542021464e
     status:
       code: 200
       message: OK

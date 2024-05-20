@@ -53,7 +53,9 @@ def warehouse(client, warehouse_request) -> Generator:
 
 @pytest.fixture(scope="function")
 def shipment_request(client, warehouse):
-    with vcr.use_cassette(BASE_DIR / "vcr_cassettes" / "shipment_request.yaml"):
+    with vcr.use_cassette(
+        BASE_DIR / "vcr_cassettes" / "shipment_request.yaml", filter_headers=["API-Key"]
+    ):
         carriers = client.carriers.get_carriers()[0]
 
     return ShipmentRequest(
