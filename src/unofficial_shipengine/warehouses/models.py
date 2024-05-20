@@ -1,4 +1,4 @@
-from typing import Self
+from typing import Self, Any
 
 from attrs import define, field
 
@@ -23,7 +23,7 @@ class Warehouse:
     is_default: bool = field(default=None)
 
     @classmethod
-    def from_dict(cls, data: dict) -> Self:
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         origin_address: Address = Address(**data.pop("origin_address"))
         return_address: Address = Address(**data.pop("return_address"))
         return cls(origin_address=origin_address, return_address=return_address, **data)

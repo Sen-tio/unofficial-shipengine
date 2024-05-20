@@ -35,7 +35,7 @@ class WarehouseService:
         response = self.session.delete(url)
 
         if response.status_code != 204:
-            response_dict: dict = json.loads(response.text)
+            response_dict = json.loads(response.text)
             raise ShipEngineAPIError(
                 request_id=response_dict["request_id"], errors=response_dict["errors"]
             )

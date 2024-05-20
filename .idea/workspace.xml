@@ -5,44 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="restructed entire package and created base client object to act with each model as a service">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/unofficial-shipengine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/unofficial-shipengine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_13_2024_5_02_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_13_2024_5_02_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_17_2024_10_25_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_17_2024_10_25_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/batches/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/batches/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/common/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/common/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/exceptions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/unofficial_shipengine.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/unofficial_shipengine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/services.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/batches/test_batch.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/batches/test_batch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/TestBatch.test_add_to_batch_fail.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/TestBatch.test_add_to_batch_success.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/TestBatch.test_create_batch_fail.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/TestBatch.test_create_batch_success.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/TestBatch.test_delete_batch_fail.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/TestBatch.test_delete_batch_success.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/TestBatch.test_get_by_id_fail.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/TestBatch.test_get_by_id_success.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/TestBatch.test_process_labels_fail.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/TestBatch.test_process_labels_success.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/TestBatch.test_remove_from_batch_fail.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/vcr_cassettes/TestBatch.test_remove_from_batch_success.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/carriers/test_carriers.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/carriers/test_carriers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestCarriers.test_get_by_id_fail.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestCarriers.test_get_by_id_success.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/carriers/vcr_cassettes/TestCarriers.test_get_carriers.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/shipments/test_shipments.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/shipments/test_shipments.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/shipments/vcr_cassettes/TestShipments.test_create_multiple_shipment_success.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/shipments/vcr_cassettes/TestShipments.test_create_shipment_failure.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/shipments/vcr_cassettes/TestShipments.test_create_single_shipment_success.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/warehouses/test_warehouses.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/warehouses/test_warehouses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tox.ini" beforeDir="false" afterPath="$PROJECT_DIR$/tox.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,12 +45,12 @@
     &quot;assignee&quot;: &quot;Sen-tio&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Sen-tio/unofficial-shipengine.git&quot;,
-    &quot;accountId&quot;: &quot;8e43b4ea-7a4f-4fc8-a09c-b504d0091a7d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Sen-tio/unofficial-shipengine",
+    "accountId": "2c25ed3b-66b1-4f52-b1bc-a973d82e6c14"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -165,8 +142,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
-        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
+        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
       </set>
     </attachedChunks>
   </component>
@@ -198,6 +175,7 @@
       <workItem from="1716089571759" duration="740000" />
       <workItem from="1716098888912" duration="777000" />
       <workItem from="1716149281905" duration="6044000" />
+      <workItem from="1716239058255" duration="392000" />
     </task>
     <task id="LOCAL-00001" summary="- added batches&#10;- added warehouses&#10;- updated shipments&#10;- updated common&#10;- updated tests for batches&#10;- updated test for warehouses">
       <option name="closed" value="true" />

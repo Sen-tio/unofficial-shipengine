@@ -2,6 +2,7 @@ import pytest
 import os
 import vcr
 
+from typing import Generator
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -44,7 +45,7 @@ def warehouse_request():
 
 
 @pytest.fixture(scope="function")
-def warehouse(client, warehouse_request) -> Warehouse:
+def warehouse(client, warehouse_request) -> Generator:
     warehouse = client.warehouses.create_warehouse(warehouse_request)
     yield warehouse
     client.warehouses.delete_warehouse(warehouse)

@@ -17,8 +17,8 @@ def vcr_cassette_dir():
 def test_get_by_id_success(client, shipment_request):
     shipment = client.shipments.create_shipment(shipment_request)
     batch_request = BatchRequest(shipment_ids=[shipment.shipment_id])
-    created_batch: Batch = client.batches.create_batch(batch_request)
-    batch: Batch = client.batches.get_by_id(created_batch.batch_id)
+    created_batch = client.batches.create_batch(batch_request)
+    batch = client.batches.get_by_id(created_batch.batch_id)
 
     assert batch.batch_id == created_batch.batch_id
 
@@ -34,13 +34,13 @@ def test_add_to_batch_success(client, shipment_request):
     shipment = client.shipments.create_shipment(shipment_request)
     batch_request = BatchRequest(shipment_ids=[shipment.shipment_id])
 
-    batch: Batch = client.batches.create_batch(batch_request)
-    before_count: int = batch.count
+    batch = client.batches.create_batch(batch_request)
+    before_count = batch.count
 
     new_shipment = client.shipments.create_shipment(shipment_request)
     client.batches.add_to_batch(batch, shipment_ids=[new_shipment.shipment_id])
 
-    batch: Batch = client.batches.get_by_id(batch.batch_id)
+    batch = client.batches.get_by_id(batch.batch_id)
 
     assert batch.count == before_count + 1
 
@@ -50,7 +50,7 @@ def test_add_to_batch_fail(client, shipment_request):
     shipment = client.shipments.create_shipment(shipment_request)
     batch_request = BatchRequest(shipment_ids=[shipment.shipment_id])
 
-    batch: Batch = client.batches.create_batch(batch_request)
+    batch = client.batches.create_batch(batch_request)
 
     with pytest.raises(ShipEngineAPIError):
         client.batches.add_to_batch(batch, shipment_ids=["bad-shipment-id"])
@@ -61,12 +61,12 @@ def test_remove_from_batch_success(client, shipment_request):
     shipment = client.shipments.create_shipment(shipment_request)
     batch_request = BatchRequest(shipment_ids=[shipment.shipment_id])
 
-    batch: Batch = client.batches.create_batch(batch_request)
-    before_count: int = batch.count
+    batch = client.batches.create_batch(batch_request)
+    before_count = batch.count
 
     client.batches.remove_from_batch(batch, shipment_ids=[shipment.shipment_id])
 
-    batch: Batch = client.batches.get_by_id(batch.batch_id)
+    batch = client.batches.get_by_id(batch.batch_id)
 
     assert batch.count == before_count - 1
 
@@ -75,7 +75,7 @@ def test_remove_from_batch_success(client, shipment_request):
 def test_remove_from_batch_fail(client, shipment_request):
     shipment = client.shipments.create_shipment(shipment_request)
     batch_request = BatchRequest(shipment_ids=[shipment.shipment_id])
-    batch: Batch = client.batches.create_batch(batch_request)
+    batch = client.batches.create_batch(batch_request)
 
     with pytest.raises(ShipEngineAPIError):
         client.batches.remove_from_batch(batch, shipment_ids=["bad-shipment-id"])
@@ -85,7 +85,7 @@ def test_remove_from_batch_fail(client, shipment_request):
 def test_create_batch_success(client, shipment_request):
     shipment = client.shipments.create_shipment(shipment_request)
     batch_request = BatchRequest(shipment_ids=[shipment.shipment_id])
-    batch: Batch = client.batches.create_batch(batch_request)
+    batch = client.batches.create_batch(batch_request)
 
     assert batch.status == batch.Status.OPEN.value
 
@@ -121,7 +121,7 @@ def test_process_labels_success(client, shipment_request):
     batch = client.batches.create_batch(batch_request)
     client.batches.process_labels(batch, process_labels=ProcessLabels())
 
-    batch: Batch = client.batches.get_by_id(batch.batch_id)
+    batch = client.batches.get_by_id(batch.batch_id)
 
     assert batch.status in [
         Batch.Status.QUEUED.value,

@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Self
+from typing import Self, Any
 
 from attrs import define, field, validators
 
@@ -200,7 +200,7 @@ class ShipmentRequest:
     warehouse_id: str = field(default=None)
     ship_from: Address = field(default=None)
     return_to: Address = field(default=None)
-    items: list = field(default=[])
+    items: list[str] = field(default=[])
     external_order_id: str = field(default=None)
     tax_identifiers: list[TaxIdentifier] = field(default=None)
     external_shipment_id: str = field(default=None)
@@ -214,7 +214,7 @@ class ShipmentRequest:
 
     @ship_from.validator
     def _validate_ship_from(self, attribute, value):
-        if self.warehouse_id is None and self.ship_from is None:
+        if self.warehouse_id is not None:
             raise ValueError(
                 f"'{attribute}' must be passed when 'warehouse_id' is not set"
             )
@@ -242,7 +242,7 @@ class Shipment(ShipmentRequest):
     address_validation: AddressValidation = field(default=None)
 
     @classmethod
-    def from_dict(cls, data: dict) -> Self:
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         ship_to = Address(**data.pop("ship_to"))
         ship_from = Address(**data.pop("ship_from"))
         return_to = Address(**data.pop("return_to"))

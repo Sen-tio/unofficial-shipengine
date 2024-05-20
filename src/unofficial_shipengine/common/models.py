@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Self
+from typing import Self, Union, TypeAlias, Optional, Any
 
 from attrs import define, field, validators
 
@@ -107,24 +107,24 @@ class Value:
 class Package:
     @define
     class LabelMessages:
-        reference1: str = field(default=None)
-        reference2: str = field(default=None)
-        reference3: str = field(default=None)
+        reference1: Optional[str] = field(default=None)
+        reference2: Optional[str] = field(default=None)
+        reference3: Optional[str] = field(default=None)
 
-    weight: Weight
-    package_code: str = field(default=None)
-    dimensions: Dimension = field(default=None)
-    content_description: str = field(default=None)
-    package_id: str = field(default=None)
-    insured_value: Value = field(default=None)
-    label_messages: LabelMessages = field(default=None)
-    products: list[object] = field(default=None)  # TODO
-    external_package_id: str = field(default=None)
-    shipment_package_id: str = field(default=None)
-    package_name: str = field(default=None)
+    weight: "Weight"
+    package_code: Optional[str] = field(default=None)
+    dimensions: Optional["Dimension"] = field(default=None)
+    content_description: Optional[str] = field(default=None)
+    package_id: Optional[str] = field(default=None)
+    insured_value: Optional["Value"] = field(default=None)
+    label_messages: Optional[LabelMessages] = field(default=None)
+    products: Optional[list[object]] = field(default=None)  # TODO
+    external_package_id: Optional[str] = field(default=None)
+    shipment_package_id: Optional[str] = field(default=None)
+    package_name: Optional[str] = field(default=None)
 
     @classmethod
-    def from_dict(cls, data: dict) -> Self:
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         weight = Weight(**data.pop("weight"))
         dimensions = Dimension(**data.pop("dimensions"))
         insured_value = Value(**data.pop("insured_value"))

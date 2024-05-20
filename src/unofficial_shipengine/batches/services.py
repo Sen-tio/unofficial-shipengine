@@ -1,5 +1,5 @@
 import json
-from typing import Union, Optional
+from typing import Union, Optional, Any
 
 import requests
 from attrs import asdict
@@ -31,7 +31,7 @@ class BatchService:
         url: str = f"https://api.shipengine.com/v1/batches/{batch_id}"
 
         response = self.session.get(url)
-        response_dict: dict = json.loads(response.text)
+        response_dict = json.loads(response.text)
 
         if response.status_code != 200:
             raise ShipEngineAPIError(
@@ -54,14 +54,14 @@ class BatchService:
         response = self.session.post(url, data=data)
 
         if response.status_code != 204:
-            response_dict: dict = json.loads(response.text)
+            response_dict = json.loads(response.text)
             raise ShipEngineAPIError(
                 request_id=response_dict["request_id"], errors=response_dict["errors"]
             )
 
     def get_batch_errors(
         self, batch: Union[Batch, str], page: int = 1, pagesize: int = 1
-    ) -> dict:
+    ) -> dict[str, Any]:
         if isinstance(batch, Batch):
             batch = batch.batch_id
 
@@ -70,7 +70,9 @@ class BatchService:
             url, params=json.dumps({"page": page, "pagesize": pagesize})
         )
 
-        return response.json()
+        response_json: dict[str, Any] = response.json()
+
+        return response_json
 
     def delete_batch(self, batch: Union[Batch, str]) -> None:
         if isinstance(batch, Batch):
@@ -80,7 +82,7 @@ class BatchService:
         response = self.session.delete(url)
 
         if response.status_code != 204:
-            response_dict: dict = json.loads(response.text)
+            response_dict = json.loads(response.text)
             raise ShipEngineAPIError(
                 request_id=response_dict["request_id"], errors=response_dict["errors"]
             )
@@ -116,7 +118,7 @@ class BatchService:
         response = self.session.post(url, data=data)
 
         if response.status_code != 204:
-            response_dict: dict = json.loads(response.text)
+            response_dict = json.loads(response.text)
             raise ShipEngineAPIError(
                 request_id=response_dict["request_id"], errors=response_dict["errors"]
             )

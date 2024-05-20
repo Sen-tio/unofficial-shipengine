@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Union
+from typing import Union, Any, Self
 
 from attrs import define, field, validators
 
@@ -77,7 +77,7 @@ class Batch:
     )
 
     @classmethod
-    def from_dict(cls, data: dict) -> "Batch":
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         batch_shipments_url: URL = URL(**data.pop("batch_shipments_url"))
         batch_labels_url: URL = URL(**data.pop("batch_labels_url"))
         batch_errors_url: URL = URL(**data.pop("batch_errors_url"))
