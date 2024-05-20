@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Self, Union, TypeAlias, Optional, Any
+from typing import Self, Optional, Any
 
 from attrs import define, field, validators
 

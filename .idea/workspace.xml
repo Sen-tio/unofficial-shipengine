@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="restructed entire package and created base client object to act with each model as a service">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_13_2024_5_02_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_13_2024_5_02_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_17_2024_10_25_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_17_2024_10_25_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="e452d179-0e05-4203-af18-4a4948b57095" name="Changes" comment="updated type hinting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/batches/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/batches/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/batches/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/carriers/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/common/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/common/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/core/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/core/exceptions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/shipments/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unofficial_shipengine/warehouses/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/batches/test_batch.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/batches/test_batch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tox.ini" beforeDir="false" afterPath="$PROJECT_DIR$/tox.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +165,7 @@
       <workItem from="1716089571759" duration="740000" />
       <workItem from="1716098888912" duration="777000" />
       <workItem from="1716149281905" duration="6044000" />
-      <workItem from="1716239058255" duration="392000" />
+      <workItem from="1716239058255" duration="851000" />
     </task>
     <task id="LOCAL-00001" summary="- added batches&#10;- added warehouses&#10;- updated shipments&#10;- updated common&#10;- updated tests for batches&#10;- updated test for warehouses">
       <option name="closed" value="true" />
@@ -217,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716055663975</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="updated type hinting">
+      <option name="closed" value="true" />
+      <created>1716239475979</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716239475979</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +251,8 @@
     <MESSAGE value="- commited vcr cassettes" />
     <MESSAGE value="- added shipments" />
     <MESSAGE value="restructed entire package and created base client object to act with each model as a service" />
-    <option name="LAST_COMMIT_MESSAGE" value="restructed entire package and created base client object to act with each model as a service" />
+    <MESSAGE value="updated type hinting" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated type hinting" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/unofficial_shipengine$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1715554669254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />

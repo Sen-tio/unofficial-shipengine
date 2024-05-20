@@ -212,13 +212,6 @@ class ShipmentRequest:
     packages: list[Package] = field(default=None)
     comparison_rate_type: str = field(default=None)
 
-    @ship_from.validator
-    def _validate_ship_from(self, attribute, value):
-        if self.warehouse_id is not None:
-            raise ValueError(
-                f"'{attribute}' must be passed when 'warehouse_id' is not set"
-            )
-
 
 @define(kw_only=True)
 class Shipment(ShipmentRequest):

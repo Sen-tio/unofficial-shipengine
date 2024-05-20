@@ -46,7 +46,7 @@ def warehouse_request():
 
 @pytest.fixture(scope="function")
 def warehouse(client, warehouse_request) -> Generator:
-    warehouse = client.warehouses.create_warehouse(warehouse_request)
+    warehouse: Warehouse = client.warehouses.create_warehouse(warehouse_request)
     yield warehouse
     client.warehouses.delete_warehouse(warehouse)
 
