@@ -138,7 +138,9 @@ class Label:
             "paperless_download" in data.keys()
             and data["paperless_download"] is not None
         ):
-            paperless_download: URL = URL(**data.pop("paperless_download"))
+            paperless_download: PaperlessDownload = PaperlessDownload(
+                **data.pop("paperless_download")
+            )
         else:
             paperless_download = data.pop("paperless_download", None)
 

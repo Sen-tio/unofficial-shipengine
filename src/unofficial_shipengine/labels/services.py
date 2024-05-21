@@ -24,4 +24,6 @@ class LabelService:
                 request_id=response_dict["request_id"], errors=response_dict["errors"]
             )
 
-        return Label.from_dict(response_dict)
+        label: Label = Label.from_dict(response_dict)
+
+        return label

@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from unofficial_shipengine.labels.models import LabelRequest, Label
+from unofficial_shipengine.labels.models import Label
 from unofficial_shipengine.core.exceptions import ShipEngineAPIError
 
 BASE_DIR = Path(__file__).parent
