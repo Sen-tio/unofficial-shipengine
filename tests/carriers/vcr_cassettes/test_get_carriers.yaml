@@ -12,7 +12,7 @@ interactions:
     body:
       string: "{\r\n  \"carriers\": [\r\n    {\r\n      \"carrier_id\": \"se-2424643\",\r\n
         \     \"carrier_code\": \"stamps_com\",\r\n      \"account_number\": \"test_account_2424643\",\r\n
-        \     \"requires_funded_amount\": true,\r\n      \"balance\": 8331.3400,\r\n
+        \     \"requires_funded_amount\": true,\r\n      \"balance\": 4072.1000,\r\n
         \     \"nickname\": \"ShipEngine Test Account - Stamps.com\",\r\n      \"friendly_name\":
         \"Stamps.com\",\r\n      \"primary\": false,\r\n      \"has_multi_package_supporting_services\":
         false,\r\n      \"supports_label_messages\": true,\r\n      \"disabled_by_billing_plan\":
@@ -283,7 +283,7 @@ interactions:
         \         \"name\": \"shipper_release\",\r\n          \"default_value\": \"false\",\r\n
         \         \"description\": \"Driver may release package without signature\"\r\n
         \       }\r\n      ],\r\n      \"funding_source_id\": null\r\n    }\r\n  ],\r\n
-        \ \"request_id\": \"b229b8ec-de79-441d-a508-c81ed3fe1d49\",\r\n  \"errors\":
+        \ \"request_id\": \"1c54bbe1-1bfa-4ebf-8a15-1602e2449eab\",\r\n  \"errors\":
         []\r\n}"
     headers:
       Branch-Name:
@@ -297,16 +297,16 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 20 May 2024 14:02:09 GMT
+      - Tue, 21 May 2024 14:45:42 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '166'
+      - '150'
       RateLimit-Reset:
-      - '51'
+      - '19'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -314,9 +314,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - b229b8ec-de79-441d-a508-c81ed3fe1d49
+      - 1c54bbe1-1bfa-4ebf-8a15-1602e2449eab
       x-shipengine-requestid:
-      - b229b8ec-de79-441d-a508-c81ed3fe1d49
+      - 1c54bbe1-1bfa-4ebf-8a15-1602e2449eab
     status:
       code: 200
       message: OK

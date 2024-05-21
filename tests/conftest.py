@@ -6,7 +6,7 @@ from typing import Generator
 from dotenv import load_dotenv
 from pathlib import Path
 
-from unofficial_shipengine.labels.models import LabelRequest
+from unofficial_shipengine.labels.models import LabelRequest, ReturnLabelRequest
 from unofficial_shipengine.shipments.models import ShipmentRequest
 from unofficial_shipengine.unofficial_shipengine import UnofficialShipEngine
 from unofficial_shipengine.common.models import Address, Package, Weight
@@ -79,3 +79,8 @@ def shipment_request(client, warehouse):
 @pytest.fixture(scope="function")
 def label_request(shipment_request):
     return LabelRequest(shipment=shipment_request)
+
+
+@pytest.fixture(scope="function")
+def return_label_request():
+    return ReturnLabelRequest()

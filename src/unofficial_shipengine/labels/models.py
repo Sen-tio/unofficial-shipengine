@@ -31,6 +31,26 @@ class PaperlessDownload:
 
 
 @define
+class ReturnLabelRequest:
+    charge_event: ChargeEvent = field(
+        default=ChargeEvent.CARRIER_DEFAULT, validator=validators.in_(ChargeEvent)
+    )
+    label_layout: LabelLayout = field(
+        default=LabelLayout.FOUR_BY_SIX, validator=validators.in_(LabelLayout)
+    )
+    display_scheme: DisplayScheme = field(
+        default=DisplayScheme.LABEL, validator=validators.in_(DisplayScheme)
+    )
+    label_format: LabelFormat = field(
+        default=LabelFormat.PDF, validator=validators.in_(LabelFormat)
+    )
+    label_download_type: LabelDownloadType = field(
+        default=LabelDownloadType.URL, validator=validators.in_(LabelDownloadType)
+    )
+    label_image_id: str = field(default=None)
+
+
+@define
 class LabelRequest:
     shipment: ShipmentRequest
     label_image_id: str = field(default=None)

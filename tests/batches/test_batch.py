@@ -72,13 +72,9 @@ def test_remove_from_batch_success(client, shipment_request):
 
 
 @pytest.mark.vcr
-def test_remove_from_batch_fail(client, shipment_request):
-    shipment = client.shipments.create_shipment(shipment_request)
-    batch_request = BatchRequest(shipment_ids=[shipment.shipment_id])
-    batch = client.batches.create_batch(batch_request)
-
+def test_remove_from_batch_fail(client):
     with pytest.raises(ShipEngineAPIError):
-        client.batches.remove_from_batch(batch, shipments=["bad-shipment-id"])
+        client.batches.remove_from_batch("bad-batch-id", shipments=["bad-batch-id"])
 
 
 @pytest.mark.vcr

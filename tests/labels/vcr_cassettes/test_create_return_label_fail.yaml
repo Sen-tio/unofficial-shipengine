@@ -17,8 +17,8 @@ interactions:
     uri: https://api.shipengine.com/v1/warehouses
   response:
     body:
-      string: "{\r\n  \"warehouse_id\": \"se-19010893\",\r\n  \"is_default\": false,\r\n
-        \ \"name\": \"Test Warehouse 123\",\r\n  \"created_at\": \"2024-05-21T14:47:31.037Z\",\r\n
+      string: "{\r\n  \"warehouse_id\": \"se-19011258\",\r\n  \"is_default\": false,\r\n
+        \ \"name\": \"Test Warehouse 123\",\r\n  \"created_at\": \"2024-05-21T15:01:12.26Z\",\r\n
         \ \"origin_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
         \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
         null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
@@ -37,22 +37,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '965'
+      - '964'
       Content-Security-Policy:
       - default-src 'none'; frame-ancestors 'none'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 21 May 2024 14:47:31 GMT
+      - Tue, 21 May 2024 15:01:12 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '196'
+      - '199'
       RateLimit-Reset:
-      - '29'
+      - '48'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -60,9 +60,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 2b45b1ae-d7f8-4809-8a72-e8c38cab51f0
+      - 8c6e9725-85f1-4b07-a51a-a61836d03a9a
       x-shipengine-requestid:
-      - 2b45b1ae-d7f8-4809-8a72-e8c38cab51f0
+      - 8c6e9725-85f1-4b07-a51a-a61836d03a9a
     status:
       code: 200
       message: OK
@@ -80,36 +80,36 @@ interactions:
       Host:
       - api.shipengine.com
     method: POST
-    uri: https://api.shipengine.com/v1/labels
+    uri: https://api.shipengine.com/v1/labels/bad-label-id/return
   response:
     body:
-      string: "{\r\n  \"request_id\": \"0b163874-0e88-48bb-98ad-ba45bad3e784\",\r\n
+      string: "{\r\n  \"request_id\": \"b2e4fa44-bec6-40a0-93a4-6d0ea012129f\",\r\n
         \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
-        \"system\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
-        \"request.shipment: Could not cast or convert from System.String to ShipEngine.Api.Models.Shipments.Shipment.\"\r\n
-        \   }\r\n  ]\r\n}"
+        \"business_rules\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
+        \"id parameter is in the wrong format\",\r\n      \"field_name\": null,\r\n
+        \     \"field_value\": \"bad-label-id\"\r\n    }\r\n  ]\r\n}"
     headers:
       Branch-Name:
       - bWFpbg
       Connection:
       - keep-alive
       Content-Length:
-      - '327'
+      - '328'
       Content-Security-Policy:
       - default-src 'none'; frame-ancestors 'none'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 21 May 2024 14:47:31 GMT
+      - Tue, 21 May 2024 15:01:12 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '195'
+      - '198'
       RateLimit-Reset:
-      - '29'
+      - '48'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -117,9 +117,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 0b163874-0e88-48bb-98ad-ba45bad3e784
+      - b2e4fa44-bec6-40a0-93a4-6d0ea012129f
       x-shipengine-requestid:
-      - 0b163874-0e88-48bb-98ad-ba45bad3e784
+      - b2e4fa44-bec6-40a0-93a4-6d0ea012129f
     status:
       code: 400
       message: Bad Request
@@ -133,7 +133,7 @@ interactions:
       Host:
       - api.shipengine.com
     method: DELETE
-    uri: https://api.shipengine.com/v1/warehouses/se-19010893
+    uri: https://api.shipengine.com/v1/warehouses/se-19011258
   response:
     body:
       string: ''
@@ -145,16 +145,16 @@ interactions:
       Content-Security-Policy:
       - default-src 'none'; frame-ancestors 'none'
       Date:
-      - Tue, 21 May 2024 14:47:32 GMT
+      - Tue, 21 May 2024 15:01:12 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '194'
+      - '197'
       RateLimit-Reset:
-      - '29'
+      - '48'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -162,9 +162,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - f0de9c4f-d9ef-4692-964d-bd1130c8dc14
+      - 968a9904-930f-45f0-b7af-7d2831869c54
       x-shipengine-requestid:
-      - f0de9c4f-d9ef-4692-964d-bd1130c8dc14
+      - 968a9904-930f-45f0-b7af-7d2831869c54
     status:
       code: 204
       message: No Content

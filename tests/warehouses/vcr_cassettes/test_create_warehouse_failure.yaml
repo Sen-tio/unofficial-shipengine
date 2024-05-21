@@ -1,45 +1,49 @@
 interactions:
 - request:
-    body: '{"create_batch_and_process_labels": true, "ship_date": null, "label_layout":
-      "4x6", "label_format": "pdf", "display_scheme": "label"}'
+    body: '{"name": "Test Warehouse 123", "origin_address": {"name": "Electronic Output
+      Solutions", "phone": "555-555-5555", "address_line1": "", "city_locality": "Vista",
+      "state_province": "CA", "postal_code": "92081", "address_line2": null, "address_line3":
+      null, "email": null, "company_name": null, "instructions": null, "geolocation":
+      null, "country_code": "US", "address_residential_indicator": "unknown"}, "return_address":
+      null, "is_default": null}'
     headers:
       Content-Length:
-      - '133'
+      - '445'
       Content-Type:
       - application/json
       Host:
       - api.shipengine.com
     method: POST
-    uri: https://api.shipengine.com/v1/batches/bad-batch-id/process/labels
+    uri: https://api.shipengine.com/v1/warehouses
   response:
     body:
-      string: "{\r\n  \"request_id\": \"65641a8a-eb07-4f04-a244-9eb266a57533\",\r\n
+      string: "{\r\n  \"request_id\": \"cbae1172-b6d9-44af-9f8e-66fcae786685\",\r\n
         \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
-        \"business_rules\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
-        \"id parameter is in the wrong format\",\r\n      \"field_name\": null,\r\n
-        \     \"field_value\": \"bad-batch-id\"\r\n    }\r\n  ]\r\n}"
+        \"validation\",\r\n      \"error_code\": \"field_value_required\",\r\n      \"message\":
+        \"'address_line1' should not be empty.\",\r\n      \"field_name\": \"address_line1\"\r\n
+        \   }\r\n  ]\r\n}"
     headers:
       Branch-Name:
       - bWFpbg
       Connection:
       - keep-alive
       Content-Length:
-      - '328'
+      - '307'
       Content-Security-Policy:
       - default-src 'none'; frame-ancestors 'none'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 21 May 2024 14:59:30 GMT
+      - Tue, 21 May 2024 15:12:06 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '157'
+      - '199'
       RateLimit-Reset:
-      - '30'
+      - '54'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -47,9 +51,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 65641a8a-eb07-4f04-a244-9eb266a57533
+      - cbae1172-b6d9-44af-9f8e-66fcae786685
       x-shipengine-requestid:
-      - 65641a8a-eb07-4f04-a244-9eb266a57533
+      - cbae1172-b6d9-44af-9f8e-66fcae786685
     status:
       code: 400
       message: Bad Request

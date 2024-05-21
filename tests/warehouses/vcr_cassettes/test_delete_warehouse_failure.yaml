@@ -2,41 +2,43 @@ interactions:
 - request:
     body: null
     headers:
+      Content-Length:
+      - '0'
       Content-Type:
       - application/json
       Host:
       - api.shipengine.com
-    method: GET
-    uri: https://api.shipengine.com/v1/batches/bad-batch-id
+    method: DELETE
+    uri: https://api.shipengine.com/v1/warehouses/bad-warehouse-id
   response:
     body:
-      string: "{\r\n  \"request_id\": \"f6754c0a-898a-492a-ad6c-8177d9261c46\",\r\n
+      string: "{\r\n  \"request_id\": \"d3cad42d-9d54-4bed-8563-3f3a2ba48c2e\",\r\n
         \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
         \"business_rules\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
         \"id parameter is in the wrong format\",\r\n      \"field_name\": null,\r\n
-        \     \"field_value\": \"bad-batch-id\"\r\n    }\r\n  ]\r\n}"
+        \     \"field_value\": \"bad-warehouse-id\"\r\n    }\r\n  ]\r\n}"
     headers:
       Branch-Name:
       - bWFpbg
       Connection:
       - keep-alive
       Content-Length:
-      - '328'
+      - '332'
       Content-Security-Policy:
       - default-src 'none'; frame-ancestors 'none'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 21 May 2024 14:59:15 GMT
+      - Tue, 21 May 2024 15:15:43 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '194'
+      - '193'
       RateLimit-Reset:
-      - '45'
+      - '17'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -44,9 +46,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - f6754c0a-898a-492a-ad6c-8177d9261c46
+      - d3cad42d-9d54-4bed-8563-3f3a2ba48c2e
       x-shipengine-requestid:
-      - f6754c0a-898a-492a-ad6c-8177d9261c46
+      - d3cad42d-9d54-4bed-8563-3f3a2ba48c2e
     status:
       code: 400
       message: Bad Request

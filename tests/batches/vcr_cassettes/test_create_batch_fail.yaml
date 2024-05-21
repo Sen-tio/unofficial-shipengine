@@ -13,7 +13,7 @@ interactions:
     uri: https://api.shipengine.com/v1/batches
   response:
     body:
-      string: "{\r\n  \"request_id\": \"83079b67-99a8-4a87-bca3-0db36e14c7ba\",\r\n
+      string: "{\r\n  \"request_id\": \"02a2bc15-ca8e-4a36-b492-59655857c72c\",\r\n
         \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
         \"business_rules\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
         \"shipment_ids must be only integers\",\r\n      \"field_name\": \"shipment_ids\",\r\n
@@ -31,16 +31,16 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 20 May 2024 14:11:15 GMT
+      - Tue, 21 May 2024 14:59:24 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '166'
+      - '171'
       RateLimit-Reset:
-      - '45'
+      - '36'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -48,9 +48,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 83079b67-99a8-4a87-bca3-0db36e14c7ba
+      - 02a2bc15-ca8e-4a36-b492-59655857c72c
       x-shipengine-requestid:
-      - 83079b67-99a8-4a87-bca3-0db36e14c7ba
+      - 02a2bc15-ca8e-4a36-b492-59655857c72c
     status:
       code: 400
       message: Bad Request

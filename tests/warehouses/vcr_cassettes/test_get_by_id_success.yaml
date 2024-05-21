@@ -17,8 +17,8 @@ interactions:
     uri: https://api.shipengine.com/v1/warehouses
   response:
     body:
-      string: "{\r\n  \"warehouse_id\": \"se-19010893\",\r\n  \"is_default\": false,\r\n
-        \ \"name\": \"Test Warehouse 123\",\r\n  \"created_at\": \"2024-05-21T14:47:31.037Z\",\r\n
+      string: "{\r\n  \"warehouse_id\": \"se-19011780\",\r\n  \"is_default\": false,\r\n
+        \ \"name\": \"Test Warehouse 123\",\r\n  \"created_at\": \"2024-05-21T15:17:14.03Z\",\r\n
         \ \"origin_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
         \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
         null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
@@ -37,22 +37,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '965'
+      - '964'
       Content-Security-Policy:
       - default-src 'none'; frame-ancestors 'none'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 21 May 2024 14:47:31 GMT
+      - Tue, 21 May 2024 15:17:14 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '196'
+      - '199'
       RateLimit-Reset:
-      - '29'
+      - '46'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -60,56 +60,59 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 2b45b1ae-d7f8-4809-8a72-e8c38cab51f0
+      - b6dbdd4f-2074-4cbc-a525-36fea9ab6e4a
       x-shipengine-requestid:
-      - 2b45b1ae-d7f8-4809-8a72-e8c38cab51f0
+      - b6dbdd4f-2074-4cbc-a525-36fea9ab6e4a
     status:
       code: 200
       message: OK
 - request:
-    body: '{"shipment": "bad-shipment-data", "label_image_id": null, "label_layout":
-      "4x6", "display_scheme": "label", "label_format": "pdf", "label_download_type":
-      "url", "validate_address": "no_validation", "outbound_label_id": null, "charge_event":
-      "carrier_default", "is_return_label": null, "rma_number": null, "ship_to_service_point_id":
-      null, "ship_form_service_point_id": null}'
+    body: null
     headers:
-      Content-Length:
-      - '374'
       Content-Type:
       - application/json
       Host:
       - api.shipengine.com
-    method: POST
-    uri: https://api.shipengine.com/v1/labels
+    method: GET
+    uri: https://api.shipengine.com/v1/warehouses/se-19011780
   response:
     body:
-      string: "{\r\n  \"request_id\": \"0b163874-0e88-48bb-98ad-ba45bad3e784\",\r\n
-        \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
-        \"system\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
-        \"request.shipment: Could not cast or convert from System.String to ShipEngine.Api.Models.Shipments.Shipment.\"\r\n
-        \   }\r\n  ]\r\n}"
+      string: "{\r\n  \"warehouse_id\": \"se-19011780\",\r\n  \"is_default\": false,\r\n
+        \ \"name\": \"Test Warehouse 123\",\r\n  \"created_at\": \"2024-05-21T15:17:14.03Z\",\r\n
+        \ \"origin_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
+        \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
+        null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
+        null,\r\n    \"address_line3\": null,\r\n    \"city_locality\": \"Vista\",\r\n
+        \   \"state_province\": \"CA\",\r\n    \"postal_code\": \"92081\",\r\n    \"country_code\":
+        \"US\",\r\n    \"address_residential_indicator\": \"unknown\"\r\n  },\r\n
+        \ \"return_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
+        \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
+        null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
+        null,\r\n    \"address_line3\": null,\r\n    \"city_locality\": \"Vista\",\r\n
+        \   \"state_province\": \"CA\",\r\n    \"postal_code\": \"92081\",\r\n    \"country_code\":
+        \"US\",\r\n    \"address_residential_indicator\": \"unknown\"\r\n  }\r\n}"
     headers:
       Branch-Name:
       - bWFpbg
       Connection:
       - keep-alive
       Content-Length:
-      - '327'
+      - '964'
       Content-Security-Policy:
       - default-src 'none'; frame-ancestors 'none'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 21 May 2024 14:47:31 GMT
+      - Tue, 21 May 2024 15:17:14 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '195'
+      - '198'
       RateLimit-Reset:
-      - '29'
+      - '46'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -117,55 +120,10 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 0b163874-0e88-48bb-98ad-ba45bad3e784
+      - 8ca648fe-17c5-4792-8a4f-227095cf9726
       x-shipengine-requestid:
-      - 0b163874-0e88-48bb-98ad-ba45bad3e784
+      - 8ca648fe-17c5-4792-8a4f-227095cf9726
     status:
-      code: 400
-      message: Bad Request
-- request:
-    body: null
-    headers:
-      Content-Length:
-      - '0'
-      Content-Type:
-      - application/json
-      Host:
-      - api.shipengine.com
-    method: DELETE
-    uri: https://api.shipengine.com/v1/warehouses/se-19010893
-  response:
-    body:
-      string: ''
-    headers:
-      Branch-Name:
-      - bWFpbg
-      Connection:
-      - keep-alive
-      Content-Security-Policy:
-      - default-src 'none'; frame-ancestors 'none'
-      Date:
-      - Tue, 21 May 2024 14:47:32 GMT
-      Permissions-Policy:
-      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
-        microphone=(), payment=(), usb=(), interest-cohort=()
-      RateLimit-Limit:
-      - '200'
-      RateLimit-Remaining:
-      - '194'
-      RateLimit-Reset:
-      - '29'
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Robots-Tag:
-      - noindex
-      request-id:
-      - f0de9c4f-d9ef-4692-964d-bd1130c8dc14
-      x-shipengine-requestid:
-      - f0de9c4f-d9ef-4692-964d-bd1130c8dc14
-    status:
-      code: 204
-      message: No Content
+      code: 200
+      message: OK
 version: 1

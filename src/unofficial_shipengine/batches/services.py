@@ -114,7 +114,7 @@ class BatchService:
         if isinstance(batch, Batch):
             batch = batch.batch_id
 
-        shipments = [s.shipment_id for s in shipments if isinstance(s, Shipment)]
+        shipments = [s if isinstance(s, str) else s.shipment_id for s in shipments]
 
         url: str = f"https://api.shipengine.com/v1/batches/{batch}/{endpoint}"
         data: str = json.dumps({"shipment_ids": shipments, "rate_ids": rates})

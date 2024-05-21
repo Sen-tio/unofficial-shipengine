@@ -1,10 +1,11 @@
 import json
 import requests
 
+from typing import Union
 from attrs import asdict
 
 from ..core.exceptions import ShipEngineAPIError
-from .models import Label, LabelRequest
+from .models import Label, LabelRequest, ReturnLabelRequest
 from ..utils.serialize import serializer
 
 
@@ -17,6 +18,43 @@ class LabelService:
         json_data = json.dumps(asdict(label_request, value_serializer=serializer))
 
         response = self.session.post(url, data=json_data)
+        response_dict = response.json()
+
+        if response.status_code != 200:
+            raise ShipEngineAPIError(
+                request_id=response_dict["request_id"], errors=response_dict["errors"]
+            )
+
+        label: Label = Label.from_dict(response_dict)
+
+        return label
+
+    def create_return_label(
+        self, label: Union[Label, str], return_label_request: ReturnLabelRequest
+    ) -> Label:
+        if isinstance(label, Label):
+            label = label.label_id
+
+        url = f"https://api.shipengine.com/v1/labels/{label}/return"
+        json_data = json.dumps(
+            asdict(return_label_request, value_serializer=serializer)
+        )
+
+        response = self.session.post(url, data=json_data)
+        response_dict = response.json()
+
+        if response.status_code != 200:
+            raise ShipEngineAPIError(
+                request_id=response_dict["request_id"], errors=response_dict["errors"]
+            )
+
+        return_label: Label = Label.from_dict(response_dict)
+
+        return return_label
+
+    def get_by_id(self, label_id: str) -> Label:
+        url = f"https://api.shipengine.com/v1/labels/{label_id}"
+        response = self.session.get(url)
         response_dict = response.json()
 
         if response.status_code != 200:

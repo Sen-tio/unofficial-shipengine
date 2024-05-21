@@ -12,7 +12,7 @@ interactions:
     body:
       string: "{\r\n  \"carriers\": [\r\n    {\r\n      \"carrier_id\": \"se-2424643\",\r\n
         \     \"carrier_code\": \"stamps_com\",\r\n      \"account_number\": \"test_account_2424643\",\r\n
-        \     \"requires_funded_amount\": true,\r\n      \"balance\": 8331.3400,\r\n
+        \     \"requires_funded_amount\": true,\r\n      \"balance\": 4072.1000,\r\n
         \     \"nickname\": \"ShipEngine Test Account - Stamps.com\",\r\n      \"friendly_name\":
         \"Stamps.com\",\r\n      \"primary\": false,\r\n      \"has_multi_package_supporting_services\":
         false,\r\n      \"supports_label_messages\": true,\r\n      \"disabled_by_billing_plan\":
@@ -283,7 +283,7 @@ interactions:
         \         \"name\": \"shipper_release\",\r\n          \"default_value\": \"false\",\r\n
         \         \"description\": \"Driver may release package without signature\"\r\n
         \       }\r\n      ],\r\n      \"funding_source_id\": null\r\n    }\r\n  ],\r\n
-        \ \"request_id\": \"d23f8916-f22c-4955-b727-070fa6f5dcdd\",\r\n  \"errors\":
+        \ \"request_id\": \"7e1300f7-8847-4c9e-830f-87e1d028ff7f\",\r\n  \"errors\":
         []\r\n}"
     headers:
       Branch-Name:
@@ -297,16 +297,16 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 20 May 2024 14:02:10 GMT
+      - Tue, 21 May 2024 14:45:42 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '165'
+      - '149'
       RateLimit-Reset:
-      - '50'
+      - '18'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -314,9 +314,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - d23f8916-f22c-4955-b727-070fa6f5dcdd
+      - 7e1300f7-8847-4c9e-830f-87e1d028ff7f
       x-shipengine-requestid:
-      - d23f8916-f22c-4955-b727-070fa6f5dcdd
+      - 7e1300f7-8847-4c9e-830f-87e1d028ff7f
     status:
       code: 200
       message: OK
@@ -333,7 +333,7 @@ interactions:
     body:
       string: "{\r\n  \"carrier_id\": \"se-2424643\",\r\n  \"carrier_code\": \"stamps_com\",\r\n
         \ \"account_number\": \"test_account_2424643\",\r\n  \"requires_funded_amount\":
-        true,\r\n  \"balance\": 8331.3400,\r\n  \"nickname\": \"ShipEngine Test Account
+        true,\r\n  \"balance\": 4072.1000,\r\n  \"nickname\": \"ShipEngine Test Account
         - Stamps.com\",\r\n  \"friendly_name\": \"Stamps.com\",\r\n  \"primary\":
         false,\r\n  \"has_multi_package_supporting_services\": false,\r\n  \"supports_label_messages\":
         true,\r\n  \"disabled_by_billing_plan\": false,\r\n  \"services\": [\r\n    {\r\n
@@ -456,16 +456,16 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 20 May 2024 14:02:11 GMT
+      - Tue, 21 May 2024 14:45:43 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '164'
+      - '148'
       RateLimit-Reset:
-      - '49'
+      - '17'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -473,9 +473,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 16306cc8-f7cc-4c00-bb0d-a5c0a76f35d2
+      - ca31a2b8-9a54-4cd7-af75-c3c122825b6e
       x-shipengine-requestid:
-      - 16306cc8-f7cc-4c00-bb0d-a5c0a76f35d2
+      - ca31a2b8-9a54-4cd7-af75-c3c122825b6e
     status:
       code: 200
       message: OK

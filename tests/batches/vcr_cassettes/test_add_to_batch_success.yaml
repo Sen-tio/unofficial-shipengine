@@ -17,8 +17,8 @@ interactions:
     uri: https://api.shipengine.com/v1/warehouses
   response:
     body:
-      string: "{\r\n  \"warehouse_id\": \"se-18990693\",\r\n  \"is_default\": false,\r\n
-        \ \"name\": \"Test Warehouse 123\",\r\n  \"created_at\": \"2024-05-20T14:11:05.737Z\",\r\n
+      string: "{\r\n  \"warehouse_id\": \"se-19011198\",\r\n  \"is_default\": false,\r\n
+        \ \"name\": \"Test Warehouse 123\",\r\n  \"created_at\": \"2024-05-21T14:59:16.187Z\",\r\n
         \ \"origin_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
         \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
         null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
@@ -43,7 +43,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 20 May 2024 14:11:05 GMT
+      - Tue, 21 May 2024 14:59:16 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
@@ -52,7 +52,7 @@ interactions:
       RateLimit-Remaining:
       - '193'
       RateLimit-Reset:
-      - '55'
+      - '44'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -60,9 +60,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 1a84f21e-8d4d-43d2-aa70-2b0c744ce645
+      - 811b2dac-9c35-405d-bcf1-680abdc99b07
       x-shipengine-requestid:
-      - 1a84f21e-8d4d-43d2-aa70-2b0c744ce645
+      - 811b2dac-9c35-405d-bcf1-680abdc99b07
     status:
       code: 200
       message: OK
@@ -74,17 +74,20 @@ interactions:
       "email": null, "company_name": null, "instructions": null, "geolocation": null,
       "country_code": "US", "address_residential_indicator": "unknown"}, "ship_date":
       null, "validate_address": "no_validation", "advanced_options": null, "confirmation":
-      "none", "tags": [], "is_return": false, "customs": null, "warehouse_id": "se-18990693",
+      "none", "tags": [], "is_return": false, "customs": null, "warehouse_id": "se-19011198",
       "ship_from": null, "return_to": null, "items": [], "external_order_id": null,
       "tax_identifiers": null, "external_shipment_id": null, "shipment_number": null,
       "insurance_provider": "none", "order_source_code": null, "packages": [{"weight":
       {"value": 1, "unit": "ounce"}, "package_code": null, "dimensions": null, "content_description":
       null, "package_id": null, "insured_value": null, "label_messages": null, "products":
       null, "external_package_id": null, "shipment_package_id": null, "package_name":
+      null, "tracking_number": null, "qr_code_download": null, "paperless_download":
+      null, "sequence": null, "alternative_identifiers": null, "has_label_documents":
+      null, "has_form_documents": null, "has_qr_code_documents": null, "has_paperless_label_documents":
       null}], "comparison_rate_type": null}]}'
     headers:
       Content-Length:
-      - '1191'
+      - '1448'
       Content-Type:
       - application/json
       Host:
@@ -94,11 +97,11 @@ interactions:
   response:
     body:
       string: "{\r\n  \"has_errors\": false,\r\n  \"shipments\": [\r\n    {\r\n      \"errors\":
-        [],\r\n      \"address_validation\": null,\r\n      \"shipment_id\": \"se-1380799681\",\r\n
+        [],\r\n      \"address_validation\": null,\r\n      \"shipment_id\": \"se-1382711151\",\r\n
         \     \"carrier_id\": \"se-2424643\",\r\n      \"service_code\": \"usps_ground_advantage\",\r\n
         \     \"external_shipment_id\": null,\r\n      \"shipment_number\": null,\r\n
-        \     \"ship_date\": \"2024-05-20T00:00:00Z\",\r\n      \"created_at\": \"2024-05-20T14:11:06.4298417Z\",\r\n
-        \     \"modified_at\": \"2024-05-20T14:11:06.4141313Z\",\r\n      \"shipment_status\":
+        \     \"ship_date\": \"2024-05-21T00:00:00Z\",\r\n      \"created_at\": \"2024-05-21T14:59:16.5897683Z\",\r\n
+        \     \"modified_at\": \"2024-05-21T14:59:16.5741368Z\",\r\n      \"shipment_status\":
         \"pending\",\r\n      \"ship_to\": {\r\n        \"geolocation\": null,\r\n
         \       \"instructions\": \"\",\r\n        \"name\": \"Electronic Output Solutions\",\r\n
         \       \"phone\": \"555-555-5555\",\r\n        \"email\": null,\r\n        \"company_name\":
@@ -113,7 +116,7 @@ interactions:
         null,\r\n        \"address_line3\": null,\r\n        \"city_locality\": \"Vista\",\r\n
         \       \"state_province\": \"CA\",\r\n        \"postal_code\": \"92081\",\r\n
         \       \"country_code\": \"US\",\r\n        \"address_residential_indicator\":
-        \"unknown\"\r\n      },\r\n      \"warehouse_id\": \"se-18990693\",\r\n      \"return_to\":
+        \"unknown\"\r\n      },\r\n      \"warehouse_id\": \"se-19011198\",\r\n      \"return_to\":
         {\r\n        \"instructions\": null,\r\n        \"name\": \"Electronic Output
         Solutions\",\r\n        \"phone\": \"555-555-5555\",\r\n        \"email\":
         null,\r\n        \"company_name\": null,\r\n        \"address_line1\": \"2510
@@ -137,7 +140,7 @@ interactions:
         false,\r\n        \"event_notification\": false\r\n      },\r\n      \"comparison_rate_type\":
         null,\r\n      \"shipping_rule_id\": null,\r\n      \"insurance_provider\":
         \"none\",\r\n      \"tags\": [],\r\n      \"packages\": [\r\n        {\r\n
-        \         \"shipment_package_id\": \"se-1562306009\",\r\n          \"package_id\":
+        \         \"shipment_package_id\": \"se-1564313037\",\r\n          \"package_id\":
         \"se-3\",\r\n          \"package_code\": \"package\",\r\n          \"package_name\":
         \"Package\",\r\n          \"weight\": {\r\n            \"value\": 1.0,\r\n
         \           \"unit\": \"ounce\"\r\n          },\r\n          \"dimensions\":
@@ -162,7 +165,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 20 May 2024 14:11:06 GMT
+      - Tue, 21 May 2024 14:59:16 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
@@ -171,7 +174,7 @@ interactions:
       RateLimit-Remaining:
       - '192'
       RateLimit-Reset:
-      - '54'
+      - '44'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -179,14 +182,14 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 38a3dcd4-1caa-47b3-96de-48af7f04f4c6
+      - 64a4018b-96cd-4ee6-86cc-12478122195b
       x-shipengine-requestid:
-      - 38a3dcd4-1caa-47b3-96de-48af7f04f4c6
+      - 64a4018b-96cd-4ee6-86cc-12478122195b
     status:
       code: 200
       message: OK
 - request:
-    body: '{"shipment_ids": ["se-1380799681"], "rate_ids": null, "external_batch_id":
+    body: '{"shipment_ids": ["se-1382711151"], "rate_ids": null, "external_batch_id":
       null, "batch_notes": null, "process_labels": null}'
     headers:
       Content-Length:
@@ -200,17 +203,17 @@ interactions:
   response:
     body:
       string: "{\r\n  \"label_layout\": null,\r\n  \"label_format\": \"pdf\",\r\n
-        \ \"batch_id\": \"se-1942048\",\r\n  \"external_batch_id\": null,\r\n  \"batch_number\":
-        \"100040\",\r\n  \"batch_notes\": null,\r\n  \"created_at\": \"2024-05-20T14:11:06.597Z\",\r\n
+        \ \"batch_id\": \"se-1942847\",\r\n  \"external_batch_id\": null,\r\n  \"batch_number\":
+        \"100058\",\r\n  \"batch_notes\": null,\r\n  \"created_at\": \"2024-05-21T14:59:16.987Z\",\r\n
         \ \"processed_at\": null,\r\n  \"errors\": 0,\r\n  \"process_errors\": null,\r\n
         \ \"warnings\": 0,\r\n  \"completed\": 0,\r\n  \"forms\": 0,\r\n  \"count\":
-        1,\r\n  \"batch_shipments_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/shipments?batch_id=se-1942048\"\r\n
-        \ },\r\n  \"batch_labels_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/labels?batch_id=se-1942048\"\r\n
-        \ },\r\n  \"batch_errors_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/batches/se-1942048/errors\"\r\n
-        \ },\r\n  \"label_download\": {\r\n    \"pdf\": \"https://api.shipengine.com/v1/downloads/10/mU-S9PNwdUqBeX5nBWNqrg/label-1942048.pdf\",\r\n
-        \   \"zpl\": \"https://api.shipengine.com/v1/downloads/10/mU-S9PNwdUqBeX5nBWNqrg/label-1942048.zpl\",\r\n
-        \   \"href\": \"https://api.shipengine.com/v1/downloads/10/mU-S9PNwdUqBeX5nBWNqrg/label-1942048.pdf\"\r\n
-        \ },\r\n  \"form_download\": {\r\n    \"href\": \"https://api.shipengine.com/v1/downloads/10/F11ynnOdI0OAk8L0ybMZcg/form-1942048.pdf\"\r\n
+        1,\r\n  \"batch_shipments_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/shipments?batch_id=se-1942847\"\r\n
+        \ },\r\n  \"batch_labels_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/labels?batch_id=se-1942847\"\r\n
+        \ },\r\n  \"batch_errors_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/batches/se-1942847/errors\"\r\n
+        \ },\r\n  \"label_download\": {\r\n    \"pdf\": \"https://api.shipengine.com/v1/downloads/10/EPmEBq2uYUasHpKRPOd-Vg/label-1942847.pdf\",\r\n
+        \   \"zpl\": \"https://api.shipengine.com/v1/downloads/10/EPmEBq2uYUasHpKRPOd-Vg/label-1942847.zpl\",\r\n
+        \   \"href\": \"https://api.shipengine.com/v1/downloads/10/EPmEBq2uYUasHpKRPOd-Vg/label-1942847.pdf\"\r\n
+        \ },\r\n  \"form_download\": {\r\n    \"href\": \"https://api.shipengine.com/v1/downloads/10/wr8GmGWA7EyxRCH6I6LyTg/form-1942847.pdf\"\r\n
         \ },\r\n  \"status\": \"open\"\r\n}"
     headers:
       Branch-Name:
@@ -224,7 +227,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 20 May 2024 14:11:06 GMT
+      - Tue, 21 May 2024 14:59:17 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
@@ -233,7 +236,7 @@ interactions:
       RateLimit-Remaining:
       - '191'
       RateLimit-Reset:
-      - '54'
+      - '44'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -241,9 +244,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - ff2f3e1a-ca73-42c0-b42c-b3503f7041a1
+      - 4e555e47-cba4-4e40-938b-81eb1735436a
       x-shipengine-requestid:
-      - ff2f3e1a-ca73-42c0-b42c-b3503f7041a1
+      - 4e555e47-cba4-4e40-938b-81eb1735436a
     status:
       code: 200
       message: OK
@@ -255,17 +258,20 @@ interactions:
       "email": null, "company_name": null, "instructions": null, "geolocation": null,
       "country_code": "US", "address_residential_indicator": "unknown"}, "ship_date":
       null, "validate_address": "no_validation", "advanced_options": null, "confirmation":
-      "none", "tags": [], "is_return": false, "customs": null, "warehouse_id": "se-18990693",
+      "none", "tags": [], "is_return": false, "customs": null, "warehouse_id": "se-19011198",
       "ship_from": null, "return_to": null, "items": [], "external_order_id": null,
       "tax_identifiers": null, "external_shipment_id": null, "shipment_number": null,
       "insurance_provider": "none", "order_source_code": null, "packages": [{"weight":
       {"value": 1, "unit": "ounce"}, "package_code": null, "dimensions": null, "content_description":
       null, "package_id": null, "insured_value": null, "label_messages": null, "products":
       null, "external_package_id": null, "shipment_package_id": null, "package_name":
+      null, "tracking_number": null, "qr_code_download": null, "paperless_download":
+      null, "sequence": null, "alternative_identifiers": null, "has_label_documents":
+      null, "has_form_documents": null, "has_qr_code_documents": null, "has_paperless_label_documents":
       null}], "comparison_rate_type": null}]}'
     headers:
       Content-Length:
-      - '1191'
+      - '1448'
       Content-Type:
       - application/json
       Host:
@@ -275,11 +281,11 @@ interactions:
   response:
     body:
       string: "{\r\n  \"has_errors\": false,\r\n  \"shipments\": [\r\n    {\r\n      \"errors\":
-        [],\r\n      \"address_validation\": null,\r\n      \"shipment_id\": \"se-1380799696\",\r\n
+        [],\r\n      \"address_validation\": null,\r\n      \"shipment_id\": \"se-1382711178\",\r\n
         \     \"carrier_id\": \"se-2424643\",\r\n      \"service_code\": \"usps_ground_advantage\",\r\n
         \     \"external_shipment_id\": null,\r\n      \"shipment_number\": null,\r\n
-        \     \"ship_date\": \"2024-05-20T00:00:00Z\",\r\n      \"created_at\": \"2024-05-20T14:11:06.7522723Z\",\r\n
-        \     \"modified_at\": \"2024-05-20T14:11:06.7360238Z\",\r\n      \"shipment_status\":
+        \     \"ship_date\": \"2024-05-21T00:00:00Z\",\r\n      \"created_at\": \"2024-05-21T14:59:17.3703623Z\",\r\n
+        \     \"modified_at\": \"2024-05-21T14:59:17.3541361Z\",\r\n      \"shipment_status\":
         \"pending\",\r\n      \"ship_to\": {\r\n        \"geolocation\": null,\r\n
         \       \"instructions\": \"\",\r\n        \"name\": \"Electronic Output Solutions\",\r\n
         \       \"phone\": \"555-555-5555\",\r\n        \"email\": null,\r\n        \"company_name\":
@@ -294,7 +300,7 @@ interactions:
         null,\r\n        \"address_line3\": null,\r\n        \"city_locality\": \"Vista\",\r\n
         \       \"state_province\": \"CA\",\r\n        \"postal_code\": \"92081\",\r\n
         \       \"country_code\": \"US\",\r\n        \"address_residential_indicator\":
-        \"unknown\"\r\n      },\r\n      \"warehouse_id\": \"se-18990693\",\r\n      \"return_to\":
+        \"unknown\"\r\n      },\r\n      \"warehouse_id\": \"se-19011198\",\r\n      \"return_to\":
         {\r\n        \"instructions\": null,\r\n        \"name\": \"Electronic Output
         Solutions\",\r\n        \"phone\": \"555-555-5555\",\r\n        \"email\":
         null,\r\n        \"company_name\": null,\r\n        \"address_line1\": \"2510
@@ -318,7 +324,7 @@ interactions:
         false,\r\n        \"event_notification\": false\r\n      },\r\n      \"comparison_rate_type\":
         null,\r\n      \"shipping_rule_id\": null,\r\n      \"insurance_provider\":
         \"none\",\r\n      \"tags\": [],\r\n      \"packages\": [\r\n        {\r\n
-        \         \"shipment_package_id\": \"se-1562306024\",\r\n          \"package_id\":
+        \         \"shipment_package_id\": \"se-1564313064\",\r\n          \"package_id\":
         \"se-3\",\r\n          \"package_code\": \"package\",\r\n          \"package_name\":
         \"Package\",\r\n          \"weight\": {\r\n            \"value\": 1.0,\r\n
         \           \"unit\": \"ounce\"\r\n          },\r\n          \"dimensions\":
@@ -343,7 +349,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 20 May 2024 14:11:06 GMT
+      - Tue, 21 May 2024 14:59:17 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
@@ -352,7 +358,7 @@ interactions:
       RateLimit-Remaining:
       - '190'
       RateLimit-Reset:
-      - '54'
+      - '43'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -360,14 +366,14 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 73151ef5-6018-4b18-a948-9cf873097b04
+      - 09bb1f5e-b2e3-447f-abed-27901004cb3a
       x-shipengine-requestid:
-      - 73151ef5-6018-4b18-a948-9cf873097b04
+      - 09bb1f5e-b2e3-447f-abed-27901004cb3a
     status:
       code: 200
       message: OK
 - request:
-    body: '{"shipment_ids": ["se-1380799696"], "rate_ids": null}'
+    body: '{"shipment_ids": ["se-1382711178"], "rate_ids": null}'
     headers:
       Content-Length:
       - '53'
@@ -376,7 +382,7 @@ interactions:
       Host:
       - api.shipengine.com
     method: POST
-    uri: https://api.shipengine.com/v1/batches/se-1942048/add
+    uri: https://api.shipengine.com/v1/batches/se-1942847/add
   response:
     body:
       string: ''
@@ -388,7 +394,7 @@ interactions:
       Content-Security-Policy:
       - default-src 'none'; frame-ancestors 'none'
       Date:
-      - Mon, 20 May 2024 14:11:06 GMT
+      - Tue, 21 May 2024 14:59:17 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
@@ -397,7 +403,7 @@ interactions:
       RateLimit-Remaining:
       - '189'
       RateLimit-Reset:
-      - '54'
+      - '43'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -405,9 +411,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - 639e6a15-fd48-4201-b01b-40e10e24d15c
+      - 562d9389-6864-4b71-bdf6-c50079c00171
       x-shipengine-requestid:
-      - 639e6a15-fd48-4201-b01b-40e10e24d15c
+      - 562d9389-6864-4b71-bdf6-c50079c00171
     status:
       code: 204
       message: No Content
@@ -419,21 +425,21 @@ interactions:
       Host:
       - api.shipengine.com
     method: GET
-    uri: https://api.shipengine.com/v1/batches/se-1942048
+    uri: https://api.shipengine.com/v1/batches/se-1942847
   response:
     body:
       string: "{\r\n  \"label_layout\": null,\r\n  \"label_format\": \"pdf\",\r\n
-        \ \"batch_id\": \"se-1942048\",\r\n  \"external_batch_id\": null,\r\n  \"batch_number\":
-        \"100040\",\r\n  \"batch_notes\": null,\r\n  \"created_at\": \"2024-05-20T14:11:06.597Z\",\r\n
+        \ \"batch_id\": \"se-1942847\",\r\n  \"external_batch_id\": null,\r\n  \"batch_number\":
+        \"100058\",\r\n  \"batch_notes\": null,\r\n  \"created_at\": \"2024-05-21T14:59:16.987Z\",\r\n
         \ \"processed_at\": null,\r\n  \"errors\": 0,\r\n  \"process_errors\": null,\r\n
         \ \"warnings\": 0,\r\n  \"completed\": 0,\r\n  \"forms\": 0,\r\n  \"count\":
-        2,\r\n  \"batch_shipments_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/shipments?batch_id=se-1942048\"\r\n
-        \ },\r\n  \"batch_labels_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/labels?batch_id=se-1942048\"\r\n
-        \ },\r\n  \"batch_errors_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/batches/se-1942048/errors\"\r\n
-        \ },\r\n  \"label_download\": {\r\n    \"pdf\": \"https://api.shipengine.com/v1/downloads/10/mU-S9PNwdUqBeX5nBWNqrg/label-1942048.pdf\",\r\n
-        \   \"zpl\": \"https://api.shipengine.com/v1/downloads/10/mU-S9PNwdUqBeX5nBWNqrg/label-1942048.zpl\",\r\n
-        \   \"href\": \"https://api.shipengine.com/v1/downloads/10/mU-S9PNwdUqBeX5nBWNqrg/label-1942048.pdf\"\r\n
-        \ },\r\n  \"form_download\": {\r\n    \"href\": \"https://api.shipengine.com/v1/downloads/10/F11ynnOdI0OAk8L0ybMZcg/form-1942048.pdf\"\r\n
+        2,\r\n  \"batch_shipments_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/shipments?batch_id=se-1942847\"\r\n
+        \ },\r\n  \"batch_labels_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/labels?batch_id=se-1942847\"\r\n
+        \ },\r\n  \"batch_errors_url\": {\r\n    \"href\": \"https://api.shipengine.com/v1/batches/se-1942847/errors\"\r\n
+        \ },\r\n  \"label_download\": {\r\n    \"pdf\": \"https://api.shipengine.com/v1/downloads/10/EPmEBq2uYUasHpKRPOd-Vg/label-1942847.pdf\",\r\n
+        \   \"zpl\": \"https://api.shipengine.com/v1/downloads/10/EPmEBq2uYUasHpKRPOd-Vg/label-1942847.zpl\",\r\n
+        \   \"href\": \"https://api.shipengine.com/v1/downloads/10/EPmEBq2uYUasHpKRPOd-Vg/label-1942847.pdf\"\r\n
+        \ },\r\n  \"form_download\": {\r\n    \"href\": \"https://api.shipengine.com/v1/downloads/10/wr8GmGWA7EyxRCH6I6LyTg/form-1942847.pdf\"\r\n
         \ },\r\n  \"status\": \"open\"\r\n}"
     headers:
       Branch-Name:
@@ -447,7 +453,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 20 May 2024 14:11:07 GMT
+      - Tue, 21 May 2024 14:59:18 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
@@ -456,7 +462,7 @@ interactions:
       RateLimit-Remaining:
       - '188'
       RateLimit-Reset:
-      - '53'
+      - '42'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -464,9 +470,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - cbd59b1d-3efb-44a5-a440-4924740c6d15
+      - 8a8d8eac-8351-4e37-9411-e38aa88451ea
       x-shipengine-requestid:
-      - cbd59b1d-3efb-44a5-a440-4924740c6d15
+      - 8a8d8eac-8351-4e37-9411-e38aa88451ea
     status:
       code: 200
       message: OK
@@ -480,7 +486,7 @@ interactions:
       Host:
       - api.shipengine.com
     method: DELETE
-    uri: https://api.shipengine.com/v1/warehouses/se-18990693
+    uri: https://api.shipengine.com/v1/warehouses/se-19011198
   response:
     body:
       string: ''
@@ -492,7 +498,7 @@ interactions:
       Content-Security-Policy:
       - default-src 'none'; frame-ancestors 'none'
       Date:
-      - Mon, 20 May 2024 14:11:07 GMT
+      - Tue, 21 May 2024 14:59:18 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
@@ -501,7 +507,7 @@ interactions:
       RateLimit-Remaining:
       - '187'
       RateLimit-Reset:
-      - '53'
+      - '42'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -509,9 +515,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - da5a0e2a-157a-44ba-920e-dd16247e468d
+      - 524f5b2e-f8d6-4d29-bed6-f63837e43e7d
       x-shipengine-requestid:
-      - da5a0e2a-157a-44ba-920e-dd16247e468d
+      - 524f5b2e-f8d6-4d29-bed6-f63837e43e7d
     status:
       code: 204
       message: No Content

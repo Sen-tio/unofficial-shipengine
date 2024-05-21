@@ -39,3 +39,17 @@ class WarehouseService:
             raise ShipEngineAPIError(
                 request_id=response_dict["request_id"], errors=response_dict["errors"]
             )
+
+    def get_by_id(self, warehouse_id: str) -> Warehouse:
+        url = f"https://api.shipengine.com/v1/warehouses/{warehouse_id}"
+        response = self.session.get(url)
+        response_dict = json.loads(response.text)
+
+        if response.status_code != 200:
+            raise ShipEngineAPIError(
+                request_id=response_dict["request_id"], errors=response_dict["errors"]
+            )
+
+        warehouse: Warehouse = Warehouse.from_dict(response_dict)
+
+        return warehouse

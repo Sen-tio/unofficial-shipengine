@@ -12,7 +12,7 @@ interactions:
     uri: https://api.shipengine.com/v1/batches/bad-batch-id
   response:
     body:
-      string: "{\r\n  \"request_id\": \"cf97acb9-66d5-4fa4-b78b-f6972009d906\",\r\n
+      string: "{\r\n  \"request_id\": \"e2ff11b4-8a86-4058-8e13-5f7b2d1984c4\",\r\n
         \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
         \"business_rules\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
         \"id parameter is in the wrong format\",\r\n      \"field_name\": null,\r\n
@@ -29,16 +29,16 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 20 May 2024 14:11:18 GMT
+      - Tue, 21 May 2024 14:59:26 GMT
       Permissions-Policy:
       - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
         microphone=(), payment=(), usb=(), interest-cohort=()
       RateLimit-Limit:
       - '200'
       RateLimit-Remaining:
-      - '159'
+      - '164'
       RateLimit-Reset:
-      - '42'
+      - '34'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -46,9 +46,9 @@ interactions:
       X-Robots-Tag:
       - noindex
       request-id:
-      - cf97acb9-66d5-4fa4-b78b-f6972009d906
+      - e2ff11b4-8a86-4058-8e13-5f7b2d1984c4
       x-shipengine-requestid:
-      - cf97acb9-66d5-4fa4-b78b-f6972009d906
+      - e2ff11b4-8a86-4058-8e13-5f7b2d1984c4
     status:
       code: 400
       message: Bad Request
