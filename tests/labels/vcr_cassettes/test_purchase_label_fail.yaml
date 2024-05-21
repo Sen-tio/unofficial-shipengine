@@ -1,0 +1,171 @@
+interactions:
+- request:
+    body: '{"name": "Test Warehouse 123", "origin_address": {"name": "Electronic Output
+      Solutions", "phone": "555-555-5555", "address_line1": "2510 Commerce Way", "city_locality":
+      "Vista", "state_province": "CA", "postal_code": "92081", "address_line2": null,
+      "address_line3": null, "email": null, "company_name": null, "instructions":
+      null, "geolocation": null, "country_code": "US", "address_residential_indicator":
+      "unknown"}, "return_address": null, "is_default": null}'
+    headers:
+      Content-Length:
+      - '462'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: POST
+    uri: https://api.shipengine.com/v1/warehouses
+  response:
+    body:
+      string: "{\r\n  \"warehouse_id\": \"se-29888\",\r\n  \"is_default\": false,\r\n
+        \ \"name\": \"Test Warehouse 123\",\r\n  \"created_at\": \"2024-05-21T04:14:26.497Z\",\r\n
+        \ \"origin_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
+        \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
+        null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
+        null,\r\n    \"address_line3\": null,\r\n    \"city_locality\": \"Vista\",\r\n
+        \   \"state_province\": \"CA\",\r\n    \"postal_code\": \"92081\",\r\n    \"country_code\":
+        \"US\",\r\n    \"address_residential_indicator\": \"unknown\"\r\n  },\r\n
+        \ \"return_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
+        \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
+        null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
+        null,\r\n    \"address_line3\": null,\r\n    \"city_locality\": \"Vista\",\r\n
+        \   \"state_province\": \"CA\",\r\n    \"postal_code\": \"92081\",\r\n    \"country_code\":
+        \"US\",\r\n    \"address_residential_indicator\": \"unknown\"\r\n  }\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '962'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 21 May 2024 04:14:26 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '196'
+      RateLimit-Reset:
+      - '34'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - 6d027f3a-9788-4a8d-b7e0-30cf8c614b16
+      x-shipengine-requestid:
+      - 6d027f3a-9788-4a8d-b7e0-30cf8c614b16
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"shipment": "bad-shipment-data", "label_image_id": null, "label_layout":
+      "4x6", "display_scheme": "label", "label_format": "pdf", "label_download_type":
+      "url", "validate_address": "no_validation", "outbound_label_id": null, "charge_event":
+      "carrier_default", "is_return_label": null, "rma_number": null, "ship_to_service_point_id":
+      null, "ship_form_service_point_id": null}'
+    headers:
+      Content-Length:
+      - '374'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: POST
+    uri: https://api.shipengine.com/v1/labels
+  response:
+    body:
+      string: "{\r\n  \"request_id\": \"4d09d480-d40d-400e-aa69-28946b33b9e2\",\r\n
+        \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
+        \"system\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
+        \"request.shipment: Could not cast or convert from System.String to ShipEngine.Api.Models.Shipments.Shipment.\"\r\n
+        \   }\r\n  ]\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '327'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 21 May 2024 04:14:27 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '195'
+      RateLimit-Reset:
+      - '33'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - 4d09d480-d40d-400e-aa69-28946b33b9e2
+      x-shipengine-requestid:
+      - 4d09d480-d40d-400e-aa69-28946b33b9e2
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: DELETE
+    uri: https://api.shipengine.com/v1/warehouses/se-29888
+  response:
+    body:
+      string: ''
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Date:
+      - Tue, 21 May 2024 04:14:28 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '194'
+      RateLimit-Reset:
+      - '32'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - 200f1476-5d8d-4702-ba7d-f92951924f82
+      x-shipengine-requestid:
+      - 200f1476-5d8d-4702-ba7d-f92951924f82
+    status:
+      code: 204
+      message: No Content
+version: 1

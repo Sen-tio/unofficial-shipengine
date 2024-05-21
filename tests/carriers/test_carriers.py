@@ -1,12 +1,10 @@
 from pathlib import Path
 
 import pytest
-from dotenv import load_dotenv
 
 from unofficial_shipengine.carriers.models import Carrier
 from unofficial_shipengine.core.exceptions import ShipEngineAPIError
 
-load_dotenv()
 
 BASE_DIR: Path = Path(__file__).parent
 

@@ -5,17 +5,11 @@ from attrs import define, field, validators
 
 from .enums import LabelLayout, LabelFormat
 from ..common.models import URL, LabelDownload, Error
+from ..labels.enums import DisplayScheme
 
 
 @define
 class ProcessLabels:
-    class DisplayScheme(Enum):
-        LABEL: str = "label"
-        QR_CODE: str = "qr_code"
-        LABEL_AND_QR_CODE: str = "label_and_qr_code"
-        PAPERLESS: str = "paperless"
-        LABEL_AND_PAPERLESS: str = "label_and_paperless"
-
     create_batch_and_process_labels: bool = field(default=True)
     ship_date: str = field(default=None)
 

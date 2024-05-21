@@ -4,6 +4,7 @@ from .batches.services import BatchService
 from .carriers.services import CarrierService
 from .shipments.services import ShipmentService
 from .warehouses.services import WarehouseService
+from .labels.services import LabelService
 
 
 class UnofficialShipEngine:
@@ -19,6 +20,7 @@ class UnofficialShipEngine:
         self.carriers = CarrierService(self.session)
         self.batches = BatchService(self.session)
         self.warehouses = WarehouseService(self.session)
+        self.labels = LabelService(self.session)
 
         # TODO: setup retry strategy
         #   create proper fixtures for tests

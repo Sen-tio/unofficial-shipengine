@@ -123,6 +123,17 @@ class Package:
     shipment_package_id: Optional[str] = field(default=None)
     package_name: Optional[str] = field(default=None)
 
+    # TODO: these are unique to LabelPackage, perhaps create a class under labels and subclass Package
+    tracking_number: Optional[str] = field(default=None)
+    qr_code_download: Optional[str] = field(default=None)
+    paperless_download: str = field(default=None)
+    sequence: Optional[str] = field(default=None)
+    alternative_identifiers: Optional[list[str]] = field(default=None)
+    has_label_documents: bool = field(default=None)
+    has_form_documents: bool = field(default=None)
+    has_qr_code_documents: bool = field(default=None)
+    has_paperless_label_documents: bool = field(default=None)
+
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Self:
         weight = Weight(**data.pop("weight"))

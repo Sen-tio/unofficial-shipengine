@@ -24,3 +24,8 @@ class DisplayScheme(Enum):
     LABEL_AND_QR_CODE: str = "label_and_qr_code"
     PAPERLESS: str = "paperless"
     LABEL_AND_PAPERLESS: str = "label_and_paperless"
+
+
+class LabelDownloadType(Enum):
+    URL: str = "url"
+    INLINE: str = "inline"
