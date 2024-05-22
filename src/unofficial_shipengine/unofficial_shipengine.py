@@ -1,10 +1,10 @@
 import requests
 
-from .batches.services import BatchService
-from .carriers.services import CarrierService
-from .shipments.services import ShipmentService
-from .warehouses.services import WarehouseService
-from .labels.services import LabelService
+from .core.batches.services import BatchService
+from .core.carriers.services import CarrierService
+from .core.shipments.services import ShipmentService
+from .core.warehouses.services import WarehouseService
+from .core.labels.services import LabelService
 
 
 class UnofficialShipEngine:

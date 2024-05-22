@@ -5,8 +5,8 @@ import requests
 from attrs import asdict
 
 from .models import ShipmentRequest, Shipment
-from ..core.exceptions import ShipEngineAPIError
-from ..utils.serialize import serializer
+from unofficial_shipengine.exceptions import ShipEngineAPIError
+from unofficial_shipengine.utils.serialize import serializer
 
 
 class ShipmentService:

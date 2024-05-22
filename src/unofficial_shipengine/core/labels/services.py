@@ -4,9 +4,9 @@ import requests
 from typing import Union
 from attrs import asdict
 
-from ..core.exceptions import ShipEngineAPIError
-from .models import Label, LabelRequest, ReturnLabelRequest
-from ..utils.serialize import serializer
+from unofficial_shipengine.exceptions import ShipEngineAPIError
+from .models import Label, LabelRequest, ReturnLabelRequest, TrackingInformation
+from unofficial_shipengine.utils.serialize import serializer
 
 
 class LabelService:
@@ -65,3 +65,22 @@ class LabelService:
         label: Label = Label.from_dict(response_dict)
 
         return label
+
+    def get_label_tracking_info(self, label: Union[Label, str]) -> TrackingInformation:
+        if isinstance(label, Label):
+            label = label.label_id
+
+        url = f"https://api.shipengine.com/v1/labels/{label}/track"
+        response = self.session.get(url)
+        response_dict = response.json()
+
+        if response.status_code != 200:
+            raise ShipEngineAPIError(
+                request_id=response_dict["request_id"], errors=response_dict["errors"]
+            )
+
+        tracking_information: TrackingInformation = TrackingInformation.from_dict(
+            response_dict
+        )
+
+        return tracking_information

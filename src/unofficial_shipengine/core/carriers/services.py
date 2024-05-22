@@ -4,7 +4,7 @@ from typing import Union
 import requests
 
 from .models import Carrier, CarrierBalance
-from ..core.exceptions import ShipEngineAPIError
+from unofficial_shipengine.exceptions import ShipEngineAPIError
 
 
 class CarrierService:

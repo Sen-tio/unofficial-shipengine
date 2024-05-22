@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from unofficial_shipengine.warehouses.models import Warehouse
-from unofficial_shipengine.core.exceptions import ShipEngineAPIError
+from unofficial_shipengine.core.warehouses.models import Warehouse
+from unofficial_shipengine.exceptions import ShipEngineAPIError
 
 BASE_DIR = Path(__file__).parent
 

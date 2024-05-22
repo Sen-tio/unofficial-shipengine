@@ -2,10 +2,10 @@ import pytest
 from pathlib import Path
 from dotenv import load_dotenv
 
-from unofficial_shipengine.common.models import Address, Package, Weight
-from unofficial_shipengine.core.exceptions import ShipEngineAPIError
+from unofficial_shipengine.core.common.models import Address, Package, Weight
+from unofficial_shipengine.exceptions import ShipEngineAPIError
 
-from unofficial_shipengine.shipments.models import (
+from unofficial_shipengine.core.shipments.models import (
     Shipment,
     AdvancedOptions,
 )

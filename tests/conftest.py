@@ -6,11 +6,11 @@ from typing import Generator
 from dotenv import load_dotenv
 from pathlib import Path
 
-from unofficial_shipengine.labels.models import LabelRequest, ReturnLabelRequest
-from unofficial_shipengine.shipments.models import ShipmentRequest
+from unofficial_shipengine.core.labels.models import LabelRequest, ReturnLabelRequest
+from unofficial_shipengine.core.shipments.models import ShipmentRequest
 from unofficial_shipengine.unofficial_shipengine import UnofficialShipEngine
-from unofficial_shipengine.common.models import Address, Package, Weight
-from unofficial_shipengine.warehouses.models import WarehouseRequest, Warehouse
+from unofficial_shipengine.core.common.models import Address, Package, Weight
+from unofficial_shipengine.core.warehouses.models import WarehouseRequest, Warehouse
 
 load_dotenv()
 

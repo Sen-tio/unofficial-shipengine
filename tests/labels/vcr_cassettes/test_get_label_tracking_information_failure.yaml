@@ -1,0 +1,165 @@
+interactions:
+- request:
+    body: '{"name": "Test Warehouse 123", "origin_address": {"name": "Electronic Output
+      Solutions", "phone": "555-555-5555", "address_line1": "2510 Commerce Way", "city_locality":
+      "Vista", "state_province": "CA", "postal_code": "92081", "address_line2": null,
+      "address_line3": null, "email": null, "company_name": null, "instructions":
+      null, "geolocation": null, "country_code": "US", "address_residential_indicator":
+      "unknown"}, "return_address": null, "is_default": null}'
+    headers:
+      Content-Length:
+      - '462'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: POST
+    uri: https://api.shipengine.com/v1/warehouses
+  response:
+    body:
+      string: "{\r\n  \"warehouse_id\": \"se-31211\",\r\n  \"is_default\": false,\r\n
+        \ \"name\": \"Test Warehouse 123\",\r\n  \"created_at\": \"2024-05-22T02:49:36.343Z\",\r\n
+        \ \"origin_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
+        \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
+        null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
+        null,\r\n    \"address_line3\": null,\r\n    \"city_locality\": \"Vista\",\r\n
+        \   \"state_province\": \"CA\",\r\n    \"postal_code\": \"92081\",\r\n    \"country_code\":
+        \"US\",\r\n    \"address_residential_indicator\": \"unknown\"\r\n  },\r\n
+        \ \"return_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
+        \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
+        null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
+        null,\r\n    \"address_line3\": null,\r\n    \"city_locality\": \"Vista\",\r\n
+        \   \"state_province\": \"CA\",\r\n    \"postal_code\": \"92081\",\r\n    \"country_code\":
+        \"US\",\r\n    \"address_residential_indicator\": \"unknown\"\r\n  }\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '962'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 22 May 2024 02:49:36 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '195'
+      RateLimit-Reset:
+      - '24'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - 318fbb2b-c581-46fe-8247-a99b53595cf8
+      x-shipengine-requestid:
+      - 318fbb2b-c581-46fe-8247-a99b53595cf8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: GET
+    uri: https://api.shipengine.com/v1/labels/bad-label-id/track
+  response:
+    body:
+      string: "{\r\n  \"request_id\": \"52c54c9b-e614-43bb-a688-afdcb4b70c6b\",\r\n
+        \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
+        \"business_rules\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
+        \"id parameter is in the wrong format\",\r\n      \"field_name\": null,\r\n
+        \     \"field_value\": \"bad-label-id\"\r\n    }\r\n  ]\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '328'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 22 May 2024 02:49:37 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '194'
+      RateLimit-Reset:
+      - '23'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - 52c54c9b-e614-43bb-a688-afdcb4b70c6b
+      x-shipengine-requestid:
+      - 52c54c9b-e614-43bb-a688-afdcb4b70c6b
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: DELETE
+    uri: https://api.shipengine.com/v1/warehouses/se-31211
+  response:
+    body:
+      string: ''
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Date:
+      - Wed, 22 May 2024 02:49:37 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '193'
+      RateLimit-Reset:
+      - '23'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - 1e2147ae-4078-4743-99a8-54f53fc92adc
+      x-shipengine-requestid:
+      - 1e2147ae-4078-4743-99a8-54f53fc92adc
+    status:
+      code: 204
+      message: No Content
+version: 1

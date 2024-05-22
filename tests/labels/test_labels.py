@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from unofficial_shipengine.labels.models import Label
-from unofficial_shipengine.core.exceptions import ShipEngineAPIError
+from unofficial_shipengine.core.labels.models import Label, TrackingInformation
+from unofficial_shipengine.exceptions import ShipEngineAPIError
 
 BASE_DIR = Path(__file__).parent
 
@@ -57,3 +57,17 @@ def test_get_by_id_success(client, label_request) -> None:
 def test_get_by_id_fail(client) -> None:
     with pytest.raises(ShipEngineAPIError):
         client.labels.get_by_id("bad-label-id")
+
+
+@pytest.mark.vcr
+def test_get_label_tracking_information_success(client, label_request) -> None:
+    label = client.labels.purchase_label(label_request)
+    label_tracking_information = client.labels.get_label_tracking_info(label)
+
+    assert isinstance(label_tracking_information, TrackingInformation)
+
+
+@pytest.mark.vcr
+def test_get_label_tracking_information_failure(client, label_request) -> None:
+    with pytest.raises(ShipEngineAPIError):
+        client.labels.get_label_tracking_info("bad-label-id")

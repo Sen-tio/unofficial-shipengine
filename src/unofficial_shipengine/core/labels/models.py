@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Union, Self
 from enum import Enum
 
 from attrs import define, field, validators
@@ -12,6 +12,7 @@ from .enums import (
     LabelLayout,
     DisplayScheme,
     LabelDownloadType,
+    TrackingStatusCode,
 )
 
 
@@ -28,6 +29,52 @@ class PaperlessDownload:
     href: str
     instructions: str = field(default=None)
     handoff_code: str = field(default=None)
+
+
+@define
+class TrackingInformation:
+
+    @define
+    class TrackEvent:
+        occurred_at: str
+        carrier_occurred_at: str
+        description: str
+        city_locality: str
+        state_province: str
+        postal_code: str
+        country_code: str
+        company_name: str
+        signer: str
+        event_code: str
+        carrier_detail_code: str
+        status_code: TrackingStatusCode
+        status_description: str
+        carrier_status_code: str
+        carrier_status_description: str
+        latitude: float
+        longitude: float
+
+    tracking_number: str
+    tracking_url: str
+    status_code: TrackingStatusCode
+    carrier_code: str
+    carrier_id: str
+    status_description: str
+    carrier_status_code: str
+    carrier_detail_code: str
+    carrier_status_description: str
+    ship_date: str
+    estimated_delivery_date: str
+    actual_delivery_date: str
+    exception_description: str
+    events: list[TrackEvent]
+
+    @classmethod
+    def from_dict(cls, data: Union[str, Any]) -> Self:
+        events: list[TrackingInformation.TrackEvent] = [
+            TrackingInformation.TrackEvent(**e) for e in data.pop("events")
+        ]
+        return cls(events=events, **data)
 
 
 @define
@@ -148,7 +195,7 @@ class Label:
         )
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]):
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         if "form_download" in data.keys() and data["form_download"] is not None:
             form_download: URL = URL(**data.pop("form_download"))
         else:
