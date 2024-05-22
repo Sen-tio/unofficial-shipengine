@@ -13,11 +13,16 @@ from .unofficial_shipengine_config import UnofficialShipEngineConfig
 
 
 class UnofficialShipEngine:
-    def __init__(self, config: Union[UnofficialShipEngineConfig, dict, str]) -> None:
+    def __init__(
+        self,
+        config: Union[
+            UnofficialShipEngineConfig, dict[str, Union[float, int, str]], str
+        ],
+    ) -> None:
         if isinstance(config, str):
             self.config = UnofficialShipEngineConfig(config)
         elif isinstance(config, dict):
-            self.config = UnofficialShipEngineConfig(**config)
+            self.config = UnofficialShipEngineConfig.from_dict(config)
         elif isinstance(config, UnofficialShipEngineConfig):
             self.config = config
 
@@ -39,7 +44,7 @@ class UnofficialShipEngine:
         }
 
         retry = Retry(
-            total=self.config.backoff_factor,
+            total=self.config.retries,
             backoff_factor=self.config.backoff_factor,
             status_forcelist=[500, 502, 503, 504],
         )

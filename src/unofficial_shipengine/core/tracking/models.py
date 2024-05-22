@@ -44,7 +44,5 @@ class TrackingInformation:
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Self:
-        events: list[TrackEvent] = [
-            TrackingInformation.TrackEvent(**e) for e in data.pop("events")
-        ]
+        events: list[TrackEvent] = [TrackEvent(**e) for e in data.pop("events")]
         return cls(events=events, **data)

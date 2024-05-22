@@ -1,0 +1,273 @@
+interactions:
+- request:
+    body: '{"name": "Test Warehouse 123", "origin_address": {"name": "Electronic Output
+      Solutions", "phone": "555-555-5555", "address_line1": "2510 Commerce Way", "city_locality":
+      "Vista", "state_province": "CA", "postal_code": "92081", "address_line2": null,
+      "address_line3": null, "email": null, "company_name": null, "instructions":
+      null, "geolocation": null, "country_code": "US", "address_residential_indicator":
+      "unknown"}, "return_address": null, "is_default": null}'
+    headers:
+      Content-Length:
+      - '462'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: POST
+    uri: https://api.shipengine.com/v1/warehouses
+  response:
+    body:
+      string: "{\r\n  \"warehouse_id\": \"se-19029734\",\r\n  \"is_default\": false,\r\n
+        \ \"name\": \"Test Warehouse 123\",\r\n  \"created_at\": \"2024-05-22T15:58:57.35Z\",\r\n
+        \ \"origin_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
+        \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
+        null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
+        null,\r\n    \"address_line3\": null,\r\n    \"city_locality\": \"Vista\",\r\n
+        \   \"state_province\": \"CA\",\r\n    \"postal_code\": \"92081\",\r\n    \"country_code\":
+        \"US\",\r\n    \"address_residential_indicator\": \"unknown\"\r\n  },\r\n
+        \ \"return_address\": {\r\n    \"name\": \"Electronic Output Solutions\",\r\n
+        \   \"phone\": \"555-555-5555\",\r\n    \"email\": null,\r\n    \"company_name\":
+        null,\r\n    \"address_line1\": \"2510 Commerce Way\",\r\n    \"address_line2\":
+        null,\r\n    \"address_line3\": null,\r\n    \"city_locality\": \"Vista\",\r\n
+        \   \"state_province\": \"CA\",\r\n    \"postal_code\": \"92081\",\r\n    \"country_code\":
+        \"US\",\r\n    \"address_residential_indicator\": \"unknown\"\r\n  }\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '964'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 22 May 2024 15:58:57 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '199'
+      RateLimit-Reset:
+      - '3'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - bd49bbc2-54f2-4191-bbce-cffddb256d62
+      x-shipengine-requestid:
+      - bd49bbc2-54f2-4191-bbce-cffddb256d62
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"shipment": {"carrier_id": "se-2424643", "service_code": "usps_ground_advantage",
+      "ship_to": {"name": "Electronic Output Solutions", "phone": "555-555-5555",
+      "address_line1": "2510 Commerce Way", "city_locality": "Vista", "state_province":
+      "CA", "postal_code": "92081", "address_line2": null, "address_line3": null,
+      "email": null, "company_name": null, "instructions": null, "geolocation": null,
+      "country_code": "US", "address_residential_indicator": "unknown"}, "ship_date":
+      null, "validate_address": "no_validation", "advanced_options": null, "confirmation":
+      "none", "tags": [], "is_return": false, "customs": null, "warehouse_id": "se-19029734",
+      "ship_from": null, "return_to": null, "items": [], "external_order_id": null,
+      "tax_identifiers": null, "external_shipment_id": null, "shipment_number": null,
+      "insurance_provider": "none", "order_source_code": null, "packages": [{"weight":
+      {"value": 1, "unit": "ounce"}, "package_code": null, "dimensions": null, "content_description":
+      null, "package_id": null, "insured_value": null, "label_messages": null, "products":
+      null, "external_package_id": null, "shipment_package_id": null, "package_name":
+      null, "tracking_number": null, "qr_code_download": null, "paperless_download":
+      null, "sequence": null, "alternative_identifiers": null, "has_label_documents":
+      null, "has_form_documents": null, "has_qr_code_documents": null, "has_paperless_label_documents":
+      null}], "comparison_rate_type": null}, "label_image_id": null, "label_layout":
+      "4x6", "display_scheme": "label", "label_format": "pdf", "label_download_type":
+      "url", "validate_address": "no_validation", "outbound_label_id": null, "charge_event":
+      "carrier_default", "is_return_label": null, "rma_number": null, "ship_to_service_point_id":
+      null, "ship_form_service_point_id": null}'
+    headers:
+      Content-Length:
+      - '1786'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: POST
+    uri: https://api.shipengine.com/v1/labels
+  response:
+    body:
+      string: "{\r\n  \"label_id\": \"se-454433131\",\r\n  \"status\": \"completed\",\r\n
+        \ \"shipment_id\": \"se-1384326533\",\r\n  \"ship_date\": \"2024-05-22T07:00:00Z\",\r\n
+        \ \"created_at\": \"2024-05-22T15:58:57.8619493Z\",\r\n  \"shipment_cost\":
+        {\r\n    \"currency\": \"usd\",\r\n    \"amount\": 3.7900\r\n  },\r\n  \"insurance_cost\":
+        {\r\n    \"currency\": \"usd\",\r\n    \"amount\": 0.0\r\n  },\r\n  \"requested_comparison_amount\":
+        {\r\n    \"currency\": \"usd\",\r\n    \"amount\": 0.0\r\n  },\r\n  \"rate_details\":
+        [],\r\n  \"tracking_number\": \"9400111899563821175404\",\r\n  \"is_return_label\":
+        false,\r\n  \"rma_number\": null,\r\n  \"is_international\": false,\r\n  \"batch_id\":
+        \"\",\r\n  \"carrier_id\": \"se-2424643\",\r\n  \"service_code\": \"usps_ground_advantage\",\r\n
+        \ \"package_code\": \"package\",\r\n  \"voided\": false,\r\n  \"voided_at\":
+        null,\r\n  \"label_format\": \"pdf\",\r\n  \"display_scheme\": \"label\",\r\n
+        \ \"label_layout\": \"4x6\",\r\n  \"trackable\": true,\r\n  \"label_image_id\":
+        null,\r\n  \"carrier_code\": \"stamps_com\",\r\n  \"tracking_status\": \"in_transit\",\r\n
+        \ \"label_download\": {\r\n    \"pdf\": \"https://api.shipengine.com/v1/downloads/10/IG7XMgw0lE-epnMv12-Ndw/label-454433131.pdf\",\r\n
+        \   \"png\": \"https://api.shipengine.com/v1/downloads/10/IG7XMgw0lE-epnMv12-Ndw/label-454433131.png\",\r\n
+        \   \"zpl\": \"https://api.shipengine.com/v1/downloads/10/IG7XMgw0lE-epnMv12-Ndw/label-454433131.zpl\",\r\n
+        \   \"href\": \"https://api.shipengine.com/v1/downloads/10/IG7XMgw0lE-epnMv12-Ndw/label-454433131.pdf\"\r\n
+        \ },\r\n  \"form_download\": null,\r\n  \"qr_code_download\": null,\r\n  \"insurance_claim\":
+        null,\r\n  \"paperless_download\": null,\r\n  \"packages\": [\r\n    {\r\n
+        \     \"package_id\": 476183598,\r\n      \"package_code\": \"package\",\r\n
+        \     \"weight\": {\r\n        \"value\": 1.00,\r\n        \"unit\": \"ounce\"\r\n
+        \     },\r\n      \"dimensions\": {\r\n        \"unit\": \"inch\",\r\n        \"length\":
+        0.0,\r\n        \"width\": 0.0,\r\n        \"height\": 0.0\r\n      },\r\n
+        \     \"insured_value\": {\r\n        \"currency\": \"usd\",\r\n        \"amount\":
+        0.00\r\n      },\r\n      \"tracking_number\": \"9400111899563821175404\",\r\n
+        \     \"qr_code_download\": null,\r\n      \"paperless_download\": null,\r\n
+        \     \"label_messages\": {\r\n        \"reference1\": null,\r\n        \"reference2\":
+        null,\r\n        \"reference3\": null\r\n      },\r\n      \"external_package_id\":
+        null,\r\n      \"content_description\": null,\r\n      \"sequence\": 1,\r\n
+        \     \"alternative_identifiers\": [],\r\n      \"has_label_documents\": false,\r\n
+        \     \"has_form_documents\": false,\r\n      \"has_qr_code_documents\": false,\r\n
+        \     \"has_paperless_label_documents\": false\r\n    }\r\n  ],\r\n  \"charge_event\":
+        \"carrier_default\",\r\n  \"alternative_identifiers\": [],\r\n  \"shipping_rule_id\":
+        null\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2512'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 22 May 2024 15:58:58 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '198'
+      RateLimit-Reset:
+      - '3'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - 3ada6902-70ab-44cb-879f-f9914c6e4882
+      x-shipengine-requestid:
+      - 3ada6902-70ab-44cb-879f-f9914c6e4882
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: GET
+    uri: https://api.shipengine.com/v1/tracking?carrier_code=stamps_com&tracking_number=9400111899563821175404
+  response:
+    body:
+      string: "{\r\n  \"tracking_number\": \"9400111899563821175404\",\r\n  \"tracking_url\":
+        \"https://tools.usps.com/go/TrackConfirmAction.action?tLabels=9400111899563821175404\",\r\n
+        \ \"status_code\": \"NY\",\r\n  \"carrier_code\": \"stamps_com\",\r\n  \"carrier_id\":
+        1,\r\n  \"carrier_detail_code\": null,\r\n  \"status_description\": \"Not
+        Yet In System\",\r\n  \"carrier_status_code\": \"-2147219283\",\r\n  \"carrier_status_description\":
+        \"A status update is not yet available for this tracking number.  More information
+        will become available when USPS receives the tracking information, or when
+        the package is received by USPS.\",\r\n  \"ship_date\": null,\r\n  \"estimated_delivery_date\":
+        null,\r\n  \"actual_delivery_date\": null,\r\n  \"exception_description\":
+        null,\r\n  \"events\": []\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '719'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 22 May 2024 15:58:59 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '197'
+      RateLimit-Reset:
+      - '1'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - dfa4c978-b57e-460a-bc66-bf5a520f4cb3
+      x-shipengine-requestid:
+      - dfa4c978-b57e-460a-bc66-bf5a520f4cb3
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: DELETE
+    uri: https://api.shipengine.com/v1/warehouses/se-19029734
+  response:
+    body:
+      string: ''
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Date:
+      - Wed, 22 May 2024 15:58:59 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '196'
+      RateLimit-Reset:
+      - '1'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - 7fe17270-5a23-4513-8921-cf9887747d8a
+      x-shipengine-requestid:
+      - 7fe17270-5a23-4513-8921-cf9887747d8a
+    status:
+      code: 204
+      message: No Content
+version: 1
