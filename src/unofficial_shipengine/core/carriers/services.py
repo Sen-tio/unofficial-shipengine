@@ -1,26 +1,17 @@
 import json
 from typing import Union
 
-import requests
-from unofficial_shipengine.exceptions import ShipEngineAPIError
-
 from .models import Carrier, CarrierBalance
+from ..common.services import BaseService
 
 
-class CarrierService:
-
-    def __init__(self, session: requests.Session):
-        self.session = session
-
+class CarrierService(BaseService):
     def get_carriers(self) -> list[Carrier]:
         url = "https://api.shipengine.com/v1/carriers"
         response = self.session.get(url)
         response_dict = json.loads(response.text)
 
-        if response.status_code not in [200, 207]:
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)
 
         carriers = response_dict["carriers"]
 
@@ -31,10 +22,7 @@ class CarrierService:
         response = self.session.get(url)
         response_dict = json.loads(response.text)
 
-        if response.status_code != 200:
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)
 
         return Carrier.from_dict(response_dict)
 
@@ -54,9 +42,6 @@ class CarrierService:
         response = self.session.post(url, data=json.dumps(data))
         response_dict = json.loads(response.text)
 
-        if response.status_code != 200:
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)
 
         return CarrierBalance.from_dict(response_dict)

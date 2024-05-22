@@ -1,16 +1,16 @@
-import pytest
 import os
-import vcr
-
-from typing import Generator
-from dotenv import load_dotenv
 from pathlib import Path
+from typing import Generator
 
+import pytest
+import vcr
+from dotenv import load_dotenv
+
+from unofficial_shipengine.core.common.models import Address, Package, Weight
 from unofficial_shipengine.core.labels.models import LabelRequest, ReturnLabelRequest
 from unofficial_shipengine.core.shipments.models import ShipmentRequest
-from unofficial_shipengine.unofficial_shipengine import UnofficialShipEngine
-from unofficial_shipengine.core.common.models import Address, Package, Weight
 from unofficial_shipengine.core.warehouses.models import WarehouseRequest, Warehouse
+from unofficial_shipengine.unofficial_shipengine import UnofficialShipEngine
 
 load_dotenv()
 

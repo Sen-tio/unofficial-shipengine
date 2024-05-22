@@ -1,6 +1,7 @@
+from pathlib import Path
+
 import pytest
 from dotenv import load_dotenv
-from pathlib import Path
 
 from unofficial_shipengine.core.tracking.models import TrackingInformation
 from unofficial_shipengine.exceptions import ShipEngineAPIError

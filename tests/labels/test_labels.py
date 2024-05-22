@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from unofficial_shipengine.core.tracking.models import TrackingInformation
 from unofficial_shipengine.core.labels.models import Label
+from unofficial_shipengine.core.tracking.models import TrackingInformation
 from unofficial_shipengine.exceptions import ShipEngineAPIError
 
 BASE_DIR = Path(__file__).parent

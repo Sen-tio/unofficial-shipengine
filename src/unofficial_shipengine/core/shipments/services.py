@@ -1,18 +1,14 @@
 import json
 from typing import Union
 
-import requests
 from attrs import asdict
-from unofficial_shipengine.exceptions import ShipEngineAPIError
+
 from unofficial_shipengine.utils.serialize import serializer
-
 from .models import ShipmentRequest, Shipment
+from ..common.services import BaseService
 
 
-class ShipmentService:
-
-    def __init__(self, session: requests.Session):
-        self.session = session
+class ShipmentService(BaseService):
 
     def create_shipment(
         self, shipment_request: Union[ShipmentRequest, list[ShipmentRequest]]
@@ -29,10 +25,7 @@ class ShipmentService:
         response = self.session.post(url, data=json_data)
         response_dict = response.json()
 
-        if response.status_code != 200:
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)
 
         shipments = [Shipment.from_dict(s) for s in response_dict["shipments"]]
 
@@ -46,11 +39,7 @@ class ShipmentService:
 
         response = self.session.get(url)
         response_dict = response.json()
-
-        if response.status_code != 200:
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)
 
         return Shipment.from_dict(response_dict)
 
@@ -62,11 +51,7 @@ class ShipmentService:
 
         response = self.session.get(url)
         response_dict = response.json()
-
-        if response.status_code != 200:
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)
 
         return Shipment.from_dict(response_dict)
 
@@ -76,11 +61,7 @@ class ShipmentService:
 
         response = self.session.put(url, data=json_data)
         response_dict = response.json()
-
-        if response.status_code != 200:
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)
 
         return Shipment.from_dict(response_dict)
 
@@ -90,10 +71,4 @@ class ShipmentService:
 
         url = f"https://api.shipengine.com/v1/shipments/{shipment}/cancel"
         response = self.session.put(url)
-
-        if response.status_code != 204:
-            print(response.text)
-            response_dict = response.json()
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)

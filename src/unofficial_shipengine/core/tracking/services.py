@@ -1,13 +1,8 @@
-import requests
-from unofficial_shipengine.exceptions import ShipEngineAPIError
-
 from unofficial_shipengine.core.tracking.models import TrackingInformation
+from ..common.services import BaseService
 
 
-class TrackingService:
-    def __init__(self, session: requests.Session) -> None:
-        self.session = session
-
+class TrackingService(BaseService):
     def get_tracking_information(
         self, carrier_code: str, tracking_number: str
     ) -> TrackingInformation:
@@ -16,12 +11,7 @@ class TrackingService:
 
         response = self.session.get(url, params=params)
         response_dict = response.json()
-
-        if response.status_code != 200:
-            response_dict = response.json()
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)
 
         tracking_information: TrackingInformation = TrackingInformation.from_dict(
             response_dict
@@ -40,11 +30,5 @@ class TrackingService:
     ) -> None:
         url = f"https://api.shipengine.com/v1/tracking/{action}"
         params = {"carrier_code": carrier_code, "tracking_number": tracking_number}
-
         response = self.session.post(url, params=params)
-
-        if response.status_code != 204:
-            response_dict = response.json()
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)

@@ -1,9 +1,9 @@
-import pytest
 from pathlib import Path
 
+import pytest
 
-from unofficial_shipengine.exceptions import ShipEngineAPIError
 from unofficial_shipengine.core.batches.models import Batch, BatchRequest, ProcessLabels
+from unofficial_shipengine.exceptions import ShipEngineAPIError
 
 BASE_DIR: Path = Path(__file__).parent
 

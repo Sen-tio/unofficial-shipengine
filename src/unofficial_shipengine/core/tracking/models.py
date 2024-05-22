@@ -1,6 +1,8 @@
-from attrs import define
-from .enums import TrackingStatusCode
 from typing import Any, Self
+
+from attrs import define
+
+from .enums import TrackingStatusCode
 
 
 @define

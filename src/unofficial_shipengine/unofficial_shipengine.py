@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, Mapping, Any
 
 import requests
 from requests.adapters import HTTPAdapter, Retry
@@ -19,13 +19,7 @@ class UnofficialShipEngine:
             UnofficialShipEngineConfig, dict[str, Union[float, int, str]], str
         ],
     ) -> None:
-        if isinstance(config, str):
-            self.config = UnofficialShipEngineConfig(config)
-        elif isinstance(config, dict):
-            self.config = UnofficialShipEngineConfig.from_dict(config)
-        elif isinstance(config, UnofficialShipEngineConfig):
-            self.config = config
-
+        self.config = self._parse_config(config)
         self._session = self._create_session()
 
         self.shipments = ShipmentService(self._session)
@@ -34,6 +28,19 @@ class UnofficialShipEngine:
         self.warehouses = WarehouseService(self._session)
         self.labels = LabelService(self._session)
         self.tracking = TrackingService(self._session)
+
+    @staticmethod
+    def _parse_config(
+        config: Union[UnofficialShipEngineConfig, dict[str, Any], str],
+    ) -> UnofficialShipEngineConfig:
+        if isinstance(config, str):
+            return UnofficialShipEngineConfig(config)
+        elif isinstance(config, Mapping):
+            return UnofficialShipEngineConfig.from_dict(config)
+        elif isinstance(config, UnofficialShipEngineConfig):
+            return config
+        else:
+            raise ValueError("Invalid configuration type provided")
 
     def _create_session(self) -> requests.Session:
         session = requests.Session()
@@ -52,3 +59,12 @@ class UnofficialShipEngine:
         session.mount("https://", HTTPAdapter(max_retries=retry))
 
         return session
+
+    # TODO: create list_<service> for the remaining services, use some sort of
+    #   filter object/typed dictionary for filter params
+
+    # TODO: finishing touches, type hinting, clean up UnofficialShipEngine class
+
+    # TODO: write documentation and comments on complex code
+
+    # TODO: write tests for any remaining uncovered code

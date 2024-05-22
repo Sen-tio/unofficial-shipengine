@@ -1,30 +1,22 @@
 import json
 from typing import Union, Optional, Any
 
-import requests
 from attrs import asdict
-from unofficial_shipengine.exceptions import ShipEngineAPIError
-from unofficial_shipengine.utils.serialize import serializer
 
+from unofficial_shipengine.utils.serialize import serializer
 from .models import Batch, BatchRequest, ProcessLabels
+from ..common.services import BaseService
 from ..shipments.models import Shipment
 
 
-class BatchService:
-
-    def __init__(self, session: requests.Session):
-        self.session = session
+class BatchService(BaseService):
 
     def create_batch(self, batch_request: BatchRequest) -> Batch:
         data: str = json.dumps(asdict(batch_request, value_serializer=serializer))
 
         response = self.session.post("https://api.shipengine.com/v1/batches", data=data)
         response_dict = json.loads(response.text)
-
-        if response.status_code in [400, 500]:
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)
 
         return Batch.from_dict(response_dict)
 
@@ -33,11 +25,7 @@ class BatchService:
 
         response = self.session.get(url)
         response_dict = json.loads(response.text)
-
-        if response.status_code != 200:
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)
 
         return Batch.from_dict(response_dict)
 
@@ -49,16 +37,9 @@ class BatchService:
             batch = batch.batch_id
 
         data: str = json.dumps(asdict(process_labels, value_serializer=serializer))
-
         url: str = f"https://api.shipengine.com/v1/batches/{batch}/process/labels"
-
         response = self.session.post(url, data=data)
-
-        if response.status_code != 204:
-            response_dict = json.loads(response.text)
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)
 
     def get_batch_errors(
         self, batch: Union[Batch, str], page: int = 1, pagesize: int = 1
@@ -81,12 +62,7 @@ class BatchService:
 
         url: str = f"https://api.shipengine.com/v1/batches/{batch}"
         response = self.session.delete(url)
-
-        if response.status_code != 204:
-            response_dict = json.loads(response.text)
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)
 
     def add_to_batch(
         self,
@@ -119,9 +95,4 @@ class BatchService:
         url: str = f"https://api.shipengine.com/v1/batches/{batch}/{endpoint}"
         data: str = json.dumps({"shipment_ids": shipments, "rate_ids": rates})
         response = self.session.post(url, data=data)
-
-        if response.status_code != 204:
-            response_dict = json.loads(response.text)
-            raise ShipEngineAPIError(
-                request_id=response_dict["request_id"], errors=response_dict["errors"]
-            )
+        self._handle_response(response)

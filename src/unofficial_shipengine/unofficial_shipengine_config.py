@@ -1,5 +1,6 @@
-from attrs import define, field
 from typing import Self, Any
+
+from attrs import define, field
 
 
 @define

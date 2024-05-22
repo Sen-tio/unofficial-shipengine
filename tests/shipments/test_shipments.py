@@ -1,15 +1,15 @@
-import pytest
+from datetime import datetime
 from pathlib import Path
+
+import pytest
 from dotenv import load_dotenv
 
-from datetime import datetime
 from unofficial_shipengine.core.common.models import Address, Package, Weight
-from unofficial_shipengine.exceptions import ShipEngineAPIError
-
 from unofficial_shipengine.core.shipments.models import (
     Shipment,
     AdvancedOptions,
 )
+from unofficial_shipengine.exceptions import ShipEngineAPIError
 
 load_dotenv()
 
