@@ -2,6 +2,7 @@ import pytest
 from pathlib import Path
 from dotenv import load_dotenv
 
+from datetime import datetime
 from unofficial_shipengine.core.common.models import Address, Package, Weight
 from unofficial_shipengine.exceptions import ShipEngineAPIError
 
@@ -50,4 +51,67 @@ def test_create_shipment_failure(client, shipment_request):
         client.shipments.create_shipment(shipment_request)
 
 
-# TODO: finish writing tests
+@pytest.mark.vcr
+def test_get_by_id_success(client, shipment_request):
+    created_shipment = client.shipments.create_shipment(shipment_request)
+    shipment = client.shipments.get_by_id(created_shipment.shipment_id)
+
+    assert isinstance(shipment, Shipment)
+
+
+@pytest.mark.vcr
+def test_get_by_id_failure(client):
+    with pytest.raises(ShipEngineAPIError):
+        client.shipments.get_by_id("bad-shipment-id")
+
+
+@pytest.mark.vcr
+def test_get_by_external_id_success(client, shipment_request):
+    shipment_request.external_shipment_id = f"{datetime.now():%Y%m%d%H%M%S}"
+    created_shipment = client.shipments.create_shipment(shipment_request)
+    shipment = client.shipments.get_by_external_id(
+        created_shipment.external_shipment_id
+    )
+
+    assert isinstance(shipment, Shipment)
+
+
+@pytest.mark.vcr
+def test_get_by_external_id_failure(client):
+    with pytest.raises(ShipEngineAPIError):
+        client.shipments.get_by_external_id("some-non-existing-external-id")
+
+
+@pytest.mark.vcr
+def test_update_shipment_success(client, shipment_request):
+    name_to_change_to = "New Name"
+    shipment = client.shipments.create_shipment(shipment_request)
+    shipment.ship_to.name = name_to_change_to
+    client.shipments.update_shipment(shipment)
+    shipment = client.shipments.get_by_id(shipment.shipment_id)
+
+    assert shipment.ship_to.name == name_to_change_to
+
+
+@pytest.mark.vcr
+def test_update_shipment_failure(client, shipment_request):
+    shipment = client.shipments.create_shipment(shipment_request)
+    shipment.shipment_id = "bad-shipment-id"
+
+    with pytest.raises(ShipEngineAPIError):
+        client.shipments.update_shipment(shipment)
+
+
+@pytest.mark.vcr
+def test_cancel_shipment_success(client, shipment_request):
+    shipment = client.shipments.create_shipment(shipment_request)
+    client.shipments.cancel_shipment(shipment)
+    shipment = client.shipments.get_by_id(shipment.shipment_id)
+
+    assert shipment.shipment_status == Shipment.Status.CANCELLED.value
+
+
+@pytest.mark.vcr
+def test_cancel_shipment_failure(client):
+    with pytest.raises(ShipEngineAPIError):
+        client.shipments.cancel_shipment("bad-shipment-id")

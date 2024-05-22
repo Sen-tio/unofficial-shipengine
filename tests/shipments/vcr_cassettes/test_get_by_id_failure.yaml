@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Content-Type:
+      - application/json
+      Host:
+      - api.shipengine.com
+    method: GET
+    uri: https://api.shipengine.com/v1/shipments/bad-shipment-id
+  response:
+    body:
+      string: "{\r\n  \"request_id\": \"b5045931-8f79-4bfc-bae3-d5f60e3d705e\",\r\n
+        \ \"errors\": [\r\n    {\r\n      \"error_source\": \"shipengine\",\r\n      \"error_type\":
+        \"business_rules\",\r\n      \"error_code\": \"unspecified\",\r\n      \"message\":
+        \"id parameter is in the wrong format\",\r\n      \"field_name\": null,\r\n
+        \     \"field_value\": \"bad-shipment-id\"\r\n    }\r\n  ]\r\n}"
+    headers:
+      Branch-Name:
+      - bWFpbg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '331'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 22 May 2024 19:02:15 GMT
+      Permissions-Policy:
+      - accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(),
+        microphone=(), payment=(), usb=(), interest-cohort=()
+      RateLimit-Limit:
+      - '200'
+      RateLimit-Remaining:
+      - '195'
+      RateLimit-Reset:
+      - '45'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex
+      request-id:
+      - b5045931-8f79-4bfc-bae3-d5f60e3d705e
+      x-shipengine-requestid:
+      - b5045931-8f79-4bfc-bae3-d5f60e3d705e
+    status:
+      code: 400
+      message: Bad Request
+version: 1

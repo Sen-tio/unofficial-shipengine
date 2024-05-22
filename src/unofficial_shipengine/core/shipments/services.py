@@ -55,7 +55,10 @@ class ShipmentService:
         return Shipment.from_dict(response_dict)
 
     def get_by_external_id(self, external_shipment_id: str) -> Shipment:
-        url = f"https://api.shipengine.com/v1/shipments/{external_shipment_id}"
+        url = (
+            f"https://api.shipengine.com/v1/shipments/"
+            f"external_shipment_id/{external_shipment_id}"
+        )
 
         response = self.session.get(url)
         response_dict = response.json()
@@ -69,8 +72,9 @@ class ShipmentService:
 
     def update_shipment(self, shipment: Shipment) -> Shipment:
         url = f"https://api.shipengine.com/v1/shipments/{shipment.shipment_id}"
+        json_data = json.dumps(asdict(shipment, value_serializer=serializer))
 
-        response = self.session.put(url)
+        response = self.session.put(url, data=json_data)
         response_dict = response.json()
 
         if response.status_code != 200:
@@ -80,11 +84,15 @@ class ShipmentService:
 
         return Shipment.from_dict(response_dict)
 
-    def cancel_shipment(self, shipment_id: str) -> None:
-        url = f"https://api.shipengine.com/v1/shipments/{shipment_id}/cancel"
-        response = self.session.delete(url)
+    def cancel_shipment(self, shipment: Union[Shipment, str]) -> None:
+        if isinstance(shipment, Shipment):
+            shipment = shipment.shipment_id
+
+        url = f"https://api.shipengine.com/v1/shipments/{shipment}/cancel"
+        response = self.session.put(url)
 
         if response.status_code != 204:
+            print(response.text)
             response_dict = response.json()
             raise ShipEngineAPIError(
                 request_id=response_dict["request_id"], errors=response_dict["errors"]

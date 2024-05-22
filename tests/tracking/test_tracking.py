@@ -29,3 +29,21 @@ def test_get_tracking_information_success(client, label_request):
 def test_get_tracking_information_failure(client):
     with pytest.raises(ShipEngineAPIError):
         client.tracking.get_tracking_information("bad-carrier-code", "")
+
+
+@pytest.mark.vcr
+def test_start_tracking_package_success(client, label_request):
+    label = client.labels.purchase_label(label_request)
+    client.tracking.start_tracking_package(label.carrier_code, label.tracking_number)
+
+
+@pytest.mark.vcr
+def test_stop_tracking_package_success(client, label_request):
+    label = client.labels.purchase_label(label_request)
+    client.tracking.stop_tracking_package(label.carrier_code, label.tracking_number)
+
+
+@pytest.mark.vcr
+def test_tracking_package_failure(client, label_request):
+    with pytest.raises(ShipEngineAPIError):
+        client.tracking.start_tracking_package("bad-carrier-code", "")
