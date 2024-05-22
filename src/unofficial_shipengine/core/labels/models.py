@@ -1,4 +1,4 @@
-from typing import Any, Union, Self
+from typing import Any, Self
 from enum import Enum
 
 from attrs import define, field, validators
@@ -70,7 +70,7 @@ class TrackingInformation:
     events: list[TrackEvent]
 
     @classmethod
-    def from_dict(cls, data: Union[str, Any]) -> Self:
+    def from_dict(cls, data: dict[str, Any]) -> Self:
         events: list[TrackingInformation.TrackEvent] = [
             TrackingInformation.TrackEvent(**e) for e in data.pop("events")
         ]
