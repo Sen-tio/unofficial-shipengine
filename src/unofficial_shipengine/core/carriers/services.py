@@ -2,9 +2,9 @@ import json
 from typing import Union
 
 import requests
+from unofficial_shipengine.exceptions import ShipEngineAPIError
 
 from .models import Carrier, CarrierBalance
-from unofficial_shipengine.exceptions import ShipEngineAPIError
 
 
 class CarrierService:

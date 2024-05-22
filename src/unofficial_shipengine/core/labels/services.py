@@ -1,12 +1,13 @@
 import json
-import requests
-
 from typing import Union
-from attrs import asdict
 
+import requests
+from attrs import asdict
 from unofficial_shipengine.exceptions import ShipEngineAPIError
-from .models import Label, LabelRequest, ReturnLabelRequest, TrackingInformation
 from unofficial_shipengine.utils.serialize import serializer
+
+from .models import Label, LabelRequest, ReturnLabelRequest
+from ..tracking.models import TrackingInformation
 
 
 class LabelService:

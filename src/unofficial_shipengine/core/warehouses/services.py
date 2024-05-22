@@ -3,10 +3,10 @@ from typing import Union
 
 import requests
 from attrs import asdict
-
-from .models import WarehouseRequest, Warehouse
 from unofficial_shipengine.exceptions import ShipEngineAPIError
 from unofficial_shipengine.utils.serialize import serializer
+
+from .models import WarehouseRequest, Warehouse
 
 
 class WarehouseService:

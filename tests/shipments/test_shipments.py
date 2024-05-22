@@ -48,3 +48,6 @@ def test_create_shipment_failure(client, shipment_request):
 
     with pytest.raises(ShipEngineAPIError):
         client.shipments.create_shipment(shipment_request)
+
+
+# TODO: finish writing tests

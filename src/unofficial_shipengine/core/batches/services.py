@@ -3,11 +3,11 @@ from typing import Union, Optional, Any
 
 import requests
 from attrs import asdict
+from unofficial_shipengine.exceptions import ShipEngineAPIError
+from unofficial_shipengine.utils.serialize import serializer
 
 from .models import Batch, BatchRequest, ProcessLabels
-from unofficial_shipengine.exceptions import ShipEngineAPIError
 from ..shipments.models import Shipment
-from unofficial_shipengine.utils.serialize import serializer
 
 
 class BatchService:
