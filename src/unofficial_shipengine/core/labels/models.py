@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Any, Self
+from typing import Any, Self, Optional
 
 from attrs import define, field, validators
 
@@ -48,6 +48,19 @@ class ReturnLabelRequest:
         default=LabelDownloadType.URL, validator=validators.in_(LabelDownloadType)
     )
     label_image_id: str = field(default=None)
+
+
+@define
+class PackageLabel(Package):
+    tracking_number: Optional[str] = field(default=None)
+    qr_code_download: Optional[str] = field(default=None)
+    paperless_download: str = field(default=None)
+    sequence: Optional[str] = field(default=None)
+    alternative_identifiers: Optional[list[str]] = field(default=None)
+    has_label_documents: bool = field(default=None)
+    has_form_documents: bool = field(default=None)
+    has_qr_code_documents: bool = field(default=None)
+    has_paperless_label_documents: bool = field(default=None)
 
 
 @define
@@ -121,7 +134,7 @@ class Label:
     form_download: URL
     paperless_download: PaperlessDownload
     insurance_claim: URL
-    packages: list[Package]
+    packages: list[PackageLabel]
     alternative_identifiers: list[AlternativeIdentifier] = field(default=None)
     label_format: LabelFormat = field(
         default=LabelFormat.PDF, validator=validators.in_(LabelFormat)
@@ -171,7 +184,9 @@ class Label:
             **data.pop("requested_comparison_amount")
         )
 
-        packages = [Package.from_dict(p) for p in data.pop("packages")]
+        packages: list[PackageLabel] = [
+            PackageLabel.from_dict(p) for p in data.pop("packages")
+        ]
 
         return cls(
             label_download=label_download,

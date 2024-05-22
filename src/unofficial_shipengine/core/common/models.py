@@ -104,6 +104,75 @@ class Value:
 
 
 @define
+class GenericAmount:
+    amount: int = field(default=0)
+    unit: str = field(default=None)
+
+
+@define
+class Product:
+
+    @define
+    class DangerousGood:
+
+        class PackagingGroup(Enum):
+            I: str = "i"
+            II: str = "ii"
+            III: str = "iii"
+
+        class PackagingInstructionSection(Enum):
+            SECTION_1: str = "section_1"
+            SECTION_2: str = "section_2"
+            SECTION_1A: str = "section_1a"
+            SECTION_1B: str = "section_1b"
+
+        class TransportMean(Enum):
+            GROUND: str = "ground"
+            WATER: str = "water"
+            CARGO_AIRCRAFT_ONLY: str = "cargo_aircraft_only"
+            PASSENGER_AIRCRAFT: str = "passenger_aircraft"
+
+        class RegulationLevel(Enum):
+            LIGHLTY_REGULATED: str = "lightly_regulated"
+            FULLY_REGULATED: str = "fully_regulated"
+            LIMITED_QUANTITIES: str = "limited_quantities"
+            EXCEPTED_QUANTITY: str = "excepted_quantity"
+
+        dangerous_amount: GenericAmount
+        quantity: int = field(default=0)
+        packaging_instruction: str = field(default=None)
+        id_number: str = field(default=None)
+        shipping_name: str = field(default=None)
+        technical_name: str = field(default=None)
+        product_class: str = field(default=None)
+        product_class_subsidiary: str = field(default=None)
+        packaging_type: str = field(default=None)
+        transport_category: str = field(default=None)
+        regulation_authority: str = field(default=None)
+        radioactive: bool = field(default=None)
+        reportable_quantity: bool = field(default=None)
+        tunnel_code: str = field(default=None)
+        additional_description: str = field(default=None)
+        regulation_level: RegulationLevel = field(default=None)
+        transport_mean: TransportMean = field(default=None)
+        packaging_group: PackagingGroup = field(default=None)
+        packaging_instruction_section: PackagingInstructionSection = field(default=None)
+
+    quantity: int
+    value: Value
+    weight: Weight
+    sku: str = field(default=None)
+    sku_description: str = field(default=None)
+    mid_code: str = field(default=None)
+    product_url: str = field(default=None)
+    vat_rate: float = field(default=None)
+    unit_of_measure: str = field(default=None)
+    country_of_origin: str = field(default=None)
+    harmonized_tarrif_code: str = field(default=None)
+    description: str = field(default=None)
+
+
+@define
 class Package:
     @define
     class LabelMessages:
@@ -111,28 +180,17 @@ class Package:
         reference2: Optional[str] = field(default=None)
         reference3: Optional[str] = field(default=None)
 
-    weight: "Weight"
+    weight: Weight
     package_code: Optional[str] = field(default=None)
     dimensions: Optional["Dimension"] = field(default=None)
     content_description: Optional[str] = field(default=None)
     package_id: Optional[str] = field(default=None)
     insured_value: Optional["Value"] = field(default=None)
     label_messages: Optional[LabelMessages] = field(default=None)
-    products: Optional[list[object]] = field(default=None)  # TODO
+    products: Optional[list[Product]] = field(default=None)
     external_package_id: Optional[str] = field(default=None)
     shipment_package_id: Optional[str] = field(default=None)
     package_name: Optional[str] = field(default=None)
-
-    # TODO: these are unique to LabelPackage, perhaps create a class under labels and subclass Package
-    tracking_number: Optional[str] = field(default=None)
-    qr_code_download: Optional[str] = field(default=None)
-    paperless_download: str = field(default=None)
-    sequence: Optional[str] = field(default=None)
-    alternative_identifiers: Optional[list[str]] = field(default=None)
-    has_label_documents: bool = field(default=None)
-    has_form_documents: bool = field(default=None)
-    has_qr_code_documents: bool = field(default=None)
-    has_paperless_label_documents: bool = field(default=None)
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Self:
