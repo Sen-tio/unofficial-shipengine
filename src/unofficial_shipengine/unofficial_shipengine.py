@@ -26,14 +26,14 @@ class UnofficialShipEngine:
         elif isinstance(config, UnofficialShipEngineConfig):
             self.config = config
 
-        self.session = self._create_session()
+        self._session = self._create_session()
 
-        self.shipments = ShipmentService(self.session)
-        self.carriers = CarrierService(self.session)
-        self.batches = BatchService(self.session)
-        self.warehouses = WarehouseService(self.session)
-        self.labels = LabelService(self.session)
-        self.tracking = TrackingService(self.session)
+        self.shipments = ShipmentService(self._session)
+        self.carriers = CarrierService(self._session)
+        self.batches = BatchService(self._session)
+        self.warehouses = WarehouseService(self._session)
+        self.labels = LabelService(self._session)
+        self.tracking = TrackingService(self._session)
 
     def _create_session(self) -> requests.Session:
         session = requests.Session()
