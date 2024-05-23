@@ -1,5 +1,5 @@
 import json
-from typing import Union, Optional
+from typing import Union, Optional, Any
 
 from attrs import asdict
 from datetime import datetime
@@ -80,10 +80,10 @@ class ShipmentService(BaseService):
         shipment_status: Optional[Union[Shipment.Status, str]] = None,
         batch_id: Optional[str] = None,
         tag: Optional[str] = None,
-        created_at_start: Optional[Union[str, datetime]] = None,
-        created_at_end: Optional[Union[str, datetime]] = None,
-        modified_at_start: Optional[Union[str, datetime]] = None,
-        modified_at_end: Optional[Union[str, datetime]] = None,
+        created_at_start: Optional[datetime] = None,
+        created_at_end: Optional[datetime] = None,
+        modified_at_start: Optional[datetime] = None,
+        modified_at_end: Optional[datetime] = None,
         page: int = 1,
         page_size: int = 25,
         sales_order_id: Optional[str] = None,
@@ -110,8 +110,7 @@ class ShipmentService(BaseService):
         }
 
         url = "https://api.shipengine.com/v1/shipments"
-        params = {k: v for k, v in filters if v is not None}
-
+        params: dict[str, Any] = {k: v for k, v in filters.items() if v is not None}
         response = self.session.get(url, params=params)
         response_dict = response.json()
 
