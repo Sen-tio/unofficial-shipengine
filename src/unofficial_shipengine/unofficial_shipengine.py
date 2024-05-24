@@ -60,9 +60,6 @@ class UnofficialShipEngine:
 
         return session
 
-    # TODO: create list_<service> for the remaining services, use some sort of
-    #   filter object/typed dictionary for filter params
-
     # TODO: finishing touches, type hinting, clean up UnofficialShipEngine class
 
     # TODO: write documentation and comments on complex code
