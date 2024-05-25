@@ -19,6 +19,14 @@ class UnofficialShipEngine:
             UnofficialShipEngineConfig, dict[str, Union[float, int, str]], str
         ],
     ) -> None:
+        """
+        Initializes the UnofficialShipEngine client with the provided configuration.
+
+        Args:
+            config (Union[UnofficialShipEngineConfig, dict[str, Union[float, int, str]], str]):
+                The configuration for the ShipEngine client. It can be an UnofficialShipEngineConfig object,
+                a dictionary, or a string representing just the API key and the rest of the values will default.
+        """
         self.config = self._parse_config(config)
         self._session = self._create_session()
 
@@ -33,6 +41,20 @@ class UnofficialShipEngine:
     def _parse_config(
         config: Union[UnofficialShipEngineConfig, dict[str, Any], str],
     ) -> UnofficialShipEngineConfig:
+        """
+        Parses the provided configuration into an UnofficialShipEngineConfig object.
+
+        Args:
+            config (Union[UnofficialShipEngineConfig, dict[str, Any], str]):
+                The configuration to parse. It can be an UnofficialShipEngineConfig object,
+                a dictionary, or a string representing just the API key and the rest of the values will default.
+
+        Returns:
+            UnofficialShipEngineConfig: The parsed configuration object.
+
+        Raises:
+            ValueError: If the configuration type is invalid.
+        """
         if isinstance(config, str):
             return UnofficialShipEngineConfig(config)
         elif isinstance(config, Mapping):
@@ -43,6 +65,12 @@ class UnofficialShipEngine:
             raise ValueError("Invalid configuration type provided")
 
     def _create_session(self) -> requests.Session:
+        """
+        Creates a configured requests session for making API calls.
+
+        Returns:
+            requests.Session: The configured session with headers and retry strategy.
+        """
         session = requests.Session()
         session.headers = {
             "Host": "api.shipengine.com",
@@ -59,9 +87,3 @@ class UnofficialShipEngine:
         session.mount("https://", HTTPAdapter(max_retries=retry))
 
         return session
-
-    # TODO: finishing touches, type hinting, clean up UnofficialShipEngine class
-
-    # TODO: write documentation and comments on complex code
-
-    # TODO: write tests for any remaining uncovered code
