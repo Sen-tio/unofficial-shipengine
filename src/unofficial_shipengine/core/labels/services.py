@@ -6,6 +6,7 @@ from attrs import asdict
 from unofficial_shipengine.utils.serialize import serializer
 from .models import Label, LabelRequest, ReturnLabelRequest
 from ..common.services import BaseService
+from ..shipments.models import Shipment
 from ..tracking.models import TrackingInformation
 
 
