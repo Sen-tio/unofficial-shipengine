@@ -11,7 +11,7 @@ The Unofficial ShipEngine client provides a simple interface for interacting wit
 To install, you can use pip:
 
 ```bash
-pip install unofficial-shipengine-python
+pip install unofficial-shipengine
 ```
 
 ## Usage
